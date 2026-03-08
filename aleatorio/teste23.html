@@ -1,0 +1,48 @@
+ <nav class="navbar">
+        <div class="nav-logo">
+            <img src="images/Redapng.png" alt="Logo REDA+">
+        </div>
+
+        <ul class="nav-links">
+            <li><a id="homP" href="#">Home</a></li>
+            <li><a id="cntP" href="#">Contato</a></li>
+            <li><a id="sbrP" href="#">Sobre</a></li>
+        </ul>
+    </nav>
+
+------------------------------ ------------------------------ ------------------------------ 
+.navbar {
+    height: 80px;
+    background: #204B86;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 60px;
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .08);
+}
+
+.nav-logo img {
+    height: 20%;
+    width: 20%;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 55px;
+    font-size: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    color: #ff8c42;
+}
