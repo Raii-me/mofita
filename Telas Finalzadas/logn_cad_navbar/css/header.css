@@ -1,0 +1,156 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+
+
+nav{
+    height: 80px;
+    background: #204B86;
+    width: 100%;
+    padding: 10px 10%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .08);
+}
+
+.logo{
+    width: 120px;
+}
+
+
+.cont-user{
+    display: flex;
+}
+.msg{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    font-size: small;
+}
+
+.user-pic{
+    display: flex;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+nav ul {
+    margin-left: 1px;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    font-weight: 600;
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+
+}
+
+nav ul li a:hover{
+    transition: font-size 1s, color 1s, border-bottom 1s;
+    transform: scale(1.1);
+    color: #fc871a;
+    border-bottom: 3px solid #fc871a;
+}
+
+
+
+.sub-menu-wrap{
+    position: absolute;
+    top: 100%;
+    right: 10%;
+    width: 320px;
+    max-height: 0;  
+    overflow: hidden;
+    transition: max-height 0.5s;
+    
+}
+
+.sub-menu-wrap.open-menu{
+    max-height: 430px;
+}
+
+.sub-menu{
+    background: #e3eeff6e;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #204B86;
+    border-radius: 10px;
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.user-info h3,
+.user-info p{
+    font-weight: 500;
+}
+
+.user-info img {
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.sub-menu hr{
+    border:0px;
+    height: 1px;
+    width: 100%;
+    background-color: #204B86;
+    margin:1px 0 10px;
+}
+
+.sub-menu-link{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 500;
+    color: #000000;
+    margin: 13px 0;
+
+}
+.sub-menu-link p {
+    width: 100%;
+    
+}
+
+.sub-menu-link img{
+    width: 35px;
+    background: #cae0ff98;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 15px;
+}
+
+.sub-menu-link span{
+    font-style: 22px;
+    transition: transform 0.5s;
+}
+
+.sub-menu-link:hover span{
+    transform: translateX(5px);
+}
+
+.sub-menu-link:hover p{
+    font-weight: 600;
+}

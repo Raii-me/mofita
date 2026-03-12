@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="css/header.css">
+</head>
+
+<body>
+    <div class="hero">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Modelos</a></li>
+                <li><a href="#">Livros</a></li>
+                <li><a href="#">Desempenho</a></li>
+            </ul>
+
+            <div class="cont-user">
+                <div class="msg">
+                <p>Olá!, <font size="4px" color="#fc871a">{Usuario}</font></p>
+                <p><font size="2px">{Funcao}</font></p>
+                </div>
+                <img src="images/user.png" class="user-pic" onclick="toggleMenu()">
+            </div>
+
+            <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                    <div class="user-info">
+                        <img src="images/user.png">
+                        <ul>
+                            <li><h3>{Usuario}</h3></li>
+                            <li><p> {Funcao}</p></li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/profile.png">
+                        <p>Acessar Perfil</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/letter.png">
+                        <p>Nova Redação</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/book.png">
+                        <p>Continuar Redação</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/robot.png">
+                        <p>ChatBot</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/setting.png">
+                        <p>Configurações</p>
+                        <span>></span>
+                    </a>
+                    <a href="#" class="sub-menu-link">
+                        <img src="images/logout.png">
+                        <p>Sair</p>
+                        <span>></span>
+                    </a>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+    <script>
+        let subMenu = document.getElementById("subMenu");
+        function toggleMenu() {
+            subMenu.classList.toggle("open-menu");
+        }
+    </script>
+</body>
+
+</html>

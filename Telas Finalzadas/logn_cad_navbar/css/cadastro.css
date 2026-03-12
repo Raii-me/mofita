@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: rgb(241, 238, 234);
+    min-height: 100vh;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 30%;
+    height: 30%;
+
+}
+
+.container {
+    display: flex;
+    width: auto;
+    height: auto;
+
+}
+
+img {
+    display: block;
+}
+
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #204B86;
+    width: 45%;
+    height: 90vh;
+    border-radius: 28px;
+    margin-top: 2%;
+}
+
+.banner {
+    width: 40%;
+    margin: 0 auto 20%;
+}
+
+.texto-titulo {
+    font-size: 24px;
+    color: white;
+    font-weight: 500;
+}
+
+.texto-descricao {
+    text-align: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.74);
+    margin: 15px;
+}
+
+.right {
+    width: 50%;
+    padding-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(105, 105, 105);
+    transition: .3s;
+}
+
+a:hover {
+    color: orangered;
+    border-bottom: 2px solid orangered;
+}
+
+.escolherPag {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.form-container input {
+    width: 100%;
+    height: 35px;
+    border-radius: 8px;
+    border: 2px solid rgba(224, 223, 223, 0.986);
+    margin-bottom: 10px;
+    padding-left: 16px;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: rgb(100, 98, 98);
+}
+
+h1 {
+    color: rgb(95, 95, 95);
+}
+
+.titulo {
+    font-size: 13px;
+    padding-bottom: 20px;
+    color: rgb(95, 95, 95);
+}
+
+
+.btn-login {
+    width: 100%;
+    height: 35px;
+    border-radius: 8px;
+    border: 1px solid #ff3c00;
+    background: #FF7600;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+    color: white;
+}
+
+.detalhe {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.linha {
+    width: 50%;
+    border: 1px solid rgb(105, 105, 105);
+}
+
+
+.btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 35px;
+    font-weight: 400;
+    font-size: 18px;
+    border: none;
+    border-radius: 9px;
+    background: #fff;
+    margin-top: 10px;
+    gap: 40px;
+    cursor: pointer;
+
+}
+
+.google {
+    width: 20px;
+}
+
+.senha-box {
+    position: relative;
+    width: 100%;
+}
+
+.senha-box input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.cadeado {
+    position: absolute;
+    right: 12px;
+    top: 40%;
+    transform: translateY(-50%);
+    color: gray;
+    cursor: pointer;
+    user-select: none;
+}
+
+.forgot-password {
+    text-align:right;
+    margin: 10px 0 20px;
+    font-weight: 500;
+}
