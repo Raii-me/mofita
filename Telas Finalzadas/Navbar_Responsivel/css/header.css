@@ -154,3 +154,73 @@ nav ul li a:hover{
 .sub-menu-link:hover p{
     font-weight: 600;
 }
+
+
+
+
+@media (max-width: 1024px) {
+    nav { 
+        padding: 10px 5%; 
+    }
+    nav ul li { 
+        margin: 10px 15px; 
+    }
+    .sub-menu-wrap { 
+        right: 5%; 
+    }
+}
+
+/* Tablets e Aparelhos em Modo Paisagem (até 768px) */
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        height: auto; /* Remove a altura fixa para os links descerem */
+        padding: 15px 5%;
+    }
+    
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        width: 100%; /* Força os links do menu a irem para a linha de baixo */
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .cont-user {
+        position: absolute; /* Fixa o usuário no topo à direita */
+        top: 20px;
+        right: 5%;
+    }
+
+    .sub-menu-wrap {
+        right: 5%;
+        top: 100%; 
+    }
+}
+
+/* Celulares (até 480px) */
+@media (max-width: 480px) {
+    .logo { 
+        width: 100px; 
+    }
+    
+    .msg {
+        display: none; /* Esconde o texto do usuário para focar apenas na foto */
+    }
+
+    nav ul li {
+        display: block; /* Empilha os links um embaixo do outro */
+        margin: 15px 0;
+    }
+
+    nav ul li a:hover {
+        transform: scale(1.05); /* Escala menor no celular para evitar quebra de layout */
+    }
+
+    .sub-menu-wrap {
+        width: 90%; /* Adapta a largura do menu suspenso para a tela mobile */
+        right: 5%;
+    }
+}
