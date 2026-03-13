@@ -1,0 +1,158 @@
+.site-footer {
+    /*fundo + cor da letras + letras  */
+
+    background-color: #214f82;
+    font-family: "Poppins", sans-serif;
+}
+
+.footer-container {
+    /*deixar os text centralizados   */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    gap: 50px;
+}
+
+.footer-left {
+    /* deixar os items a esquerda */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-logo {
+    /* tamanho da logo + margin para baixo  */
+    height: 170px;
+    width: auto;
+    
+}
+
+.app-text {
+    /*  text abaixo da img*/
+    color: #fc871a;
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.playstore-btn {
+    /*tamanho do playstore  */
+    height: 50px;
+    width: auto;
+    border: #000000 2px solid;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+}
+
+
+.footer-right {
+    /* deixar os items a direita */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 700px;
+    gap: 30px;
+}
+
+.footer-menus {
+    /* deixar responsivel os text */
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-col h4 {
+    /* estilizar o texts com <h4> */
+    color: #fc871a;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.menu-col ul {
+    /* margin nos texts  */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-col li {
+    /* margin nos text afetando o retangulo para baixo */
+    margin-bottom: 10px;
+}
+
+.menu-col a {
+    /* estilizando os text */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.menu-col a:hover {
+    /* efeito de click */
+    text-decoration: underline;
+}
+
+.legal-box {
+    /*estilizando o retangulo   */
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+}
+
+.legal-box a {
+    /* estilizasndo text */
+    color: #fc871a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.legal-box a:hover {
+    /* efeito click */
+    text-decoration: underline;
+}
+
+
+.footer-bottom {
+    /* barra de copyright */
+    background-color: #36659c;
+    text-align: center;
+    padding: 12px 20px;
+}
+
+.footer-bottom p {
+    /*estilizando text  */
+    margin: 0;
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+
+@media (max-width: 768px) {
+
+    /* para deixar o footer responsivel a tela incurtada */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-menus {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .legal-box {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
