@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+:root {
+  --azulPadrao: #204B86;
+  --azul: #3e5f8a;
+  --azul-escuro-hover: #2f4d75;
+  --azul-escuro: #152f55;
+  --indigo: #3b4cca;
+  --indigo-bg: #eef2ff;
+
+  --laranjaPadrao: #fc871a;
+  --laranja-hover: #ff7a2a;
+  --laranja-btn: #ff7300;
+  --laranja-btn-hover: #e66600;
+  --laranja-escuro: #d86b05;
+
+  --texto: #333333;
+  --texto-sec: #666666;
+  --texto-claro: #777777;
+
+  --borda: #dddddd;
+  --borda-clara: #e0e0e0;
+
+  --radius-grande: 50px;
+  --radius-medio: 20px;
+  --radius-pequeno: 8px;
+
+  --brancoPadrao: #fff;
+  --branco2: #EBF1F5;
+  --brancoLeve: rgb(224,222,225);
+
+  --cinza-claro: #b8cae2;
+
+  --sombra-sm: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --sombra-md: 0 8px 24px rgba(0, 0, 0, 0.18);
+  --shadowPadrao: rgba(0,0,0,0.25) 0 14px 28px, rgba(0,0,0,0.22) 0 10px 10px;
+
+
+  --raio: 16px;
+  --raio-lg: 28px;
+  --trans: 0.25s ease;
+}
+
+
+

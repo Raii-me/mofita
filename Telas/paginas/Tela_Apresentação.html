@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="REDA+ — A maior plataforma de redação do Brasil. Correção com IA, simulados ENEM, chatbot e muito mais para você gabaritar!">
+    <title>Simulados ENEM, Correção de Redação, ChatBot e Muito Mais | REDA+</title>
+    <link rel="stylesheet" href="../assets/CSS/Tela_Apresentação.css">
+</head>
+
+<body>
+
+    <nav class="nav-barra" id="barra-nav">
+        <div class="nav-logotipo">
+            <a href="#inicio">
+                <img src="../assets/IMAGES/logo-redamais-grande.png" alt="Logo REDA+">
+            </a>
+        </div>
+        <ul class="nav-menu" id="menu-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#planos">Planos</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a href="">Login</a></li>
+        </ul>
+        <button class="menu-hamburguer" id="btn-hamburguer" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <main>
+
+        <header class="hero" id="inicio">
+            <div class="hero-conteudo">
+                <h1 class="titulo">
+                    Torne-se um <span class="laranja">MESTRE</span>,<br>
+                    seja <span class="laranja">REDA+</span>
+                </h1>
+                <p class="subtitulo">
+                    com a inovadora plataforma de<br>
+                    redação especializada para <strong>VOCÊ</strong>,<br>
+                    estudante!
+                </p>
+                <a href=""><button class="btn-quero">Eu Quero!</button></a>
+            </div>
+        </header>
+
+        <section id="sobre" class="secao">
+            <h2>A Maior plataforma de redação do <span class="laranja">BRASIL</span>!</h2>
+            <div class="conteudo">
+
+                <div class="caixa-esquerda">
+                    <a href="#" aria-label="Assistir vídeo sobre a REDA+">
+                        <div class="video-miniatura">
+                            <img src="../assets/IMAGES/exemplo-video.png" alt="Vídeo REDA+">
+                            <div class="play-sobreposicao">
+                                <div class="play-botao" aria-hidden="true">&#9654;</div>
+                            </div>
+                        </div>
+                    </a>
+                    <p>Conheça mais sobre nós!</p>
+                </div>
+
+                <div class="caixa-direita">
+                    <p class="caixa-titulo">Conheça nossos planos!</p>
+                    <div class="caixa-direita-interna">
+                        <p class="mensagem">Nossa plataforma oferece planos vitalícios para te fazer ser o Nº 1!</p>
+                        <ul class="lista-planos">
+                            <li>
+                                <a id="plano-basico" href="#planos">
+                                    <span class="plano-etiqueta">Grátis</span>
+                                    <span class="plano-preco">R$ 0,00</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="plano-pro-link" href="#planos">
+                                    <span class="plano-etiqueta">Pro</span>
+                                    <span class="plano-preco">R$ 29,99</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a id="plano-prem-link" href="#planos">
+                                    <span class="plano-etiqueta">REDA+</span>
+                                    <span class="plano-preco">R$ 49,99</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="#planos"><button class="btn-solicitar">Eu Quero!</button></a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="planos" class="secao secao-planos">
+            <header class="cabecalho-planos">
+                <h3 class="titulo-secao">
+                    Planos, Funcionalidades e Valores
+                    <span class="laranja"> Permanentes</span>
+                </h3>
+                <p class="subtitulo-secao">O plano de compra única permite pagar apenas uma vez e ter acesso vitalício ao conteúdo.<br>Não há mensalidades, renovações ou cobranças recorrentes.</p>
+            </header>
+
+            <div class="caixa-planos">
+                <ul class="lista-cards-plano">
+
+                    <li class="card-plano">
+                        <div class="cabecalho-card">
+                            <p class="plano-label plano-label-inicial">Plano Inicial</p>
+                            <p class="plano-valor plano-valor-inicial">R$ 0,00</p>
+                            <p class="plano-desc">Nenhum pagamento necessário</p>
+                        </div>
+                        <button id="btn-plano-inicial" class="btn-plano">Começar Grátis</button>
+                        <ul class="plano-recursos">
+                            <li>✓ 3 correções por mês</li>
+                            <li>✓ Feedback básico</li>
+                            <li>✓ bonus</li>
+                            <li>✓ bonus</li>
+                        </ul>
+                    </li>
+
+                    <li class="card-plano card-plano-pro">
+                        <div class="cabecalho-card">
+                            <p class="plano-label plano-label-pro">Plano Pro</p>
+                            <p class="plano-valor plano-valor-pro">R$ 29,99 <span class="plano-recorrencia">vitalício</span></p>
+                            <p class="plano-desc-pro">Plano vitalício com diversas ferramentas</p>
+                        </div>
+                        <button id="btn-plano-pro" class="btn-plano">Começar Agora</button>
+                        <ul class="plano-recursos">
+                            <li>✓ Correções ilimitadas</li>
+                            <li>✓ Feedback detalhado</li>
+                            <li>✓ bonus</li>
+                            <li>✓ bonus</li>
+                            <li>✓ bonus</li>
+                        </ul>
+                    </li>
+
+                    <li class="card-plano card-plano-premium">
+                        <div class="cabecalho-card">
+                            <p class="plano-label plano-label-premium">Plano REDA+</p>
+                            <p class="plano-valor plano-valor-premium">R$ 49,99 <span class="plano-recorrencia">vitalício</span></p>
+                            <p class="plano-desc-premium">Tudo que a REDA+ pode oferecer</p>
+                        </div>
+                        <button id="btn-plano-premium" class="btn-plano">Começar Agora</button>
+                        <ul class="plano-recursos">
+                            <li>✓ Correções ilimitadas</li>
+                            <li>✓ Feedback premium</li>
+                            <li>✓ bonus</li>
+                            <li>✓ bonus</li>
+                            <li>✓ bonus</li>
+                            <li>✓ bonus</li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+        <section id="funcionalidades" class="secao secao-funcionalidades">
+            <h2 style="margin-bottom:40px;">Veja o que a REDA+ oferece</h2>
+            <div class="conteudo-funcionalidades">
+
+                <div class="grid-imagens">
+                    <article class="card-imagem">
+                        <img src="../assets/IMAGES/exemplo-redacao.jpg" alt="Correção de redações com IA" class="imagem-funcionalidade">
+                        <p class="legenda">Correção de redações com IA focada em vestibulares</p>
+                    </article>
+                    <article class="card-imagem">
+                        <img src="../assets/IMAGES/inicial-exemplo-desempenho.jpg" alt="Gráficos de desempenho do aluno" class="imagem-funcionalidade">
+                        <p class="legenda">Gráficos de desempenho das redações do aluno</p>
+                    </article>
+                    <article class="card-imagem">
+                        <img src="../assets/IMAGES/livros-variedade.jpg" alt="Acervo com alta variedade de livros" class="imagem-funcionalidade">
+                        <p class="legenda">Acervo com alta variedade de livros</p>
+                    </article>
+                    <article class="card-imagem">
+                        <img src="../assets/IMAGES/inicial-exemplo-chatbot.jpg" alt="Chatbot com IA para tirar dúvidas" class="imagem-funcionalidade">
+                        <p class="legenda">Chatbot com IA para tirar dúvidas</p>
+                    </article>
+                </div>
+
+                <div class="caixa-app">
+                    <img src="../assets/IMAGES/logo-redamais-grande.png" alt="Logo REDA+" class="logo-aplicativo">
+                    <p class="legenda">Baixe nosso aplicativo!</p>
+                    <button id="btn-baixar">Baixar App</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="como-usar" class="secao secao-como-usar">
+            <div class="cabecalho-como-usar">
+                <h2 class="titulo-como-usar">
+                    Veja como utilizar a plataforma para
+                    <span class="laranja"> Correção!</span>
+                </h2>
+                <p class="subtitulo-como-usar">e veja como é extremamente simples utilizar a REDA+</p>
+            </div>
+
+            <div class="conteudo-passos">
+                <div class="caixa-passos">
+                    <div class="card-passo">
+                        <div class="passo-numero">1</div>
+                        <p class="passo-titulo">Escolha o tema da sua redação</p>
+                        <p class="passo-texto">Na REDA+ existem milhares de temas à sua disposição!</p>
+                    </div>
+                    <div class="card-passo">
+                        <div class="passo-numero">2</div>
+                        <p class="passo-titulo">Escreva e envie sua redação</p>
+                        <p class="passo-texto">Digite ou cole a sua redação no editor da REDA+ e receba estatísticas</p>
+                    </div>
+                    <div class="card-passo">
+                        <div class="passo-numero">3</div>
+                        <p class="passo-titulo">Receba sua correção em segundos!</p>
+                        <p class="passo-texto">Em questão de segundos, a REDA+ te entrega uma redação corrigida e detalhada para você, estudante.</p>
+                    </div>
+                    <div class="card-passo">
+                        <div class="passo-numero">4</div>
+                        <p class="passo-titulo">Aplique sugestões e envie para recorreção</p>
+                        <p class="passo-texto">Correções e recorreções ilimitadas com a REDA+</p>
+                    </div>
+                </div>
+
+                <div class="caixa-info caixa-info-esquerda">
+                    <p class="info-titulo">Por que usar o REDA+?</p>
+                    <p class="info-texto">No REDA+, você transforma suas redações em resultados reais! Nossa plataforma foi criada especialmente para quem quer entender, na prática, o que precisa melhorar para gabaritar a redação do ENEM. Com correções detalhadas, feedbacks personalizados e análise de critérios oficiais, você ganha clareza sobre seus pontos fortes e o que desenvolver para alcançar uma nota alta. Estude com foco e confiança — porque cada palavra escrita com estratégia faz diferença!</p>
+                </div>
+
+                <div class="caixa-info caixa-info-direita">
+                    <p class="info-titulo">Vantagens de usar o REDA+</p>
+                    <p class="info-texto">Com o REDA+, sua evolução está no centro de tudo. Você recebe correções que vão além do simples "certo ou errado": explicações claras, sugestões de melhorias, estrutura e coesão avaliadas com precisão, e ainda acompanhamento de desempenho ao longo do tempo. Tudo pensado especialmente para o ENEM! Aqui você não treina sozinho — você aprende com feedbacks que realmente impulsionam sua escrita rumo à aprovação.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape" id="contato">
+        <div class="rodape-conteudo">
+
+            <div class="rodape-esquerda">
+                <a href="#inicio">
+                    <img src="../assets/IMAGES/logo-redamais-grande.png" alt="REDA+" class="rodape-logo">
+                </a>
+                <p class="app-texto">Baixe nosso Aplicativo</p>
+                <a href="#">
+                    <img src="../assets/IMAGES/footer-googleplay.png" alt="Disponível no Google Play" class="btn-playstore">
+                </a>
+            </div>
+
+            <div class="rodape-direita">
+                <div class="rodape-menus">
+                    <div class="menu-coluna">
+                        <h4>Sobre</h4>
+                        <ul>
+                            <li><a href="#">Quem Somos</a></li>
+                            <li><a href="#">Nossa Missão</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-coluna">
+                        <h4>Ajuda</h4>
+                        <ul>
+                            <li><a href="#">Perguntas Frequentes</a></li>
+                            <li><a href="#">Suporte</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-coluna">
+                        <h4>Produtos</h4>
+                        <ul>
+                            <li><a href="#planos">Planos</a></li>
+                            <li><a href="#">Assine</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="caixa-legal">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="rodape-base">
+            <p>&copy; 2026 REDA+. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
