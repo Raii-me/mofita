@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Tela_desempenho from '../views/Tela_desempenho.vue'
+import Tela_Teste from '../views/Tela_Teste.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -7,7 +7,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Tela_desempenho
+      component: Tela_Teste
     }
   ]
 })
