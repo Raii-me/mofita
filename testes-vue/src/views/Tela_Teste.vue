@@ -8,11 +8,18 @@ import Switch from '../components/Switch.vue'
 import "../assets/css/variaveis.css"
 
 
-const abrir1 = ref(false)
-const abrir2 = ref(false)
-const abrir3 = ref(false)
-const abrir4 = ref(false)
-const abrir5 = ref(false)
+const tirarAnimacao = ref(false)
+const altoContraste = ref(false)
+const notificacao = ref(false)
+const espacamentoLinha = ref(false)
+const modoFoco = ref(false)
+const restaurarPadraoConfiguracao = ref(false)
+const modoEscuro = ref(false)
+const receberEmail = ref(false)
+const chatbotFlutuante = ref(false)
+
+const restaurarPadraoAcessibilidade = ref(false)
+
 
 const abaAtiva = ref('conta')
 
@@ -56,7 +63,8 @@ function mudarAba(aba) {
                             <img src="../assets/ICONS/icon-configuracoes.png">
                             <p>Configurações</p>
                         </div>
-                        <div class="opcoes-sidebar">
+                        <div class="opcoes-sidebar" @click="mudarAba('caixa4')"
+                            :class="{ ativo: abaAtiva === 'caixa4' }">
                             <img src="../assets/ICONS/icon-botao-ajuda.png">
                             <p>palavracoisa</p>
                         </div>
@@ -128,14 +136,58 @@ function mudarAba(aba) {
                             <h4>Acessibilidade</h4>
                         </div>
 
-                        <div class="acessibilidade-box">
-                            <p>Modo Escuro</p>
-                            <Switch v-model="abrir1" />
-                        </div>
 
                         <div class="acessibilidade-box">
                             <p>Tirar Animações</p>
-                            <Switch v-model="abrir2" />
+                            <Switch v-model="tirarAnimacao" />
+                        </div>
+
+                        <div class="acessibilidade-box">
+                            <p>Alto contraste</p>
+                            <Switch v-model="altoContraste" />
+                        </div>
+
+
+
+                        <div class="acessibilidade-box">
+                            <p>Notificações</p>
+                            <Switch v-model="notificacao" />
+                        </div>
+                        <div class="acessibilidade-box">
+                            <p>Espaçamento entre linhas</p>
+                            <Switch v-model="espacamentoLinha" />
+                        </div>
+                        <div class="acessibilidade-box">
+                            <p>Modo foco</p>
+                            <Switch v-model="modoFoco" />
+                        </div>
+
+                        <div class="acessibilidade-box">
+                            <p>Restaurar Padrão</p>
+                            <Switch v-model="restaurarPadraoAcessibilidade" />
+                        </div>
+
+
+                    </div>
+
+                    <div v-else-if="abaAtiva === 'configuracao'">
+                        <div class="titulo">
+                            <h4>Configurações</h4>
+                        </div>
+
+                        <div class="acessibilidade-box">
+                            <p>Modo Escuro</p>
+                            <Switch v-model="modoEscuro" />
+                        </div>
+
+                        <div class="acessibilidade-box">
+                            <p>Idiomas</p>
+                            <select class="category">
+                                <option value="opcao1">PT-BR</option>
+                                <option value="opcao2">ES</option>
+                                <option value="opcao3">EN</option>
+
+                            </select>
                         </div>
 
                         <div class="acessibilidade-box">
@@ -153,20 +205,24 @@ function mudarAba(aba) {
 
                         <div class="acessibilidade-box">
                             <p>Receber Email</p>
-                            <Switch v-model="abrir4" />
+                            <Switch v-model="receberEmail" />
                         </div>
 
                         <div class="acessibilidade-box">
-                            <p>Sons do Sistema</p>
-                            <Switch v-model="abrir5" />
+                            <p>Chatbot Flutuante</p>
+                            <Switch v-model="chatbotFlutuante" />
                         </div>
 
-                    </div>
-
-                    <div v-else-if="abaAtiva === 'configuracao'">
-                         <div class="titulo">
-                            <h4>Configurações</h4>
+                        <div class="acessibilidade-box">
+                            <p>Restaurar Padrão</p>
+                            <Switch v-model="restaurarPadraoConfiguracao" />
                         </div>
+
+                        
+
+
+
+
 
                     </div>
                 </main>
@@ -195,9 +251,8 @@ function mudarAba(aba) {
 .config-container {
     width: 70%;
     height: fit-content;
-
     background-color: #fff;
-    border-radius: var(--radius-medio);
+    border-radius: var(--radius-pequeno);
     margin-top: 30px;
 }
 
@@ -210,7 +265,8 @@ function mudarAba(aba) {
     padding-top: 35px;
     width: 200px;
     background-color: var(--laranjaPadrao);
-    border-radius: var(--radius-medio) 0px 0px var(--radius-medio);
+    border-radius: var(--radius-pequeno) 0px 0px var(--radius-pequeno);
+    border-right: 2px solid var(--azulPadrao);
 }
 
 .profile-edt {
@@ -221,16 +277,19 @@ function mudarAba(aba) {
 
 .profile-edt img {
 
-    width: 30px;
-    height: 30px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    border: 1px solid var(--texto-sec);
+    border: 2px solid var(--branco2);
     margin-bottom: 5px;
+  
 
 }
 
 .profile-edt p {
-    font-size: 10px;
+    font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
 
 }
 
@@ -351,6 +410,7 @@ function mudarAba(aba) {
     border: 1px solid var(--cinza-claro);
     border-radius: var(--radius-pequeno);
     margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 .setting-box p,
