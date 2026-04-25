@@ -107,10 +107,12 @@ export default {
 }
 
 
-/* NAVBAR */
 nav {
     height: 80px;
-    background: var(--azulPadrao);
+    background:  linear-gradient(90deg, 
+      var(--azul-escuro) 0%, 
+      var(--azul) 100%
+    );
     width: 100%;
     padding: 10px 10%;
     display: flex;
@@ -187,7 +189,6 @@ nav ul li a:hover {
 
 }
 
-/* SUBMENU */
 .sub-menu-wrap {
     position: absolute;
     top: 100%;
@@ -266,7 +267,6 @@ nav ul li a:hover {
     color: var(--laranjaPadrao);
 }
 
-/* RESPONSIVO */
 @media (max-width: 1024px){
     nav{ padding: 10px 5%; }
     nav ul li{ margin: 10px 15px; }
