@@ -1,22 +1,46 @@
-<template>
+<script>
+import Footer from "../components/Footer.vue";
 
-  <nav class="nav-barra" id="barra-nav">
+export default {
+  components: {
+    Footer,
+  },
+
+  data() {
+    return {
+      navRolado: false,
+    };
+  },
+
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+
+  unmounted() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+
+  methods: {
+    handleScroll() {
+      this.navRolado = window.scrollY > 10;
+    },
+  },
+};
+</script>
+
+<template>
+  <nav class="nav-barra" :class="{ rolado: navRolado }" id="barra-nav">
     <div class="nav-logotipo">
       <a href="#inicio">
-        <img src="../assets/IMAGES/logo-redamais-grande.png" alt="Logo REDA+">
+        <img src="../assets/IMAGES/logo-redamais.png" alt="Logo REDA+" />
       </a>
     </div>
-    <ul class="nav-menu" id="menu-links">
+    <ul class="nav-menu">
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#planos">Planos</a></li>
       <li><a href="#contato">Contato</a></li>
-      <li><a href="">Login</a></li>
+      <li><a href="#" class="nav-btn-entrar">Login</a></li>
     </ul>
-    <button class="menu-hamburguer" id="btn-hamburguer" aria-label="Abrir menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
   </nav>
 
   <main>
@@ -24,18 +48,26 @@
     <header class="hero" id="inicio">
       <div class="hero-conteudo">
         <h1 class="titulo">
-          Torne-se um <span class="laranja">MESTRE</span>,<br>
+          Torne-se um <span class="laranja">MESTRE</span>,<br />
           seja <span class="laranja">REDA+</span>
         </h1>
         <p class="subtitulo">
-          com a inovadora plataforma de<br>
-          redação especializada para <strong>VOCÊ</strong>,<br>
+          com a inovadora plataforma de<br />
+          redação especializada para <strong>VOCÊ</strong>,<br />
           estudante!
         </p>
-        <a href=""><button class="btn-quero">Eu Quero!</button></a>
+        <div class="hero-acoes">
+          <a href="#planos"><button class="btn-quero">Eu Quero!</button></a>
+        </div>
+      </div>
+
+      <div class="hero-imagem">
+        <div class="hero-imagem-wrapper">
+          <img src="../assets/IMAGES/college project-rafiki.png" alt="Estudante usando a REDA+"
+            class="garota-estudando" />
+        </div>
       </div>
     </header>
-
     <section id="sobre" class="secao">
       <h2>A Maior plataforma de redação do <span class="laranja">BRASIL</span>!</h2>
       <div class="conteudo">
@@ -43,7 +75,7 @@
         <div class="caixa-esquerda">
           <a href="#" aria-label="Assistir vídeo sobre a REDA+">
             <div class="video-miniatura">
-              <img src="../assets/IMAGES/exemplo-video.png" alt="Vídeo REDA+">
+              <img src="../assets/IMAGES/exemplo-video.png" alt="Vídeo REDA+" />
               <div class="play-sobreposicao">
                 <div class="play-botao" aria-hidden="true">&#9654;</div>
               </div>
@@ -55,7 +87,9 @@
         <div class="caixa-direita">
           <p class="caixa-titulo">Conheça nossos planos!</p>
           <div class="caixa-direita-interna">
-            <p class="mensagem">Nossa plataforma oferece planos vitalícios para te fazer ser o Nº 1!</p>
+            <p class="mensagem">
+              Nossa plataforma oferece planos vitalícios para te fazer ser o Nº 1!
+            </p>
             <ul class="lista-planos">
               <li>
                 <a id="plano-basico" href="#planos">
@@ -89,8 +123,10 @@
           Planos, Funcionalidades e Valores
           <span class="laranja"> Permanentes</span>
         </h3>
-        <p class="subtitulo-secao">O plano de compra única permite pagar apenas uma vez e ter acesso vitalício ao
-          conteúdo.<br>Não há mensalidades, renovações ou cobranças recorrentes.</p>
+        <p class="subtitulo-secao">
+          O plano de compra única permite pagar apenas uma vez e ter acesso
+          vitalício ao conteúdo. Não há mensalidades, renovações ou cobranças recorrentes.
+        </p>
       </header>
 
       <div class="caixa-planos">
@@ -114,7 +150,9 @@
           <li class="card-plano card-plano-pro">
             <div class="cabecalho-card">
               <p class="plano-label plano-label-pro">Plano Pro</p>
-              <p class="plano-valor plano-valor-pro">R$ 29,99 <span class="plano-recorrencia">vitalício</span></p>
+              <p class="plano-valor plano-valor-pro">
+                R$ 29,99 <span class="plano-recorrencia">vitalício</span>
+              </p>
               <p class="plano-desc-pro">Plano vitalício com diversas ferramentas</p>
             </div>
             <button id="btn-plano-pro" class="btn-plano">Começar Agora</button>
@@ -130,7 +168,9 @@
           <li class="card-plano card-plano-premium">
             <div class="cabecalho-card">
               <p class="plano-label plano-label-premium">Plano REDA+</p>
-              <p class="plano-valor plano-valor-premium">R$ 49,99 <span class="plano-recorrencia">vitalício</span></p>
+              <p class="plano-valor plano-valor-premium">
+                R$ 49,99 <span class="plano-recorrencia">vitalício</span>
+              </p>
               <p class="plano-desc-premium">Tudo que a REDA+ pode oferecer</p>
             </div>
             <button id="btn-plano-premium" class="btn-plano">Começar Agora</button>
@@ -141,7 +181,6 @@
               <li>✓ bonus</li>
               <li>✓ bonus</li>
               <li>✓ bonus</li>
-
             </ul>
           </li>
 
@@ -150,34 +189,34 @@
     </section>
 
     <section id="funcionalidades" class="secao secao-funcionalidades">
-      <h2 style="margin-bottom:40px;">Veja o que a REDA+ oferece</h2>
+      <h2 style="margin-bottom: 40px">Veja o que a REDA+ oferece</h2>
       <div class="conteudo-funcionalidades">
 
         <div class="grid-imagens">
           <article class="card-imagem">
             <img src="../assets/IMAGES/exemplo-redacao.jpg" alt="Correção de redações com IA"
-              class="imagem-funcionalidade">
+              class="imagem-funcionalidade" />
             <p class="legenda">Correção de redações com IA focada em vestibulares</p>
           </article>
           <article class="card-imagem">
             <img src="../assets/IMAGES/inicial-exemplo-desempenho.jpg" alt="Gráficos de desempenho do aluno"
-              class="imagem-funcionalidade">
+              class="imagem-funcionalidade" />
             <p class="legenda">Gráficos de desempenho das redações do aluno</p>
           </article>
           <article class="card-imagem">
             <img src="../assets/IMAGES/livros-variedade.jpg" alt="Acervo com alta variedade de livros"
-              class="imagem-funcionalidade">
+              class="imagem-funcionalidade" />
             <p class="legenda">Acervo com alta variedade de livros</p>
           </article>
           <article class="card-imagem">
             <img src="../assets/IMAGES/inicial-exemplo-chatbot.jpg" alt="Chatbot com IA para tirar dúvidas"
-              class="imagem-funcionalidade">
+              class="imagem-funcionalidade" />
             <p class="legenda">Chatbot com IA para tirar dúvidas</p>
           </article>
         </div>
 
         <div class="caixa-app">
-          <img src="../assets/IMAGES/logo-redamais-grande.png" alt="Logo REDA+" class="logo-aplicativo">
+          <img src="../assets/IMAGES/logo-redamais.png" alt="Logo REDA+" class="logo-aplicativo" />
           <p class="legenda">Baixe nosso aplicativo!</p>
           <button id="btn-baixar">Baixar App</button>
         </div>
@@ -196,144 +235,63 @@
 
       <div class="conteudo-passos">
         <div class="caixa-passos">
+
           <div class="card-passo">
             <div class="passo-numero">1</div>
             <p class="passo-titulo">Escolha o tema da sua redação</p>
             <p class="passo-texto">Na REDA+ existem milhares de temas à sua disposição!</p>
           </div>
+
           <div class="card-passo">
             <div class="passo-numero">2</div>
             <p class="passo-titulo">Escreva e envie sua redação</p>
             <p class="passo-texto">Digite ou cole a sua redação no editor da REDA+ e receba estatísticas</p>
           </div>
+
           <div class="card-passo">
             <div class="passo-numero">3</div>
             <p class="passo-titulo">Receba sua correção em segundos!</p>
-            <p class="passo-texto">Em questão de segundos, a REDA+ te entrega uma redação corrigida e detalhada para
-              você, estudante.</p>
+            <p class="passo-texto">Em questão de segundos, a REDA+ te entrega uma redação corrigida e detalhada.</p>
           </div>
+
           <div class="card-passo">
             <div class="passo-numero">4</div>
             <p class="passo-titulo">Aplique sugestões e envie para recorreção</p>
             <p class="passo-texto">Correções e recorreções ilimitadas com a REDA+</p>
           </div>
+
         </div>
 
         <div class="caixa-info caixa-info-esquerda">
           <p class="info-titulo">Por que usar o REDA+?</p>
-          <p class="info-texto">No REDA+, você transforma suas redações em resultados reais! Nossa plataforma foi criada
-            especialmente para quem quer entender, na prática, o que precisa melhorar para gabaritar a redação do ENEM.
-            Com correções detalhadas, feedbacks personalizados e análise de critérios oficiais, você ganha clareza sobre
-            seus pontos fortes e o que desenvolver para alcançar uma nota alta. Estude com foco e confiança — porque
-            cada palavra escrita com estratégia faz diferença!</p>
+          <p class="info-texto">
+            No REDA+, você transforma suas redações em resultados reais! Nossa plataforma foi criada
+            especialmente para quem quer entender, na prática, o que precisa melhorar para gabaritar
+            a redação do ENEM. Com correções detalhadas, feedbacks personalizados e análise de
+            critérios oficiais, você ganha clareza sobre seus pontos fortes e o que desenvolver
+            para alcançar uma nota alta.
+          </p>
         </div>
 
         <div class="caixa-info caixa-info-direita">
           <p class="info-titulo">Vantagens de usar o REDA+</p>
-          <p class="info-texto">Com o REDA+, sua evolução está no centro de tudo. Você recebe correções que vão além do
-            simples "certo ou errado": explicações claras, sugestões de melhorias, estrutura e coesão avaliadas com
-            precisão, e ainda acompanhamento de desempenho ao longo do tempo. Tudo pensado especialmente para o ENEM!
-            Aqui você não treina sozinho — você aprende com feedbacks que realmente impulsionam sua escrita rumo à
-            aprovação.</p>
+          <p class="info-texto">
+            Com o REDA+, sua evolução está no centro de tudo. Você recebe correções que vão além
+            do simples "certo ou errado": explicações claras, sugestões de melhorias, estrutura e
+            coesão avaliadas com precisão, e ainda acompanhamento de desempenho ao longo do tempo.
+            Tudo pensado especialmente para o ENEM!
+          </p>
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="rodape" id="contato">
-    <div class="rodape-conteudo">
-
-      <div class="rodape-esquerda">
-        <a href="#inicio">
-          <img src="../assets/IMAGES/logo-redamais-grande.png" alt="REDA+" class="rodape-logo">
-        </a>
-        <p class="app-texto">Baixe nosso Aplicativo</p>
-        <a href="#">
-          <img src="../assets/IMAGES/footer-googleplay.png" alt="Disponível no Google Play" class="btn-playstore">
-        </a>
-      </div>
-
-      <div class="rodape-direita">
-        <div class="rodape-menus">
-          <div class="menu-coluna">
-            <h4>Sobre</h4>
-            <ul>
-              <li><a href="#">Quem Somos</a></li>
-              <li><a href="#">Nossa Missão</a></li>
-            </ul>
-          </div>
-          <div class="menu-coluna">
-            <h4>Ajuda</h4>
-            <ul>
-              <li><a href="#">Perguntas Frequentes</a></li>
-              <li><a href="#">Suporte</a></li>
-            </ul>
-          </div>
-          <div class="menu-coluna">
-            <h4>Produtos</h4>
-            <ul>
-              <li><a href="#planos">Planos</a></li>
-              <li><a href="#">Assine</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="caixa-legal">
-          <a href="#">Política de Privacidade</a>
-          <a href="#">Termos de Uso</a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="rodape-base">
-      <p>&copy; 2026 REDA+. Todos os direitos reservados.</p>
-    </div>
-  </footer>
-
+  <Footer />
 </template>
 
-<script>
-
-import "../assets/css/variaveis.css";
-
-</script>
-
-<style>
-:root {
-  --azul: #204b86;
-  --azul-escuro: #152f55;
-  --laranja: #fc871a;
-  --laranja-escuro: #d86b05;
-  --branco2: #ebf1f5;
-  --cinza-claro: #b8cae2;
-  --sombra-sm: 0 4px 12px rgba(0, 0, 0, 0.12);
-  --sombra-md: 0 8px 24px rgba(0, 0, 0, 0.18);
-  --raio: 16px;
-  --raio-lg: 28px;
-  --trans: 0.25s ease;
-}
-
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-body {
-  background: var(--branco2);
-  min-height: 100vh;
-  overflow-x: hidden;
-}
+<style scoped>
+@import "../assets/css/variaveis.css";
 
 .nav-barra {
   position: fixed;
@@ -341,24 +299,23 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  height: 72px;
-  background: var(--azul);
+  height: 70px;
+  background: linear-gradient(90deg, var(--azul-escuro) 0%, var(--azulPadrao) 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 60px;
-  transition:
-    background var(--trans),
-    box-shadow var(--trans);
+  transition: background var(--trans), box-shadow var(--trans);
 }
 
 .nav-barra.rolado {
   background: var(--azul-escuro);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 .nav-logotipo img {
-  height: 140px;
+  height: 70px;
   width: auto;
 }
 
@@ -366,71 +323,72 @@ body {
   display: flex;
   list-style: none;
   align-items: center;
-  gap: 40px;
-  font-size: 17px;
+  gap: 36px;
+  font-size: 15px;
 }
 
 .nav-menu a {
   text-decoration: none;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.88);
   font-weight: 600;
+  letter-spacing: 0.2px;
   transition: color var(--trans);
 }
 
 .nav-menu a:hover {
-  color: var(--laranja);
+  color: var(--laranja-hover);
+}
+
+.nav-btn-entrar {
+  background: linear-gradient(135deg, var(--laranjaPadrao) 0%, var(--laranja-escuro) 100%);
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: var(--radius-pequeno);
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+  transition: opacity var(--trans), transform var(--trans);
 }
 
 .nav-btn-entrar:hover {
-  background: var(--laranja-escuro);
-}
-
-.menu-hamburguer {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-}
-
-.menu-hamburguer span {
-  display: block;
-  width: 26px;
-  height: 3px;
-  background: #fff;
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  opacity: 0.9;
+  transform: translateY(-1px);
 }
 
 .hero {
-  margin-top: 72px;
-  min-height: 460px;
-  background: linear-gradient(135deg, #152f55 0%, var(--azul) 80%);
+  min-height: 580px;
+  background:
+    radial-gradient(ellipse 60% 80% at 90% 50%, rgba(37, 99, 199, 0.3) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(249, 115, 22, 0.1) 0%, transparent 60%),
+    linear-gradient(130deg, #061830 0%, var(--azul-escuro) 35%, var(--azulPadrao) 70%, var(--azul) 100%);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 60px 60px 48px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 80px;
+  gap: 40px;
+  overflow: hidden;
+  position: relative;
 }
 
 .hero-conteudo {
-  max-width: 660px;
+  max-width: 560px;
+  z-index: 1;
+  flex-shrink: 0;
 }
 
 .titulo {
-  color: var(--branco2);
-  font-size: 44px;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 16px;
+  color: #fff;
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
 
 .subtitulo {
-  color: rgba(235, 241, 245, 0.88);
-  font-size: 18px;
-  line-height: 1.7;
-  margin-bottom: 30px;
+  color: var(--texto-claro);
+  font-size: 17px;
+  line-height: 1.75;
+  margin-bottom: 32px;
 }
 
 .subtitulo strong {
@@ -439,60 +397,90 @@ body {
 }
 
 .laranja {
-  color: var(--laranja);
+  color: var(--laranjaPadrao);
+}
+
+.hero-acoes {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.hero-imagem {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-width: 400px;
+  max-width: 100vh;
+  z-index: 1;
+  position: relative;
+}
+
+.hero-imagem-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.garota-estudando {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.5));
+  border-radius: var(--raio);
 }
 
 .btn-quero,
 .btn-solicitar,
 #btn-baixar {
-  background: var(--laranja);
+  background: var(--laranjaPadrao);
   color: #fff;
   font-weight: 700;
   border: none;
-  border-radius: 10px;
+  border-radius: var(--radius-pequeno);
   cursor: pointer;
-  box-shadow: var(--sombra-md);
-  transition:
-    background var(--trans),
-    transform var(--trans);
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+  transition: opacity var(--trans), transform var(--trans), box-shadow var(--trans);
+  font-family: "Poppins", sans-serif;
 }
 
 .btn-quero {
-  font-size: 18px;
+  font-size: 17px;
   padding: 14px 52px;
 }
 
 .btn-solicitar {
-  font-size: 18px;
+  font-size: 17px;
   padding: 13px 52px;
   margin-top: 12px;
 }
 
 #btn-baixar {
-  font-size: 17px;
+  font-size: 16px;
   padding: 13px 40px;
-  box-shadow: var(--sombra-sm);
 }
 
 .btn-quero:hover,
 .btn-solicitar:hover,
 #btn-baixar:hover {
-  background: var(--laranja-escuro);
+  opacity: 0.92;
   transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(249, 115, 22, 0.4);
 }
 
 .secao {
-  padding: 40px 60px;
+  padding: 72px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 h2 {
-  color: var(--laranja);
+  color: var(--laranjaPadrao);
   font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 32px;
+  font-weight: 800;
+  margin-bottom: 36px;
   text-align: center;
 }
 
@@ -511,10 +499,11 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--azul);
+  background: var(--azulPadrao);
   border-radius: var(--raio-lg);
-  box-shadow: var(--sombra-md);
-  transition: transform var(--trans);
+  box-shadow: var(--shadowPadrao);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform var(--trans), box-shadow var(--trans);
 }
 
 .caixa-esquerda {
@@ -527,13 +516,14 @@ h2 {
   padding: 24px;
 }
 
-.caixa-esquerda:hover {
+.caixa-esquerda:hover,
+.caixa-direita:hover {
   transform: translateY(-4px);
 }
 
 .caixa-esquerda>p {
-  color: var(--branco2);
-  font-size: 22px;
+  color: var(--texto-claro);
+  font-size: 20px;
   font-weight: 600;
   text-align: center;
   margin-top: 14px;
@@ -542,58 +532,22 @@ h2 {
 .video-miniatura {
   position: relative;
   width: 100%;
-  border-radius: 12px;
+  border-radius: var(--radius-medio);
   overflow: hidden;
 }
 
 .video-miniatura img {
   width: 100%;
   display: block;
-  border-radius: 12px;
+  border-radius: var(--radius-medio);
   transition: transform 0.4s ease;
-}
-
-.video-miniatura:hover img {
-  transform: scale(1.03);
-}
-
-.play-sobreposicao {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.25);
-  transition: background var(--trans);
-}
-
-.play-sobreposicao:hover {
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.play-botao {
-  width: 60px;
-  height: 60px;
-  background: var(--laranja);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-  transition: transform var(--trans);
-}
-
-.play-sobreposicao:hover .play-botao {
-  transform: scale(1.1);
 }
 
 .caixa-direita-interna {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #fff;
+  background: var(--brancoPadrao);
   border-radius: var(--raio);
   box-shadow: var(--sombra-sm);
   padding: 24px;
@@ -601,25 +555,27 @@ h2 {
 }
 
 .caixa-titulo {
-  color: var(--branco2);
+  color: #fff;
   text-align: center;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
   margin-bottom: 16px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
 }
 
 .mensagem {
-  color: #333;
-  font-size: 16px;
+  color: var(--texto);
+  font-size: 15px;
   font-weight: 500;
   text-align: center;
   margin-bottom: 8px;
+  line-height: 1.55;
 }
 
 .lista-planos {
   list-style: none;
   display: flex;
-  gap: 12px;
+  gap: 10px;
   margin: 16px 0;
   flex-wrap: wrap;
   justify-content: center;
@@ -630,71 +586,76 @@ h2 {
   flex-direction: column;
   align-items: center;
   background: var(--branco2);
-  padding: 16px 20px;
-  border-radius: 10px;
+  padding: 14px 18px;
+  border-radius: var(--radius-pequeno);
   text-decoration: none;
   box-shadow: var(--sombra-sm);
+  border: 1px solid var(--borda-clara);
   cursor: pointer;
-  transition: transform var(--trans);
+  transition: transform var(--trans), box-shadow var(--trans);
 }
 
 .lista-planos li a:hover {
   transform: translateY(-3px);
+  box-shadow: var(--sombra-md);
 }
 
 .plano-etiqueta {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
 }
 
 .plano-preco {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
   margin-top: 4px;
 }
 
 #plano-basico .plano-etiqueta,
 #plano-basico .plano-preco {
-  color: #7a7a7a;
+  color: #7a8a9a;
 }
 
 #plano-pro-link .plano-etiqueta,
 #plano-pro-link .plano-preco {
-  color: var(--azul);
+  color: var(--azulPadrao);
 }
 
 #plano-prem-link .plano-etiqueta,
 #plano-prem-link .plano-preco {
-  color: var(--laranja);
+  color: var(--laranjaPadrao);
 }
 
 .secao-planos {
-  background: var(--branco2);
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(26, 75, 156, 0.07) 0%, transparent 70%),
+    var(--branco2);
 }
 
 .cabecalho-planos {
-  background: #fff;
+  background: var(--brancoPadrao);
   padding: 36px 60px;
   border-radius: var(--raio-lg);
   box-shadow: var(--sombra-sm);
+  border: 1px solid var(--borda-clara);
   max-width: 760px;
   text-align: center;
   margin-bottom: 20px;
 }
 
 .titulo-secao {
-  color: var(--azul);
+  color: var(--azulPadrao);
   font-size: 26px;
   font-weight: 800;
   margin-bottom: 12px;
 }
 
 .subtitulo-secao {
-  color: #555;
-  font-size: 15px;
-  line-height: 1.7;
+  color: var(--texto-sec);
+  font-size: 14.5px;
+  line-height: 1.75;
 }
 
 .caixa-planos {
@@ -713,8 +674,8 @@ h2 {
 }
 
 .card-plano {
-  background: #fff;
-  border: 2px solid #e4e1e1;
+  background: var(--brancoPadrao);
+  border: 2px solid var(--borda-clara);
   width: 300px;
   border-radius: var(--raio-lg);
   text-align: center;
@@ -724,29 +685,32 @@ h2 {
   flex-direction: column;
   align-items: center;
   position: relative;
-  transition:
-    transform var(--trans),
-    box-shadow var(--trans);
+  transition: transform var(--trans), box-shadow var(--trans);
 }
 
 .card-plano:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--sombra-md);
+  transform: translateY(-7px);
+  box-shadow: var(--shadowPadrao);
 }
 
 .card-plano-pro {
   border-color: var(--azul);
-  background: rgba(32, 75, 134, 0.04);
+  background: linear-gradient(180deg, #f0f5ff 0%, var(--brancoPadrao) 100%);
   transform: scale(1.04);
+  box-shadow: var(--sombra-md), 0 0 0 3px rgba(26, 75, 156, 0.1);
 }
 
 .card-plano-pro:hover {
-  transform: scale(1.04) translateY(-6px);
+  transform: scale(1.04) translateY(-7px);
 }
 
 .card-plano-premium {
-  border-color: var(--laranja);
-  background: rgba(252, 135, 26, 0.04);
+  border-color: var(--laranjaPadrao);
+  background: linear-gradient(180deg, #fff7f0 0%, var(--brancoPadrao) 100%);
+}
+
+.card-plano-premium:hover {
+  box-shadow: var(--shadowPadrao), 0 0 0 3px rgba(249, 115, 22, 0.12);
 }
 
 .cabecalho-card {
@@ -755,113 +719,114 @@ h2 {
 }
 
 .plano-label {
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 700;
+  font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   margin-bottom: 8px;
 }
 
 .plano-label-inicial {
-  color: #888;
+  color: #8898a8;
 }
 
 .plano-label-pro {
-  color: var(--azul);
+  color: var(--azulPadrao);
 }
 
 .plano-label-premium {
-  color: var(--laranja);
+  color: var(--laranjaPadrao);
 }
 
 .plano-valor {
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .plano-valor-inicial {
-  color: #555;
+  color: var(--texto-sec);
   font-size: 26px;
 }
 
 .plano-valor-pro {
-  color: var(--azul);
-  font-size: 22px;
+  color: var(--azulPadrao);
+  font-size: 24px;
 }
 
 .plano-valor-premium {
-  color: var(--laranja);
-  font-size: 22px;
+  color: var(--laranjaPadrao);
+  font-size: 24px;
 }
 
 .plano-recorrencia {
   font-size: 13px;
   font-weight: 500;
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 .plano-desc {
-  color: #777;
+  color: #8898a8;
   font-size: 13px;
   margin-top: 6px;
 }
 
 .plano-desc-pro {
-  color: var(--azul);
+  color: var(--azulPadrao);
   font-size: 13px;
   margin-top: 6px;
   font-weight: 500;
 }
 
 .plano-desc-premium {
-  color: var(--laranja);
+  color: var(--laranjaPadrao);
   font-size: 13px;
   margin-top: 6px;
   font-weight: 600;
 }
 
 .btn-plano {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
-  padding: 10px 36px;
-  border-radius: 10px;
+  padding: 11px 36px;
+  border-radius: var(--radius-pequeno);
   cursor: pointer;
   margin-bottom: 20px;
-  transition:
-    background var(--trans),
-    color var(--trans),
-    transform var(--trans);
+  font-family: "Poppins", sans-serif;
+  transition: background var(--trans), color var(--trans), transform var(--trans), box-shadow var(--trans);
 }
 
 #btn-plano-inicial {
-  background: #fff;
-  border: 2px solid var(--azul);
-  color: var(--azul);
+  background: transparent;
+  border: 2px solid var(--azulPadrao);
+  color: var(--azulPadrao);
 }
 
 #btn-plano-inicial:hover {
-  background: var(--azul);
+  background: var(--azulPadrao);
   color: #fff;
+  transform: translateY(-2px);
 }
 
 #btn-plano-pro {
-  background: var(--azul);
-  border: 2px solid var(--azul-escuro);
+  background: var(--azul-escuro);
+  border: none;
   color: #fff;
+  box-shadow: 0 6px 16px rgba(26, 75, 156, 0.35);
 }
 
 #btn-plano-pro:hover {
-  background: var(--azul-escuro);
+  opacity: 0.9;
   transform: translateY(-2px);
 }
 
 #btn-plano-premium {
-  background: var(--laranja);
-  border: 2px solid var(--laranja-escuro);
+  background: var(--laranjaPadrao);
+  border: none;
   color: #fff;
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
 }
 
 #btn-plano-premium:hover {
-  background: var(--laranja-escuro);
+  opacity: 0.9;
   transform: translateY(-2px);
 }
 
@@ -871,24 +836,24 @@ h2 {
   text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .plano-recursos li {
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 500;
-  color: #444;
-  padding: 6px 10px;
-  border-radius: 6px;
-  background: rgba(0, 0, 0, 0.025);
+  color: var(--texto-sec);
+  padding: 7px 12px;
+  border-radius: var(--radius-pequeno);
+  background: var(--branco2);
+  border: 1px solid var(--borda-clara);
 }
-
 .secao-funcionalidades {
-  background: var(--cinza-claro);
+  background: linear-gradient(160deg, #dce8f5 0%, var(--cinza-claro) 100%);
 }
 
 .secao-funcionalidades h2 {
-  color: var(--azul);
+  color: var(--azulPadrao);
 }
 
 .conteudo-funcionalidades {
@@ -910,25 +875,24 @@ h2 {
 }
 
 .card-imagem {
-  background: #fff;
+  background: var(--brancoPadrao);
   padding: 12px;
   border-radius: var(--raio);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  transition:
-    transform var(--trans),
-    box-shadow var(--trans);
+  box-shadow: var(--sombra-sm);
+  border: 1px solid rgba(26, 75, 156, 0.08);
+  transition: transform var(--trans), box-shadow var(--trans);
 }
 
 .card-imagem:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-md);
 }
 
 .imagem-funcionalidade {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: var(--radius-pequeno);
   display: block;
 }
 
@@ -937,15 +901,15 @@ h2 {
   margin-top: 10px;
   font-size: 13px;
   font-weight: 500;
-  color: #333;
+  color: var(--texto-sec);
   line-height: 1.4;
 }
 
 .caixa-app {
-  background: #fff;
+  background: var(--brancoPadrao);
   padding: 30px;
   border-radius: var(--raio-lg);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  box-shadow: var(--sombra-md);
   text-align: center;
   flex: 1;
   min-width: 220px;
@@ -954,38 +918,42 @@ h2 {
   flex-direction: column;
   align-items: center;
   gap: 14px;
+  border: 1px solid rgba(26, 75, 156, 0.1);
 }
 
 .logo-aplicativo {
   width: 100%;
   max-width: 200px;
-  border-radius: 10px;
+  border-radius: var(--radius-pequeno);
 }
 
 .secao-como-usar {
-  background: var(--branco2);
+  background:
+    radial-gradient(ellipse 80% 40% at 50% 100%, rgba(26, 75, 156, 0.06) 0%, transparent 70%),
+    var(--branco2);
 }
 
 .cabecalho-como-usar {
-  background: #fff;
+  background: var(--brancoPadrao);
   padding: 32px 60px;
   border-radius: var(--raio-lg);
   box-shadow: var(--sombra-sm);
+  border: 1px solid var(--borda-clara);
   max-width: 760px;
   text-align: center;
   margin-bottom: 16px;
 }
 
 .titulo-como-usar {
-  color: var(--azul);
+  color: var(--azulPadrao);
   font-size: 26px;
   font-weight: 800;
   margin-bottom: 10px;
 }
 
 .subtitulo-como-usar {
-  color: #555;
-  font-size: 16px;
+  color: var(--texto-sec);
+  font-size: 15px;
 }
 
 .conteudo-passos {
@@ -1006,67 +974,65 @@ h2 {
 }
 
 .card-passo {
-  background: #637ea4;
+  background: var(--azulPadrao);
   padding: 28px 24px;
   border-radius: var(--raio);
-  box-shadow: var(--sombra-sm);
+  box-shadow: var(--sombra-md);
   width: 220px;
   flex-shrink: 0;
-  transition:
-    transform var(--trans),
-    box-shadow var(--trans);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform var(--trans), box-shadow var(--trans);
 }
 
 .card-passo:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--sombra-md);
+  transform: translateY(-5px);
+  box-shadow: var(--shadowPadrao);
 }
 
 .passo-numero {
   width: 36px;
   height: 36px;
-  background: var(--laranja);
+  background: linear-gradient(135deg, var(--laranjaPadrao) 0%, var(--laranja-escuro) 100%);
   color: #fff;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  margin-bottom: 14px;
+  box-shadow: 0 3px 10px rgba(249, 115, 22, 0.4);
 }
 
 .passo-titulo {
-  color: #ffa151;
-  font-size: 17px;
+  color: var(--laranja-hover);
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
   line-height: 1.4;
 }
 
 .passo-texto {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--texto-claro);
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .caixa-info {
-  background: #637ea4;
+  background: var(--azulPadrao);
   color: #fff;
   padding: 30px 40px;
   border-radius: var(--raio);
-  box-shadow: var(--sombra-sm);
+  box-shadow: var(--sombra-md);
   width: 65%;
   max-width: 680px;
-  transition:
-    transform var(--trans),
-    box-shadow var(--trans);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform var(--trans), box-shadow var(--trans);
 }
 
 .caixa-info:hover {
   transform: translateY(-3px);
-  box-shadow: var(--sombra-md);
+  box-shadow: var(--shadowPadrao);
 }
 
 .caixa-info-esquerda {
@@ -1082,157 +1048,50 @@ h2 {
 .info-titulo {
   font-size: 20px;
   font-weight: 700;
-  color: #ffa151;
+  color: var(--laranja-hover);
   margin-bottom: 12px;
 }
 
 .info-texto {
   font-size: 14px;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.75;
+  color: var(--texto-claro);
 }
-
-.rodape {
-  background: var(--azul);
-}
-
-.rodape-conteudo {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 80%;
-  margin: 0 auto;
-  padding: 50px 20px;
-  gap: 60px;
-}
-
-.rodape-esquerda {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.rodape-logo {
-  height: 130px;
-  width: auto;
-}
-
-.app-texto {
-  color: var(--laranja);
-  font-style: italic;
-  margin: 16px 0 8px;
-  font-size: 15px;
-}
-
-.btn-playstore {
-  height: 48px;
-  border: 2px solid rgba(0, 0, 0, 0.3);
-  border-radius: 8px;
-  box-shadow: var(--sombra-sm);
-  transition: transform var(--trans);
-  cursor: pointer;
-}
-
-.btn-playstore:hover {
-  transform: translateY(-2px);
-}
-
-.rodape-direita {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  max-width: 700px;
-  gap: 30px;
-}
-
-.rodape-menus {
-  display: flex;
-  justify-content: space-between;
-}
-
-.menu-coluna h4 {
-  color: var(--laranja);
-  font-size: 17px;
-  font-weight: 600;
-  margin-bottom: 14px;
-}
-
-.menu-coluna ul {
-  list-style: none;
-}
-
-.menu-coluna li {
-  margin-bottom: 10px;
-}
-
-.menu-coluna a {
-  color: rgba(255, 255, 255, 0.85);
-  text-decoration: none;
-  font-size: 14px;
-  transition: color var(--trans);
-}
-
-.menu-coluna a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-.caixa-legal {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 14px 30px;
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.caixa-legal a {
-  color: var(--laranja);
-  font-weight: 600;
-  font-size: 14px;
-  text-decoration: none;
-  transition: opacity var(--trans);
-}
-
-.caixa-legal a:hover {
-  opacity: 0.75;
-  text-decoration: underline;
-}
-
-.rodape-base {
-  border-top: 1px solid rgba(252, 135, 26, 0.4);
-  background: var(--azul-escuro);
-  text-align: center;
-  padding: 14px 20px;
-}
-
-.rodape-base p {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
-}
-
 
 @media (max-width: 1024px) {
   .nav-barra {
-    padding: 0 30px;
+    padding: 0 28px;
   }
 
   .nav-menu {
-    gap: 24px;
-    font-size: 16px;
+    gap: 20px;
+    font-size: 15px;
   }
 
   .hero {
-    padding: 50px 30px 36px;
+    padding: 48px 30px 36px;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: auto;
+  }
+
+  .hero-imagem {
+    width: 100%;
+    max-width: 100%;
+    align-self: center;
+    min-width: unset;
+  }
+
+  .garota-estudando {
+    max-width: 320px;
   }
 
   .titulo {
-    font-size: 36px;
+    font-size: 38px;
   }
 
   .secao {
-    padding: 60px 30px;
+    padding: 60px 28px;
   }
 
   .conteudo-funcionalidades {
@@ -1243,6 +1102,23 @@ h2 {
   .caixa-app {
     max-width: 100%;
     width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 36px 18px 28px;
+  }
+
+  .hero-imagem {
+    display: none;
+  }
+
+  .caixa-info {
+    width: 90%;
+    margin-left: 0;
+    margin-right: 0;
+    align-self: center;
   }
 }
 </style>
