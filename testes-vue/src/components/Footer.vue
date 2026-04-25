@@ -1,132 +1,117 @@
-<script>
-import "../assets/css/variaveis.css";
-</script>
-
 <template>
-  <footer class="site-footer">
-    <div class="footer-container">
-      <div class="footer-left">
-        <a href="#">
-          <img src="../assets/IMAGES/logo-redamais-grande.png" alt="Reda+" class="footer-logo" />
+  <footer class="rodape" id="contato">
+    <div class="rodape-conteudo">
+      
+      <div class="rodape-esquerda">
+        <a href="#inicio">
+          <img src="../assets/IMAGES/logo-redamais-grande.png" alt="REDA+" class="rodape-logo" />
         </a>
-        <p class="app-text">Baixe nosso Aplicativo</p>
 
-        <a href="#"
-          ><img
+        <p class="app-texto">Baixe nosso Aplicativo</p>
+
+        <a href="#">
+          <img
             src="../assets/IMAGES/footer-googleplay.png"
             alt="Google Play"
-            class="playstore-btn"
+            class="btn-playstore"
           />
         </a>
       </div>
 
-      <div class="footer-right">
-        <div class="footer-menus">
-          <div class="menu-col">
+      <div class="rodape-direita">
+        
+        <div class="rodape-menus">
+          <div class="menu-coluna">
             <h4>Sobre</h4>
             <ul>
               <li><a href="#">Quem Somos</a></li>
+              <li><a href="#">Nossa Missão</a></li>
             </ul>
           </div>
-          <div class="menu-col">
+
+          <div class="menu-coluna">
             <h4>Ajuda</h4>
             <ul>
               <li><a href="#">Perguntas Frequentes</a></li>
+              <li><a href="#">Suporte</a></li>
             </ul>
           </div>
-          <div class="menu-col">
+
+          <div class="menu-coluna">
             <h4>Produtos</h4>
             <ul>
+              <li><a href="#planos">Planos</a></li>
               <li><a href="#">Assine</a></li>
             </ul>
           </div>
         </div>
 
-        <div class="legal-box">
-          <a href="#">Politicas de Privacidade</a>
+        <div class="caixa-legal">
+          <a href="#">Política de Privacidade</a>
           <a href="#">Termos de Uso</a>
         </div>
+
       </div>
     </div>
 
-    <div class="footer-bottom">
+    <div class="rodape-base">
       <p>&copy; 2026 REDA+. Todos os direitos reservados.</p>
     </div>
   </footer>
 </template>
 
-<style>
+<style scoped>
+@import "../assets/css/variaveis.css";
 
-
-* {
-  margin: 0px;
-  padding: 0px;
-  font-family: "Poppins", sans-serif;
-  box-sizing: border-box;
+.rodape {
+  background: linear-gradient(90deg,
+    var(--azul-escuro) 0%,
+    var(--azul) 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
 }
 
-html {
-  scroll-behavior: smooth;
-  overflow: auto;
-  overflow-x: hidden;
-  height: 100%;
-}
-
-body {
+.rodape-conteudo {
   display: flex;
-  flex-direction: column;
-  background: var(--branco2);
-  min-height: 100vh;
-  margin: 0;
-  overflow-x: hidden;
-}
-
-
-
-/* FOOTER */
-.site-footer {
-  flex: 1;
-  margin-top: auto;
-  background-color: var(--azulPadrao);
-}
-
-.footer-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
   max-width: 80%;
   margin: 0 auto;
-  padding: 40px 20px;
-  gap: 150px;
-  
+  padding: 50px 20px;
+  gap: 60px;
 }
 
-.footer-left {
+.rodape-esquerda {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
-.footer-logo {
-  height: 170px;
+.rodape-logo {
+  height: 120px;
   width: auto;
 }
 
-.app-text {
+.app-texto {
   color: var(--laranjaPadrao);
   font-style: italic;
-  margin: 20px 0 10px;
-  font-size: 16px;
+  margin: 16px 0 8px;
+  font-size: 14px;
 }
 
-.playstore-btn {
-  height: 50px;
-  border: #000 2px solid;
-  border-radius: 7px;
-  box-shadow: var(--shadowPadrao);
+.btn-playstore {
+  height: 46px;
+  border-radius: 8px;
+  box-shadow: var(--sombra-sm);
+  transition: var(--trans);
+  cursor: pointer;
 }
 
-.footer-right {
+.btn-playstore:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.rodape-direita {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -134,65 +119,68 @@ body {
   gap: 30px;
 }
 
-.footer-menus {
+.rodape-menus {
   display: flex;
   justify-content: space-between;
 }
 
-.menu-col h4 {
+.menu-coluna h4 {
   color: var(--laranjaPadrao);
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 15px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 14px;
 }
 
-.menu-col ul {
+.menu-coluna ul {
   list-style: none;
 }
 
-.menu-col li {
+.menu-coluna li {
   margin-bottom: 10px;
 }
 
-.menu-col a {
+.menu-coluna a {
   color: var(--brancoPadrao);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 14px;
+  transition: var(--trans);
 }
 
-.menu-col a:hover {
-  text-decoration: underline;
+.menu-coluna a:hover {
+  color: var(--laranja-hover);
 }
 
-.legal-box {
-  background-color: var(--brancoPadrao);
-  border-radius: 4px;
-  padding: 15px 30px;
+.caixa-legal {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 14px 30px;
   display: flex;
   justify-content: center;
-  gap: 100px;
+  gap: 60px;
   box-shadow: var(--shadowPadrao);
 }
 
-.legal-box a {
+.caixa-legal a {
   color: var(--laranjaPadrao);
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 13px;
   text-decoration: none;
 }
 
-.legal-box a:hover {
+.caixa-legal a:hover {
   text-decoration: underline;
 }
 
-.footer-bottom {
+.rodape-base {
   border-top: 1px solid var(--laranjaPadrao);
-  background-color: var(--azulPadrao);
+  background: var(--azulPadrao);
   text-align: center;
-  padding: 12px 20px;
+  padding: 14px 20px;
 }
 
-.footer-bottom p {
-  font-size: 14px;
-  color: #e0e0e0;
+.rodape-base p {
+  font-size: 12px;
+  color: var(--texto-claro);
 }
 </style>
