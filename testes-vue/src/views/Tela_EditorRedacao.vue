@@ -43,17 +43,7 @@ export default {
     fecharModal() {
       this.mostrandoModal = false;
       document.body.style.overflow = "auto";
-    },
-    trocarTema() {
-      // Lógica para trocar de tema
-    },
-    sairSemSalvar() {
-      // Lógica para sair
-    },
-    salvarRascunho() {
-      // Lógica para salvar
     }
-  },
 };
 </script>
 
