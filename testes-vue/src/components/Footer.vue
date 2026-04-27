@@ -47,8 +47,10 @@
         </div>
 
         <div class="caixa-legal">
-          <a href="#">Política de Privacidade</a>
-          <a href="#">Termos de Uso</a>
+          <RouterLink to="/politica" class="router-link">Política de Privacidade</RouterLink>
+          <RouterLink to="/termos" class="router-link">Termos de Uso</RouterLink>
+
+
         </div>
 
       </div>
@@ -140,14 +142,14 @@
 }
 
 .menu-coluna a {
-  color: var(--brancoPadrao);
+  color: var(--branco);
   text-decoration: none;
   font-size: 14px;
   transition: var(--trans);
 }
 
 .menu-coluna a:hover {
-  color: var(--laranja-hover);
+  color: var(--laranjaPadrao);
 }
 
 .caixa-legal {

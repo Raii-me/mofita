@@ -66,7 +66,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 .fixo-Chat {
   position: fixed;
   right: 20px;

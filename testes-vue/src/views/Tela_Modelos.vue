@@ -35,7 +35,7 @@ export default {
 
             <div class="caixa-2">
                 <img src="../assets/ICONS/icon-category-buscar.PNG" id="category-icon">
-                <select name="opcoes" class="category">
+                <select name="visualizar-detalhe-modelo" class="category">
                     <option>Todos</option>
                     <option value="opcao1">ENEM</option>
                     <option value="opcao2">Provão Paulista</option>
@@ -65,16 +65,16 @@ export default {
 
      
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Envelhecimento_Sociedade.png" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>ENEM</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>Perspectivas acerca do envelhecimento na sociedade brasileira </p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -82,16 +82,16 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Herancas_Africanas.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>ENEM</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>Desafios para a valorização da herança africana no Brasil</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -99,16 +99,16 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Invisibilidade_Mulheres.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>ENEM</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>desafios para o enfrentamento da invisibilidade do trabalho de cuidado realizado pela mulher no Brasil</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -116,16 +116,16 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Cominudades_Tradicionais.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>ENEM</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>Desafios para a valorização de comunidades e povos tradicionais no Brasil</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -133,16 +133,16 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Reginstro_Civil.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>ENEM</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>Invisibilidade e registro civil: garantia de acesso a cidadania no Brasil</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -150,16 +150,16 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Doenca_Mental.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>ENEM</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>O estigma associado as doenças mentais na sociedade brasileira </p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -167,16 +167,16 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Desigualdade_Social.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>ENEM</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>O desafio de reduzir as desigualdade entre as regiões do Brasil </p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -184,16 +184,16 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Democratizacao_Cinema.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>ENEM</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>Democratização do acesso ao cinema no Brasil</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -201,16 +201,16 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Controle_Dados.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>ENEM</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>Manipulação do comportamento do usuário pelo controle de dados na internet</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -218,16 +218,16 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Tema_Educacao_Surdos.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>ENEM</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>Desafios para a formação educacional dos surdos no Brasil</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -235,17 +235,17 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Redes_Sociais_Adolecentes.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>Provão Paulista</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>Como os adolescentes podem usar as redes sociais sem prejudicar a saúde mental?
                 </p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -253,16 +253,16 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Gentrificacao.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>Provão Paulista</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>Gentrificação urbana - o processo de transformação de áreas urbanas</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -270,16 +270,16 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Fome_Brasil.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>Provão Paulista</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>O combate a fome no Brasil: entr a responsabilidade do estado e a atuação da sociedade civil</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -287,18 +287,18 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 
             <img src="../assets/TEMAS/Temas_IA_Escolas.jpg" id="img-box">
             
-            <div class="tema">
+            <div class="tema-da-modelo">
                     <p>Autoral</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p> Impacto da inteligência artificial nos alunos de escola pública</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -306,16 +306,16 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Resocializacao_Deficientes.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>Autoral</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>Inclusão social de pessoas com deficiências físicas</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -323,16 +323,16 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Consumo_Consciente.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>Autoral</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>Desafios para manter um consumo consciente</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -340,16 +340,16 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Educacao_Financeira.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>Autoral</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>Desafios para  o ensino de qualidade sobre educação financeira</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -357,16 +357,16 @@ export default {
             </div>
         </div>
         
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Substituicao_IA.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>Autoral</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>O impacto da inteligência artificial na precarização do trabalho e nas relações de consumo</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -374,16 +374,16 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Violencia_Criancas.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>Autoral</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p> Impacto da violência doméstica contra a criança e o adolescente no desenvolvimento social</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -391,16 +391,16 @@ export default {
             </div>
         </div>
 
-        <div class="card">
+        <div class="caixa-tema">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Inseguranca_Alimentar.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-da-modelo">
                     <p>Autoral</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-modelo">
                 <p>A persistência da insegurança alimentar e seus reflexos na saúde nacional</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-modelo">
                     <p>1000</p>
                     <a href="#">
                         <button>Ver modelo ↗</button></a>
@@ -511,7 +511,7 @@ export default {
     margin-bottom:10%;
 }
 
-.card {
+.caixa-tema {
     width: 100%; 
     overflow: hidden;
     position: relative;
@@ -523,7 +523,7 @@ export default {
     box-shadow: 0 6px 15px rgba(0,0,0,0.35);
 }
 
-.card:hover{
+.caixa-tema:hover{
     transform:translateY(-10px);
     box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
 }
@@ -539,7 +539,7 @@ export default {
     height: 100%;
 }
 
-.tema {
+.tema-da-modelo {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -550,22 +550,23 @@ export default {
     border-radius: 10px;
 }
 
-.descricao {
+.caixa-descricao-modelo {
     height: 50%;
     width: 100%;
     background-color: #fff;
     position: absolute;
     bottom: 0;
     border-radius: 0 0 10px 10px;
+    z-index: 999;
 }
 
-.descricao p{
+.caixa-descricao-modelo p{
     font-size: 16px;
     text-align: justify;
     margin: 2%;
 }
 
-.opcoes {
+.visualizar-detalhe-modelo {
     position:  absolute;
     bottom: -5px;
     display: flex;
@@ -575,7 +576,7 @@ export default {
     width: 100%;
 }
 
-.opcoes p {
+.visualizar-detalhe-modelo p {
     margin-left: 3%;
     background-color: transparent;
     padding: 5px 15px 5px 15px;
@@ -584,7 +585,7 @@ export default {
     transform: 0.5s;
 }
 
-.opcoes button {
+.visualizar-detalhe-modelo button {
     width: auto;
     height: auto;
     border: none;
@@ -597,7 +598,7 @@ export default {
     margin: 0 10px;
 }
 
-.opcoes button:hover {
+.visualizar-detalhe-modelo button:hover {
     color: #3248D5;
     font-weight: 700;
     border-radius: 10px;
@@ -605,7 +606,7 @@ export default {
     text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.103);
 }
 
-.opcoes a {
+.visualizar-detalhe-modelo a {
     margin-left: auto;
 }
 

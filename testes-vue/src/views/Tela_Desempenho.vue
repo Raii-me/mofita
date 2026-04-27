@@ -77,19 +77,19 @@ export default {
                         <p class="textosTema">desigualdade da educação publica Brasil</p>
                         <p class="notas">840</p>
                         <p class="datas">Maio 7, 2025</p>
-                        <button class="visualizarBotoes">Visualizar</button>
+                        <button class="visualizarBotoes"><RouterLink to="/feedback" class="router-link">Visualizar</RouterLink></button>
                     </div>
                     <div class="verificarStatus">
                         <p class="textosTema">Saude Publica no Brasil</p>
                         <p class="notas">780</p>
                         <p class="datas">Maio 7, 2025</p>
-                        <button class="visualizarBotoes">Visualizar</button>
+                        <button class="visualizarBotoes"><RouterLink to="/feedback" class="router-link">Visualizar</RouterLink></button>
                     </div>
                     <div class="verificarStatus">
                         <p class="textosTema">desigualdade da educação publica Brasil</p>
                         <p class="notas">910</p>
                         <p class="datas">Maio 7, 2025</p>
-                        <button class="visualizarBotoes">Visualizar</button>
+                        <button class="visualizarBotoes"><RouterLink to="/feedback" class="router-link">Visualizar</RouterLink></button>
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@ export default {
 </template>
 
 
-<style>
+<style scoped>
 * {
     margin: 0px;
     padding: 0px;

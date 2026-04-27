@@ -32,14 +32,14 @@ export default {
   <nav class="nav-barra" :class="{ rolado: navRolado }" id="barra-nav">
     <div class="nav-logotipo">
       <a href="#inicio">
-        <img src="../assets/IMAGES/logo-redamais.png" alt="Logo REDA+" />
+        <img src="../assets/IMAGES/logo-redamais-grande.png" alt="Logo REDA+" />
       </a>
     </div>
     <ul class="nav-menu">
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#planos">Planos</a></li>
       <li><a href="#contato">Contato</a></li>
-      <li><a href="#" class="nav-btn-entrar">Login</a></li>
+      <li class="nav-btn-entrar"><RouterLink to="/home">Entrar</RouterLink></li>
     </ul>
   </nav>
 
@@ -336,7 +336,7 @@ export default {
 }
 
 .nav-menu a:hover {
-  color: var(--laranja-hover);
+  color: var(--laranjaPadrao);
 }
 
 .nav-btn-entrar {
@@ -547,7 +547,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--brancoPadrao);
+  background: var(--branco);
   border-radius: var(--raio);
   box-shadow: var(--sombra-sm);
   padding: 24px;
@@ -585,7 +585,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--branco2);
+  background: var(--branco);
   padding: 14px 18px;
   border-radius: var(--radius-pequeno);
   text-decoration: none;
@@ -631,11 +631,11 @@ h2 {
 .secao-planos {
   background:
     radial-gradient(ellipse 70% 50% at 50% 0%, rgba(26, 75, 156, 0.07) 0%, transparent 70%),
-    var(--branco2);
+    var(--branco);
 }
 
 .cabecalho-planos {
-  background: var(--brancoPadrao);
+  background: var(--branco);
   padding: 36px 60px;
   border-radius: var(--raio-lg);
   box-shadow: var(--sombra-sm);
@@ -674,7 +674,7 @@ h2 {
 }
 
 .card-plano {
-  background: var(--brancoPadrao);
+  background: var(--branco);
   border: 2px solid var(--borda-clara);
   width: 300px;
   border-radius: var(--raio-lg);
@@ -695,7 +695,7 @@ h2 {
 
 .card-plano-pro {
   border-color: var(--azul);
-  background: linear-gradient(180deg, #f0f5ff 0%, var(--brancoPadrao) 100%);
+  background: linear-gradient(180deg, #f0f5ff 0%, var(--branco) 100%);
   transform: scale(1.04);
   box-shadow: var(--sombra-md), 0 0 0 3px rgba(26, 75, 156, 0.1);
 }
@@ -706,7 +706,7 @@ h2 {
 
 .card-plano-premium {
   border-color: var(--laranjaPadrao);
-  background: linear-gradient(180deg, #fff7f0 0%, var(--brancoPadrao) 100%);
+  background: linear-gradient(180deg, #fff7f0 0%, var(--branco) 100%);
 }
 
 .card-plano-premium:hover {
@@ -845,7 +845,7 @@ h2 {
   color: var(--texto-sec);
   padding: 7px 12px;
   border-radius: var(--radius-pequeno);
-  background: var(--branco2);
+  background: var(--branco);
   border: 1px solid var(--borda-clara);
 }
 .secao-funcionalidades {
@@ -875,7 +875,7 @@ h2 {
 }
 
 .card-imagem {
-  background: var(--brancoPadrao);
+  background: var(--branco);
   padding: 12px;
   border-radius: var(--raio);
   box-shadow: var(--sombra-sm);
@@ -906,7 +906,7 @@ h2 {
 }
 
 .caixa-app {
-  background: var(--brancoPadrao);
+  background: var(--branco);
   padding: 30px;
   border-radius: var(--raio-lg);
   box-shadow: var(--sombra-md);
@@ -930,11 +930,11 @@ h2 {
 .secao-como-usar {
   background:
     radial-gradient(ellipse 80% 40% at 50% 100%, rgba(26, 75, 156, 0.06) 0%, transparent 70%),
-    var(--branco2);
+    var(--branco);
 }
 
 .cabecalho-como-usar {
-  background: var(--brancoPadrao);
+  background: var(--branco);
   padding: 32px 60px;
   border-radius: var(--raio-lg);
   box-shadow: var(--sombra-sm);
@@ -1005,7 +1005,7 @@ h2 {
 }
 
 .passo-titulo {
-  color: var(--laranja-hover);
+  color: var(--laranjaPadrao);
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
@@ -1048,7 +1048,7 @@ h2 {
 .info-titulo {
   font-size: 20px;
   font-weight: 700;
-  color: var(--laranja-hover);
+  color: var(--laranjaPadrao);
   margin-bottom: 12px;
 }
 

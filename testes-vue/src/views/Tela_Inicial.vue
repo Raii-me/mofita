@@ -43,7 +43,8 @@ export default {
 
     <section id="part-2" class="pagina-2">
       <div class="bloco-2">
-        <div class="card">
+
+        <div class="card-design">
           <div class="img-box">
             <img src="../assets/IMAGES/exemplo-biblioteca.png" alt="Redação" />
             <h2>Última Redação Feita</h2>
@@ -59,7 +60,7 @@ export default {
           </div>
         </div>
 
-        <div class="card">
+        <div class="card-design">
           <div class="img-box">
             <img src="../assets/IMAGES/exemplo-etarismo.png" alt="Redação" />
             <h2>Tema Quente</h2>
@@ -75,7 +76,7 @@ export default {
           </div>
         </div>
 
-        <div class="card">
+        <div class="card-design">
           <div class="img-box">
             <img src="../assets/IMAGES/exemplo-Ambiente.png" alt="Redação" />
             <h2>Tema Quente</h2>
@@ -91,7 +92,7 @@ export default {
           </div>
         </div>
 
-        <div class="card">
+        <div class="card-design">
           <div class="img-box">
             <img src="../assets/IMAGES/exemplo-noticias.png" alt="Redação" />
             <h2>Tema Quente</h2>
@@ -107,7 +108,7 @@ export default {
           </div>
         </div>
 
-        <div class="card">
+        <div class="card-design">
           <div class="img-box">
             <img src="../assets/IMAGES/exemplo-estudando.png" alt="Redação" />
             <h2>Tema Quente</h2>
@@ -123,7 +124,7 @@ export default {
           </div>
         </div>
 
-        <div class="card">
+        <div class="card-design">
           <div class="img-box">
             <img src="../assets/IMAGES/exemplo-mental.png" alt="Redação" />
             <h2>Tema Quente</h2>
@@ -144,7 +145,7 @@ export default {
   <Footer />
 </template>
 
-<style>
+<style scoped>
 * {
   margin: 0px;
   padding: 0px;
@@ -158,7 +159,7 @@ main {
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  background: var(--branco2);
+  background: var(--branco);
   min-height: 100vh;
   margin: 0;
 }
@@ -203,7 +204,7 @@ h1 {
 }
 
 h2 {
-  color: #fc871a;
+  color: var(--laranjaPadrao);
   text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.103);
 }
 
@@ -220,11 +221,13 @@ h2 {
   margin-bottom: 10px;
 }
 
+
+/*pra q serve isso??? - Rai*/
 #botoesdeAcao {
-  background-color: #fc871a;
-  color: #ebf1f5;
+  background-color: var(--laranjaPadrao);
+  color: var(--branco);
   font-size: 20px;
-  border: 2px solid #c66c18;
+  border: 2px solid var(--laranja-escuro);
   border-radius: 10px;
   padding: 0 20px 0 20px;
   text-align: center;
@@ -282,8 +285,8 @@ h2 {
   margin-bottom: 30px;
 }
 
-.card {
-  background: #ffffff;
+.card-design {
+  background: var(--branco);
   border-radius: 16px;
   margin: 20px;
   overflow: hidden;
@@ -291,7 +294,7 @@ h2 {
   transition: 0.3s;
 }
 
-.card:hover {
+.card-design:hover {
   transform: translateY(-10px);
   box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
 }
@@ -320,7 +323,7 @@ h2 {
   position: absolute;
   top: 15px;
   left: 15px;
-  color: #ffffff;
+  color: var(--branco);
   font-size: 20px;
   z-index: 2;
 }
@@ -341,7 +344,7 @@ h2 {
 }
 
 .nota {
-  background: #ffffff;
+  background: var(--branco);
   border: 2px solid #0000000e;
   padding: 8px 20px;
   border-radius: 10px;
@@ -355,19 +358,19 @@ h2 {
 }
 
 .link:hover {
-  color: #3248d5;
+  color: var(--azulForte);
   font-weight: 700;
 }
 
 .tag {
-  background: #ffffff;
+  background: var(--branco);
   border: 2px solid #0000000e;
   padding: 8px 20px;
   border-radius: 10px;
 }
 
 .btn-Escrever {
-  background: #3b5bdb;
+  background: var(--azulPadrao);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -378,8 +381,8 @@ h2 {
 }
 
 .btn-Escrever:hover {
-  background: #fc871a;
-  border: 2px solid #c66c18;
+  background: var(--laranjaPadrao);
+  border: 2px solid var(--laranja-escuro);
   font-weight: 700;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.103);
@@ -435,7 +438,7 @@ h2 {
     padding: 10px;
   }
 
-  .card {
+  .card-design {
     margin: 10px;
   }
 }

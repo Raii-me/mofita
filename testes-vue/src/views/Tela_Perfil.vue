@@ -41,8 +41,8 @@ function mudarAba(aba) {
                 <div class="sidebar">
                     <div class="profile-edt">
                         <img src="../assets/IMAGES/foto-perfil-temporaria.png" />
-                        <p>Rai Vicencio</p>
-                        <p>Administrador</p>
+                        <p>{usuario}</p>
+                        <p>{Funcao}</p>
                         <hr>
                     </div>
 
@@ -52,6 +52,10 @@ function mudarAba(aba) {
                             <img src="../assets/ICONS/icon-perfil.png">
                             <p>Conta</p>
                         </div>
+
+        
+
+
                         <div class="opcoes-sidebar" @click="mudarAba('acessibilidade')"
                             :class="{ ativo: abaAtiva === 'acessibilidade' }">
                             <img src="../assets/ICONS/icon-lupa.png">
@@ -74,7 +78,7 @@ function mudarAba(aba) {
                     <div class="final">
                         <div class="final-sidebar">
                             <img src="../assets/ICONS/icon-logout.png">
-                            <p>Logout</p>
+                            <p>Sair</p>
                         </div>
                     </div>
                 </div>
@@ -164,7 +168,7 @@ function mudarAba(aba) {
 
                         <div class="acessibilidade-box">
                             <p>Restaurar Padrão</p>
-                            <Switch v-model="restaurarPadraoAcessibilidade" />
+                                <button>Mudar Nome</button>
                         </div>
 
 
@@ -238,22 +242,22 @@ function mudarAba(aba) {
     <Footer />
 </template>
 
-<style>
+<style scoped>
 .conteudo-config {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgb(189, 219, 219);
     display: flex;
     justify-content: center;
-
 }
 
 .config-container {
-    width: 70%;
+    width: 90%;
     height: fit-content;
     background-color: #fff;
     border-radius: var(--radius-pequeno);
-    margin-top: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .info-conta {
@@ -262,11 +266,18 @@ function mudarAba(aba) {
 
 .sidebar {
     height: auto;
+    min-height: 600px;
     padding-top: 35px;
     width: 200px;
-    background-color: var(--laranjaPadrao);
+    min-width: 200px;
+    max-width: 200px;
+    flex-shrink: 0;
+    background-color: var(--branco2);
     border-radius: var(--radius-pequeno) 0px 0px var(--radius-pequeno);
-    border-right: 2px solid var(--azulPadrao);
+    border-right: 3px solid var(--azulPadrao);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .profile-edt {
@@ -276,83 +287,101 @@ function mudarAba(aba) {
 }
 
 .profile-edt img {
-
     width: 70px;
     height: 70px;
     border-radius: 50%;
     border: 2px solid var(--branco2);
     margin-bottom: 5px;
-  
-
 }
 
 .profile-edt p {
     font-size: 15px;
-      font-weight: 700;
-      color: #ffffff;
-
+    font-weight: 700;
+    color: #000000;
 }
 
 .profile-edt hr {
     margin-top: 10px;
     width: 100%;
+    border: none;
+    height: 1px;
+    background-color: #e2e2e2;
 }
 
-.opcoes,
-.final {
+.opcoes {
     margin-top: 5px;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.final {
+    margin-top: auto;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.opcoes-sidebar {
+    border: 2px solid var(--azulPadrao);
+    color: var(--azulPadrao);
+}
+
+.final-sidebar {
+    border: 2px solid var(--vermelho);
+    color: var(--vermelho);
+}
+
+.opcoes-sidebar p,
+.final-sidebar p {
+    all: unset;
+    margin-right: 5px;
 }
 
 .opcoes-sidebar,
 .final-sidebar {
-    transition: 0.3s;
+    transition: 0.5s;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 5px;
-    width: 90%;
+    width: 168px;
     padding: 5px;
     background-color: var(--branco2);
     font-size: 14px;
     border-radius: var(--radius-pequeno);
+    cursor: pointer;
 }
 
 .opcoes-sidebar img,
-.final img {
-
-    margin-left: 10px;
+.final-sidebar img {
+    margin-left: 5px;
+    margin-right: 5px;
     width: 14px;
     height: 14px;
-    margin-right: auto;
-}
-
-.final {
-    margin-top: 100%;
-    margin-bottom: 10px;
 }
 
 .opcoes-sidebar:hover {
-    border-right: 5px solid #16325a;
-    background-color: var(--azulPadrao);
-    color: var(--branco2);
-    font-weight: 600;
+    background-color: var(--azulPadraoClaro);
 }
 
 .final-sidebar:hover {
-    border-right: 5px solid #b61414;
-    background-color: var(--vermelho);
-    color: var(--branco2);
-    font-weight: 600;
+    background-color: var(--vermelhoClaro);
 }
 
 .opcoes-sidebar.ativo {
-    border-right: 5px solid #16325a;
-    background-color: var(--azulPadrao);
+    background-color: var(--azulPadraoClaro);
+}
+
+.acessibilidade-box button {
+    padding: 3px;
+    border-radius: var(--radius-pequeno);
+    border: 0;
+    background: var(--laranjaPadrao);
     color: var(--branco2);
-    font-weight: 600;
 }
 
 .category {
@@ -361,7 +390,6 @@ function mudarAba(aba) {
     width: 60px;
     border-radius: var(--radius-pequeno);
     border: 1px solid var(--cinza-claro);
-
 }
 
 .acessibilidade-box {
@@ -375,19 +403,10 @@ function mudarAba(aba) {
     border: 1px solid var(--cinza-claro);
     border-radius: var(--radius-pequeno);
     margin-top: 15px;
-
 }
 
 .acessibilidade-box p {
     margin-right: auto;
-}
-
-.profile-edt button:hover,
-.setting-box button:hover,
-.password-config button:hover {
-    background: var(--laranja-btn-hover);
-    box-shadow: var(--shadowPadrao);
-    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.103);
 }
 
 .config-box {
@@ -428,7 +447,7 @@ function mudarAba(aba) {
 .password-config input {
     padding-left: 10px;
     width: 80%;
-
+    height: 34px;
     background: var(--brancoPadrao);
     border: 1px solid var(--cinza-claro);
     border-radius: var(--radius-pequeno);
@@ -438,8 +457,7 @@ function mudarAba(aba) {
 .password-config button {
     margin-left: auto;
     width: 100px;
-
-    background: var(--laranja-btn);
+    background: var(--laranjaPadrao);
     border: none;
     border-radius: var(--radius-pequeno);
     color: var(--brancoPadrao);
@@ -447,5 +465,13 @@ function mudarAba(aba) {
     cursor: pointer;
     transition: var(--trans);
     margin-right: 10px;
+}
+
+.profile-edt button:hover,
+.setting-box button:hover,
+.password-config button:hover {
+    background: var(--laranja-escuro);
+    box-shadow: var(--shadowPadrao);
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.103);
 }
 </style>

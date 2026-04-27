@@ -224,7 +224,7 @@ export default {
 
         <div class="caixa-category">
           <img src="../assets/ICONS/icon-category-buscar.PNG" id="category-icon">
-          <select name="opcoes" class="category">
+          <select name="visualizar-detalhe-tema" class="category">
             <option>Todos</option>
             <option value="opcao5">Sociedade</option>
             <option value="opcao6">Cultura</option>
@@ -253,13 +253,13 @@ export default {
       >
         <div class="imagem">
           <img :src="getImagemUrl(tema.imagem)" :alt="tema.titulo" id="img-box">
-          <div class="tema">
+          <div class="escolher-tema">
             <p>{{ tema.subcategoria }}</p>
           </div>
         </div>
-        <div class="descricao">
+        <div class="caixa-descricao-tema">
           <p>{{ tema.titulo }}</p>
-          <div class="opcoes">
+          <div class="visualizar-detalhe-tema">
             <p>{{ tema.categoria }}</p>
             <button @click="abrirModal(tema)">Escrever ↗</button>
           </div>
@@ -307,7 +307,7 @@ export default {
   <Footer />
 </template>
 
-<style>
+<style scoped>
 .fixar-search-bar {
     display: flex;
     justify-content: center;
@@ -323,7 +323,7 @@ export default {
     display: flex;
     width: 60%;
     height: 38px;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border: 1px solid var(--borda);
     border-radius: 10px;
 }
@@ -367,7 +367,7 @@ export default {
     width: fit-content;
     height: 38px;
     margin-left: auto;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border: 1px solid var(--borda);
     border-radius: 10px;
 }
@@ -385,7 +385,7 @@ export default {
     display: flex;
     height: 38px;
     margin-left: 1%;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border: 1px solid var(--borda);
     border-radius: 10px;
 }
@@ -417,7 +417,7 @@ export default {
     width: 100%;
     height: 270px;
     overflow: hidden;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
     transition: var(--trans);
@@ -440,31 +440,31 @@ export default {
     object-fit: cover;
 }
 
-.tema {
+.escolher-tema {
     position: absolute;
     top: 10px;
     left: 10px;
     padding: 5px;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border-radius: 10px;
 }
 
-.descricao {
+.caixa-descricao-tema {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 50%;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border-radius: 0 0 10px 10px;
 }
 
-.descricao p {
+.caixa-descricao-tema p {
     margin: 2%;
     font-size: 14px;
     text-align: justify;
 }
 
-.opcoes {
+.visualizar-detalhe-tema {
     position: absolute;
     bottom: 3px;
     display: flex;
@@ -473,28 +473,28 @@ export default {
     padding: 5px;
 }
 
-.opcoes p {
+.visualizar-detalhe-tema p {
     margin: 0 auto 0 3%;
     padding: 5px 15px;
     border: 1px solid var(--borda);
     border-radius: 30px;
 }
 
-.opcoes button {
+.visualizar-detalhe-tema button {
     width: 170px;
     margin-right: 10px;
     padding: 10px;
-    background: var(--laranja-btn);
+    background: var(--laranjaPadrao);
     border: none;
     border-radius: 12px;
-    color: var(--brancoPadrao);
+    color: var(--branco);
     font-weight: 700;
     cursor: pointer;
     transition: var(--trans);
 }
 
-.opcoes button:hover {
-    background: var(--laranja-btn-hover);
+.visualizar-detalhe-tema button:hover {
+    background: var(--laranja-escuro);
     box-shadow: var(--shadowPadrao);
     text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.103);
     transform: translateY(-4px);
@@ -618,7 +618,7 @@ export default {
     margin: 10px auto 0;
     width: fit-content;
     padding: 12px 30px;
-    background: var(--laranja-btn);
+    background: var(--laranjaPadrao);
     color: white;
     border: none;
     border-radius: 20px;
@@ -630,7 +630,7 @@ export default {
 }
 
 .btn-escolher:hover {
-    background: var(--laranja-btn-hover);
+    background: var(--laranja-escuro);
     box-shadow: var(--shadowPadrao);
     transform: translateY(-3px);
 }

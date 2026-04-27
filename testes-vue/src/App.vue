@@ -12,7 +12,16 @@ export default {
 
 <template>
 
-  <router-view />
 
+  <RouterView />
 </template>
+
+<style>
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+</style>
 

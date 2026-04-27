@@ -209,13 +209,14 @@ export default {
 }
 
 .cabecalho-documento h1 span {
-    color: var(--laranja-hover);
+    color: var(--laranjaPadrao);
 }
 
 .versao {
     font-size: 13px;
     margin-top: 10px;
     opacity: 0.4;
+    color: var(--branco);
 }
 
 .conteudo-documento {

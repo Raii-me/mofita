@@ -33,7 +33,7 @@ export default {
 
             <div class="caixa-category">
                 <img src="../assets/ICONS/icon-category-buscar.PNG" id="category-icon">
-                    <select name="opcoes" class="category">
+                    <select name="visualizar-detalhe-livro" class="category">
                     <option>Categorias</option>
                     <option value="opcao1">Análise Psocológica</option>
                     <option value="opcao2">Crítica Social</option>
@@ -51,13 +51,13 @@ export default {
         <div class="card" id="1-Livro-dom-casmurro">
             <div class="imagem">
                 <img src="../assets/LIVROS/livro-dom-casmurro.PNG" id="img-box">
-                <div class="tema">
+                <div class="tema-livro">
                     <p>Análise Psicológica</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-livro">
                 <p>Dom Casmmurro - Machado de Assis</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-livro">
                     <p>1899</p>
                     <a href="#">
                         <button>Abrir Arquivos ↗</button></a>
@@ -68,13 +68,13 @@ export default {
         <div class="card" id="2-Livro-memorias-postumas">
             <div class="imagem">
                 <img src="../assets/LIVROS/livro-memoria-postumas.png" id="img-box">
-                <div class="tema">
+                <div class="tema-livro">
                     <p>Crítica Social</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-livro">
                 <p>Memórias Póstumas de Brás Cubas - Machado de Assis</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-livro">
                     <p>1881</p>
                     <a href="#">
                         <button>Abrir Arquivos ↗</button></a>
@@ -85,13 +85,13 @@ export default {
         <div class="card" id="3-Livro-o-cortico">
             <div class="imagem">
                 <img src="../assets/LIVROS/livro-o-cortico.PNG" id="img-box">
-                <div class="tema">
+                <div class="tema-livro">
                     <p>Desigualdade social</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-livro">
                 <p>O Cortiço - Aluísio Azevedo</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-livro">
                     <p>1890</p>
                     <a href="#">
                         <button>Abrir Arquivos ↗</button></a>
@@ -102,13 +102,13 @@ export default {
         <div class="card" id="4-Livro-iracema">
             <div class="imagem">
                 <img src="../assets/LIVROS/livro-iracema.png" id="img-box">
-                <div class="tema">
+                <div class="tema-livro">
                     <p>Nacionalismo</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-livro">
                 <p>Iracema - José de Alencar</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-livro">
                     <p>1865</p>
                     <a href="#">
                         <button>Abrir Arquivos ↗</button></a>
@@ -119,13 +119,13 @@ export default {
         <div class="card" id="5-Livro-os-lusiadas">
             <div class="imagem">
                 <img src="../assets/LIVROS/livro-os-lusiadas.png" id="img-box">
-                <div class="tema">
+                <div class="tema-livro">
                     <p>Heroísmo</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-livro">
                 <p>Os Lusíadas - Luís de Camões</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-livro">
                     <p>1572</p>
                     <a href="#">
                         <button>Abrir Arquivos ↗</button></a>
@@ -136,13 +136,13 @@ export default {
         <div class="card" id="6-Livro-auto-da-barca-do-inferno">
             <div class="imagem">
                 <img src="../assets/LIVROS/livro-o-auto-da-barga-do-inferno.png" id="img-box">
-                <div class="tema">
+                <div class="tema-livro">
                     <p>Moralidade</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-livro">
                 <p>Auto da Barca do Inferno - Gil Vicente</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-livro">
                     <p>1517</p>
                     <a href="#">
                         <button>Abrir Arquivos ↗</button></a>
@@ -153,13 +153,13 @@ export default {
         <div class="card" id="7-Livro-a-moreninha">
             <div class="imagem">
                 <img src="../assets/LIVROS/livro-a-moreninha.png" id="img-box">
-                <div class="tema">
+                <div class="tema-livro">
                     <p>Amor</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-livro">
                 <p>A Moreninha - Joaquim Manuel de Macedo</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-livro">
                     <p>1844</p>
                     <a href="#">
                         <button>Abrir Arquivos ↗</button></a>
@@ -170,13 +170,13 @@ export default {
         <div class="card" id="8-Livro-senhora">
             <div class="imagem">
                 <img src="../assets/LIVROS/livro-senhora.png" id="img-box">
-                <div class="tema">
+                <div class="tema-livro">
                     <p>Amor</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-livro">
                 <p>Senhora - José de Alencar</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-livro">
                     <p>1844</p>
                     <a href="#">
                         <button>Abrir Arquivos ↗</button></a>
@@ -187,13 +187,13 @@ export default {
         <div class="card" id="9-Livro-quincas-borba">
             <div class="imagem">
                 <img src="../assets/LIVROS/livro-quincas-borba.png" id="img-box">
-                <div class="tema">
+                <div class="tema-livro">
                     <p>Alienação</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-livro">
                 <p>Quincas Borba - Machado de Assis</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-livro">
                     <p>1891</p>
                     <a href="#">
                         <button>Abrir Arquivos ↗</button></a>
@@ -204,13 +204,13 @@ export default {
         <div class="card" id="10-Livro-o-alienista">
             <div class="imagem">
                 <img src="../assets/LIVROS/livro-o-alienista.png" id="img-box">
-                <div class="tema">
+                <div class="tema-livro">
                     <p>Loucura</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-livro">
                 <p>O Alienista - Machado de Assis</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-livro">
                     <p>1882</p>
                     <a href="#">
                         <button>Abrir Arquivos ↗</button></a>
@@ -221,13 +221,13 @@ export default {
         <div class="card" id="11-Livro-casa-de-pensao">
             <div class="imagem">
                 <img src="../assets/LIVROS/livro-casa-de-pensao.png" id="img-box">
-                <div class="tema">
+                <div class="tema-livro">
                     <p>Determinismo</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-livro">
                 <p>Casa de Pensão - Aluísio Azevedo</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-livro">
                     <p>1884</p>
                     <a href="#">
                         <button>Abrir Arquivos ↗</button></a>
@@ -238,13 +238,13 @@ export default {
         <div class="card" id="12-Livro-PADRAO">
             <div class="imagem">
                 <img src="../assets/LIVROS/livro-triste-fim-de-policarpo-quaresma.png" id="img-box">
-                <div class="tema">
+                <div class="tema-livro">
                     <p>Idealismo</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-livro">
                 <p>Triste Fim de Policarpo Quaresma - Lima Barreto</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-livro">
                     <p>1915</p>
                     <a href="#">
                         <button>Abrir Arquivos ↗</button></a>
@@ -277,7 +277,7 @@ export default {
     display: flex;
     width: 60%;
     height: 38px;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border: 1px solid var(--borda);
     border-radius: 10px;
 }
@@ -322,7 +322,7 @@ export default {
     display: flex;
     height: 38px;
     margin-left: auto;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border: 1px solid var(--borda);
     border-radius: 10px;
 }
@@ -356,7 +356,7 @@ export default {
     width: 100%;
     height: 270px;
     overflow: hidden;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
     transition: var(--trans);
@@ -378,31 +378,31 @@ export default {
     border-radius: 10px;
 }
 
-.tema {
+.tema-livro {
     position: absolute;
     top: 10px;
     left: 10px;
     padding: 5px;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border-radius: 10px;
 }
 
-.descricao {
+.caixa-descricao-livro {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 50%;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border-radius: 0 0 10px 10px;
 }
 
-.descricao p {
+.caixa-descricao-livro p {
     margin: 5%;
     font-size: 16px;
     text-align: justify;
 }
 
-.opcoes {
+.visualizar-detalhe-livro {
     position: absolute;
     bottom: 0;
     display: flex;
@@ -411,28 +411,28 @@ export default {
     padding: 5px;
 }
 
-.opcoes p {
+.visualizar-detalhe-livro p {
     margin: 0 auto 0 3%;
     padding: 5px 15px;
     border: 1px solid var(--borda);
     border-radius: 30px;
 }
 
-.opcoes button {
+.visualizar-detalhe-livro button {
     width: 170px;
     margin-right: 10px;
     padding: 10px;
-    background: var(--laranja-btn);
+    background: var(--laranjaPadrao);
     border: none;
     border-radius: 6px;
-    color: var(--brancoPadrao);
+    color: var(--branco);
     font-weight: 700;
     cursor: pointer;
     transition: var(--trans);
 }
 
-.opcoes button:hover {
-    background: var(--laranja-btn-hover);
+.visualizar-detalhe-livro button:hover {
+    background: var(--laranja-escuro);
     box-shadow: var(--shadowPadrao);
     text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.103);
     transform: translateY(-4px);

@@ -188,10 +188,11 @@ export default {
 }
 
 .cabecalho-documento h1 span {
-  color: var(--laranja-hover);
+  color: var(--laranjaPadrao);
 }
 
 .versao {
+  color: var(--branco);
   font-size: 13px;
   margin-top: 10px;
   opacity: 0.4;

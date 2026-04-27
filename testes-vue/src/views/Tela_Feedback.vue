@@ -253,7 +253,7 @@ export default {
 }
 
 .navegacao-breadcrumb__pagina-atual {
-  color: var(--laranja-btn);
+  color: var(--laranjaPadrao);
 }
 
 .titulo-da-redacao {
@@ -352,7 +352,7 @@ export default {
 
 .botao-ver-redacao {
   padding: 9px 22px;
-  background: var(--laranja-btn);
+  background: var(--laranjaPadrao);
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -364,7 +364,7 @@ export default {
 }
 
 .botao-ver-redacao:hover {
-  background: var(--laranja-btn-hover);
+  background: var(--laranja-escuro);
   transform: translateY(-2px);
   box-shadow: 0 4px 14px rgba(249, 115, 22, 0.35);
 }

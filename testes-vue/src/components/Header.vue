@@ -21,19 +21,19 @@ export default {
 
 <template>
   <nav>
-    <img src="../assets/IMAGES/logo-redamais.png" class="logo" />
+    <RouterLink to="/"><img src="../assets/IMAGES/logo-redamais.png" class="logo" /></RouterLink>
     <ul>
       <li>
-        <h3><a href="../paginas/Tela_Inicial.html">Inicio </a></h3>
+        <h3><RouterLink to="/home" class="router-link">Inicial</RouterLink></h3>
       </li>
       <li>
-        <h3><a href="../paginas/Tela_Modelos.html">Modelos </a></h3>
+        <h3><RouterLink to="/modelos" class="router-link">Modelos</RouterLink></h3>
       </li>
       <li>
-        <h3><a href="#">Livros </a></h3>
+        <h3><RouterLink to="/livros" class="router-link">Livros</RouterLink></h3>
       </li>
       <li>
-        <h3><a href="#">Desempenho</a></h3>
+        <h3><RouterLink to="/desempenho" class="router-link">Desempenho</RouterLink></h3>
       </li>
     </ul>
 
@@ -63,17 +63,17 @@ export default {
         <hr />
         <a href="#" class="sub-menu-link">
           <img src="../assets/ICONS/icon-perfil.png" />
-          <p>Acessar Perfil</p>
+          <p><RouterLink to="/perfil" class="router-link">Acessar Perfil</RouterLink></p>
           <span>></span>
         </a>
         <a href="#" class="sub-menu-link">
           <img src="../assets/ICONS/icon-pagina.png" />
-          <p>Nova Redação</p>
+          <p><RouterLink to="/tema" class="router-link">Nova Redação</RouterLink></p>
           <span>></span>
         </a>
         <a href="#" class="sub-menu-link">
           <img src="../assets/ICONS/icon-livro.png" />
-          <p>Continuar Redação</p>
+          <p><RouterLink to="/redacao" class="router-link">Continuar Redação</RouterLink></p>
           <span>></span>
         </a>
         <a href="#" class="sub-menu-link">
@@ -81,9 +81,9 @@ export default {
           <p>ChatBot</p>
           <span>></span>
         </a>
-        <a href="#" class="sub-menu-link">
+        <a href="#" class="sub-menu-link" >
           <img src="../assets/ICONS/icon-configuracoes.png" />
-          <p>Configurações</p>
+          <p><RouterLink to="/perfil" class="router-link">Configurações</RouterLink></p>
           <span>></span>
         </a>
         <a href="#" class="sub-menu-link">
@@ -96,16 +96,7 @@ export default {
   </nav>
 </template>
 
-<style>
-
-
-* {
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-}
-
+<style scoped>
 
 nav {
     height: 80px;
@@ -135,7 +126,7 @@ nav {
     flex-direction: column;
     align-items: flex-end;
     font-weight: 600;
-    color: var(--brancoPadrao);
+    color: var(--branco);
     text-decoration: none;
     font-size: small;
 }
@@ -160,7 +151,7 @@ nav ul li {
 
 nav ul li a {
     font-weight: 600;
-    color: var(--brancoPadrao);
+    color: var(--branco);
     ;
     display: inline-block;
     text-decoration: none;
@@ -180,7 +171,7 @@ nav ul li a:hover {
 
 .sub-menu {
 
-    background: var(--branco2);
+    background: var(--branco);
     padding: 10px;
     margin: 5px;
     border-radius: 20px;

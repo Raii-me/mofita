@@ -37,7 +37,7 @@ export default {
 
                 <div class="caixa-category">
                     <img src="../assets/ICONS/icon-category-buscar.PNG" id="category-icon">
-                        <select name="opcoes" class="category">
+                        <select name="visualizar-detalhe-redacao" class="category">
                             <option>Todos</option>
                             <option value="opcao1">Recentes</option>
                             <option value="opcao2">Ultima</option>
@@ -57,13 +57,13 @@ export default {
         <div class="card" id="1-continuar-envelhecimento-sociedade">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Envelhecimento_Sociedade.png" id="img-box">
-                <div class="tema">
+                <div class="tema-redacao">
                     <p>Sociedade </p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-redacao">
                 <p>Perspectivas acerca do envelhecimento na sociedade brasileira </p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-redacao">
                     <p>11/05/2026</p>
                     <a href="#">
                         <button>Continuar Redação ↗</button></a>
@@ -74,13 +74,13 @@ export default {
         <div class="card" id="2-continuar-herancas-africanas">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Herancas_Africanas.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-redacao">
                     <p>Cultura</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-redacao">
                 <p>Desafios para a valorização da herança africana no Brasil</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-redacao">
                     <p>04/01/2026</p>
                     <a href="#">
                         <button>Continuar Redação ↗</button></a>
@@ -91,13 +91,13 @@ export default {
         <div class="card" id="3-continuar-invisibilidade-mulher">
             <div class="imagem">
                 <img src="../assets/TEMAS/Temas_Invisibilidade_Mulheres.jpg" id="img-box">
-                <div class="tema">
+                <div class="tema-redacao">
                     <p>Inclusão Social</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-redacao">
                 <p>desafios para o enfrentamento da invisibilidade do trabalho de cuidado realizado pela mulher no Brasil</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-redacao">
                     <p>30/06/2026</p>
                     <a href="#">
                         <button>Continuar Redação ↗</button></a>
@@ -109,13 +109,13 @@ export default {
         <div class="card" id="0-continuar-">
             <div class="imagem">
                 <img src="../assets/TEMAS/" id="img-box">
-                <div class="tema">
-                    <p>{Tema}</p>
+                <div class="tema-redacao">
+                    <p>{tema-redacao}</p>
                 </div>
             </div>
-            <div class="descricao">
+            <div class="caixa-descricao-redacao">
                 <p>{descrição}</p>
-                <div class="opcoes">
+                <div class="visualizar-detalhe-redacao">
                     <p>{data}</p>
                     <a href="#">
                         <button>Continuar Redação ↗</button></a>
@@ -130,7 +130,7 @@ export default {
 </template> 
 
 
-<style>
+<style scoped>
 a{
     display:flex;
     cursor: pointer;
@@ -153,7 +153,7 @@ a{
     display: flex;
     width: 60%;
     height: 38px;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border: 1px solid var(--borda);
     border-radius: 10px;
 }
@@ -205,7 +205,7 @@ a{
     width: fit-content;
     height: 38px;
     margin-left: auto;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border: 1px solid var(--borda);
     border-radius: 10px;
  
@@ -227,7 +227,7 @@ a{
     display: flex;
     height: 38px;
     margin-left: 1%;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border: 1px solid var(--borda);
     border-radius: 10px;
 }
@@ -261,7 +261,7 @@ a{
     width: 100%;
     height: 270px;
     overflow: hidden;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
     transition: var(--trans);
@@ -283,31 +283,31 @@ a{
     border-radius: 10px;
 }
 
-.tema {
+.tema-redacao {
     position: absolute;
     top: 10px;
     left: 10px;
     padding: 5px;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border-radius: 10px;
 }
 
-.descricao {
+.caixa-descricao-redacao {
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 50%;
-    background-color: var(--brancoPadrao);
+    background-color: var(--branco);
     border-radius: 0 0 10px 10px;
 }
 
-.descricao p {
+.caixa-descricao-redacao p {
     margin: 2%;
     font-size: 16px;
     text-align: justify;
 }
 
-.opcoes {
+.visualizar-detalhe-redacao {
     position: absolute;
     bottom: 0;
     display: flex;
@@ -316,28 +316,28 @@ a{
     padding: 5px;
 }
 
-.opcoes p {
+.visualizar-detalhe-redacao p {
     margin: 0 auto 0 3%;
     padding: 5px 15px;
     border: 1px solid var(--borda);
     border-radius: 30px;
 }
 
-.opcoes button {
+.visualizar-detalhe-redacao button {
     width: 170px;
     margin-right: 10px;
     padding: 10px;
-    background: var(--laranja-btn);
+    background: var(--laranjaPadrao);
     border: none;
     border-radius: 6px;
-    color: var(--brancoPadrao);
+    color: var(--branco);
     font-weight: 700;
     cursor: pointer;
     transition: var(--trans);
 }
 
-.opcoes button:hover {
-    background: var(--laranja-btn-hover);
+.visualizar-detalhe-redacao button:hover {
+    background: var(--laranja-escuro);
     box-shadow: var(--shadowPadrao);
     text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.103);
     transform: translateY(-4px);

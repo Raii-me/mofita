@@ -44,11 +44,12 @@ export default {
       this.mostrandoModal = false;
       document.body.style.overflow = "auto";
     }
-};
+}
+
 </script>
 
 <template>
-  <Cabecalho />
+
 
   <main class="editor-pagina">
     <div class="conteiner">
@@ -124,7 +125,7 @@ export default {
     </div>
   </Teleport>
 
-  <Rodape />
+
 </template>
 
 <style scoped>
@@ -185,7 +186,7 @@ export default {
 }
 
 .btn-trocar {
-  background: var(--laranja-btn);
+  background: var(--laranjaPadrao);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -201,7 +202,7 @@ export default {
 }
 
 .btn-trocar:hover {
-  background: var(--laranja-btn-hover);
+  background: var(--laranja-escuro);
   transform: translateY(-2px);
 }
 
