@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --azulPadrao: #1a4b9c;
+  --azul: #2563c7;
+  --azul-escuro-hover: #153d82;
+  --azul-escuro: #0d2d66;
+  --indigo: #3d7fdb;
+  --indigo-bg: #f0f5fc;
+  --azulForte: #3248d5;
+
+  --azulPadraoClaro:#bed7f7;
+
+  --laranjaPadrao: #f97316;
+  --laranjaEscuro: #c45a0a;
+
+  --texto: #0d1f3c;
+  --texto-sec: #4a6080;
+  --texto-claro: rgba(224, 234, 248, 0.85);
+
+  --borda: #c4d4e8;
+  --borda-clara: #e4edf8;
+
+  --cinzaPadrao:#f3f3f3;
+  --cinzaBorda: #c4d4e8;
+  --cinzaForte: #646464;
+
+  --radius-grande: 24px;
+  --radius-medio: 14px;
+  --radius-pequeno: 8px;
+
+ 
+  --branco: #ffffff;
+  --brancoLeve: #e4edf8;
+
+
+
+  --sombra-sm: 0 2px 10px rgba(13, 45, 102, 0.1);
+  --sombra-md: 0 6px 24px rgba(13, 45, 102, 0.16);
+  --shadowPadrao: 0 12px 40px rgba(13, 45, 102, 0.22);
+
+  --vermelho: #D63031;
+  --vermelhoClaro: rgb(251, 211, 211);
+
+  --raio: 14px;
+  --raio-lg: 24px;
+
+  --trans: 0.22s ease;
+  --delayCurto: 0.3s;
+  --delayMedio: 0.5s;
+  --delayAlto: 0.9s;
+
+
+  --bg-tela-apre:
+    radial-gradient(ellipse 60% 80% at 90% 50%, rgba(37, 99, 199, 0.3) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(249, 115, 22, 0.1) 0%, transparent 60%),
+    linear-gradient(130deg, #061830 0%, var(--azul-escuro) 35%, var(--azulPadrao) 70%, var(--azul) 100%);
+}
+
+.router-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
