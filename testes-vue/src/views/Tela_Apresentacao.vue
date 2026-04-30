@@ -39,7 +39,9 @@ export default {
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#planos">Planos</a></li>
       <li><a href="#contato">Contato</a></li>
-      <li class="nav-btn-entrar"><RouterLink to="/home">Entrar</RouterLink></li>
+      <li class="nav-btn-entrar">
+        <RouterLink to="/home">Entrar</RouterLink>
+      </li>
     </ul>
   </nav>
 
@@ -48,13 +50,11 @@ export default {
     <header class="hero" id="inicio">
       <div class="hero-conteudo">
         <h1 class="titulo">
-          Torne-se um <span class="laranja">MESTRE</span>,<br />
-          seja <span class="laranja">REDA+</span>
+          Torne-se um <span class="laranja-titulo">MESTRE</span><br />
+          Seja <span class="laranja-titulo">REDA+</span>
         </h1>
         <p class="subtitulo">
-          com a inovadora plataforma de<br />
-          redação especializada para <strong>VOCÊ</strong>,<br />
-          estudante!
+          Desenvolva sua <strong>escrita</strong> e seu <strong>desempenho</strong> com o <span class="laranja">REDA+</span>, A plataforma que transforma seu <strong>aprendizado</strong> em resultado.
         </p>
         <div class="hero-acoes">
           <a href="#planos"><button class="btn-quero">Eu Quero!</button></a>
@@ -63,7 +63,7 @@ export default {
 
       <div class="hero-imagem">
         <div class="hero-imagem-wrapper">
-          
+
         </div>
       </div>
     </header>
@@ -314,8 +314,9 @@ export default {
 }
 
 .nav-logotipo img {
-  height: 70px;
+  margin-top: 6px;
   width: auto;
+  height: 170px;
 }
 
 .nav-menu {
@@ -354,18 +355,13 @@ export default {
 }
 
 .hero {
-  background-image: url('../assets/IMAGES/garota-estudando.png');
-  background-repeat: no-repeat;
-  background-position: center;
+
+  background-image:
+    url('../assets/IMAGES/image-landing-page.jpg');
+
   background-size: cover;
-  background-attachment: fixed; /* Opcional: imagem fixa ao rolar */
+  background-position: center;
 
-
-  background:
-    radial-gradient(ellipse 60% 80% at 90% 50%, rgba(37, 99, 199, 0.3) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(249, 115, 22, 0.1) 0%, transparent 60%),
-    linear-gradient(130deg, #061830 0%, var(--azul-escuro) 35%, var(--azulPadrao) 70%, var(--azul) 100%);
-  
   height: 100vh;
   max-height: 1500px;
   display: flex;
@@ -377,31 +373,49 @@ export default {
   position: relative;
 }
 
+
 .hero-conteudo {
+  
+  margin-left: 50px;
+
+
   max-width: 560px;
   z-index: 1;
   flex-shrink: 0;
+  padding-bottom: 15px;
 }
 
 .titulo {
+
+
   color: #fff;
   font-size: 46px;
   font-weight: 900;
   line-height: 1.15;
-  margin-bottom: 18px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+  margin-bottom: 10px;
+  text-shadow: var(--pretoShadow);
+
 }
 
 .subtitulo {
-  color: var(--texto-claro);
+
+  font-size: 15px !important;
+  width: 350px;
+  color: var(--cinzaPadrao);
   font-size: 17px;
   line-height: 1.75;
   margin-bottom: 32px;
+  margin-left: 25px;
 }
 
 .subtitulo strong {
-  color: #fff;
-  font-weight: 700;
+  color: var(--branco);
+  font-weight: 800;
+}
+
+.laranja-titulo{
+  color: var(--laranjaPadrao);
+  text-shadow: var(--laranjaShadow);
 }
 
 .laranja {
@@ -456,6 +470,7 @@ export default {
 .btn-quero {
   font-size: 17px;
   padding: 14px 52px;
+  margin-left: 25px;
 }
 
 .btn-solicitar {
@@ -856,6 +871,7 @@ h2 {
   background: var(--branco);
   border: 1px solid var(--borda-clara);
 }
+
 .secao-funcionalidades {
   background: linear-gradient(160deg, #dce8f5 0%, var(--cinza-claro) 100%);
 }

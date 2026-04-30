@@ -2,6 +2,7 @@
 
 :root {
   --azulPadrao: #1a4b9c;
+  --teste: #204B86;
   --azul: #2563c7;
   --azul-escuro-hover: #153d82;
   --azul-escuro: #0d2d66;
@@ -11,8 +12,19 @@
 
   --azulPadraoClaro:#bed7f7;
 
-  --laranjaPadrao: #f97316;
+  --laranjaPadrao: #FF7600;
   --laranjaEscuro: #c45a0a;
+  --laranjaShadow: 0 0 10px rgba(255, 118, 0, 0.5), 
+    0 0 15px rgba(255, 118, 0, 0.8),
+    0 0 30px rgba(255, 118, 0, 0.4) !important;
+
+  --brancoShadow:  0 0 10px rgba(32, 32, 32, 0.856), 
+    0 0 15px rgba(153, 153, 153, 0.89),
+    0 0 30px rgba(255, 255, 255, 0.801);
+
+  --pretoShadow: 0 0 8px rgba(238, 238, 238, 0.616),
+    0 0 12px rgba(97, 97, 97, 0.7),
+    0 0 25px rgba(34, 34, 34, 0.781);
 
   --texto: #0d1f3c;
   --texto-sec: #4a6080;

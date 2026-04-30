@@ -11,6 +11,7 @@ import Tela_Feedback from '../views/Tela_Feedback.vue'
 import Tela_Escolher_Tema from '../views/Tela_Escolher_Tema.vue'
 import Tela_Desempenho from '../views/Tela_Desempenho.vue'
 import Tela_Continuar_Redacao from '../views/Tela_Continuar_Redacao.vue'
+import teste from '../views/fodaseteste.vue'
 
 
 
@@ -26,6 +27,7 @@ const routes = [
   { path: '/tema',            name: 'theme',     component: Tela_Escolher_Tema },
   { path: '/desempenho',      name: 'dashboard', component: Tela_Desempenho },
   { path: '/redacao',         name: 'writing',   component: Tela_Continuar_Redacao },
+  { path: '/teste',         name: 'writing',   component: teste },
 
 ]
 

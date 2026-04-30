@@ -33,7 +33,7 @@ export default {
         <p>Escolha como deseja criar uma nova redação!</p>
 
         <div class="caixaBotoes">
-            <button class="botaoAcao"><RouterLink to="/tema" class="router-link">Escrever Redação</RouterLink></button>
+            <RouterLink to="/tema" class="router-link"><button class="botaoAcao">Escrever Redação</button></RouterLink>
             <button class="botaoAcao">Enviar Arquivo</button>
         </div>
     </div>
@@ -43,7 +43,7 @@ export default {
         <p>Veja todas suas redações incompletas!</p>
 
         <div class="caixaBotoes">
-            <button class="botaoAcao"><RouterLink to="/redacao" class="router-link">Ver Rascunhos</RouterLink></button>
+            <RouterLink to="/redacao" class="router-link"><button class="botaoAcao">Ver Rascunhos</button></RouterLink>
 
         </div>
     </div>
@@ -53,7 +53,7 @@ export default {
         <p>Ver todas suas redações corrigidas!</p>
 
         <div class="caixaBotoes">
-            <button class="botaoAcao"><RouterLink to="/desempenho" class="router-link">Ver Redações</RouterLink></button>
+            <RouterLink to="/desempenho" class="router-link"><button class="botaoAcao">Ver Redações</button></RouterLink>
 
         </div>
     </div>

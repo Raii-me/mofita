@@ -58,6 +58,8 @@ export default {
                         <img src="../assets/IMAGES/foto-perfil-temporaria.png" />
                         <p>{usuario}</p>
                         <p>{Funcao}</p>
+                        <p class="id-usuario">{id}</p>
+                        
                         <hr>
                     </div>
 
@@ -108,7 +110,7 @@ export default {
                         <div class="setting-box">
                             <p>Nome:</p>
                             <div class="change-box">
-                                <input type="text" placeholder="Digite seu nome"/>
+                                <input type="text" placeholder="Digite um Nome novo"/>
                                 <button @click="salvar">Mudar Nome</button>
                             </div>
                         </div>
@@ -116,7 +118,7 @@ export default {
                         <div class="setting-box">
                             <p>Email:</p>
                             <div class="change-box">
-                                <input type="text" placeholder="{{email}}" />
+                                <input type="text" placeholder="Digite um Email novo" />
                                 <button>Mudar Email</button>
                             </div>
                         </div>
@@ -126,23 +128,23 @@ export default {
                         </div>
 
                         <div class="password-box">
-                            <p>Digite sua senha atual</p>
+                            <p>Senha Atual</p>
                             <div class="password-config">
-                                <input type="text" placeholder="Senha Atual" />
+                                <input type="text" placeholder="Digite sua senha atual" />
                             </div>
                         </div>
 
                         <div class="password-box">
-                            <p>Digite sua nova senha</p>
+                            <p>Nova Senha</p>
                             <div class="password-config">
-                                <input type="text" placeholder="Nova Senha" />
+                                <input type="text" placeholder="Digite sua nova senha" />
                             </div>
                         </div>
 
                         <div class="password-box">
-                            <p>Confirme sua senha</p>
+                            <p>Confirme</p>
                             <div class="password-config">
-                                <input type="text" placeholder="Confirmar Senha" />
+                                <input type="text" placeholder="Confirme sua senha" />
                                 <button>Salvar</button>
                             </div>
                         </div>
@@ -288,9 +290,10 @@ export default {
     min-width: 200px;
     max-width: 200px;
     flex-shrink: 0;
+    box-shadow: 2px 0 1px rgba(0, 0, 0, 0.103); /*isso daq q faz a linha ali caso alguem venha ver*/ 
     background-color: var(--branco);
     border-radius: var(--radius-pequeno) 0px 0px var(--radius-pequeno);
-    border-right: 3px solid var(--azulPadrao);
+    border-right: 2px solid var(--cinzaPadrao);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -469,7 +472,7 @@ export default {
     color: var(--cinzaForte);
     position: absolute;
     background-color: var(--branco);
-    top: 12px;
+    top: 10px;
     padding:0 5px 0 5px;
     left:10px;
     margin-left: 4px;
@@ -481,16 +484,24 @@ export default {
     display: flex;
     gap: 10px;
 }
+input:focus {
+    
+    border-color: var(--azulPadrao) !important;
+
+}
+
 
 .change-box input,
 .password-config input {
+    transition: var(--delayCurto);
     margin-top:20px;
     padding-left: 10px;
     width: 80%;
-    height: 34px;
+    height: 40px;
     background: var(--branco);
-    border: 1px solid var(--cinzaBorda);
+    border: 2px solid var(--cinzaBorda);
     border-radius: var(--radius-pequeno);
+     outline: none;
 }
 
 .change-box button,
@@ -506,6 +517,7 @@ export default {
     cursor: pointer;
     transition: var(--trans);
     margin-right: 10px;
+    font-weight: 700;
 }
 
 .profile-edt button:hover,
@@ -514,5 +526,13 @@ export default {
     background: var(--laranjaEscuro);
     box-shadow: var(--sombra-md);
     text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.103);
+    transform: translateY(-2px) ;
+   
 }
+
+.id-usuario{
+    font-size: 10px !important;
+}
+
+
 </style>
