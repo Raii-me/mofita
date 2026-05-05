@@ -12,7 +12,7 @@ export default {
       redacao: {
         titulo: "A importância da preservação das línguas e tradições indígenas para a cultura nacional",
         dataEntrega: "02/01/2025",
-        notaGeral: 198,
+        notaGeral: 860,
         notaMaxima: 1000,
       },
 
@@ -58,7 +58,7 @@ export default {
           competencia_n: "Competência 5",
           competencia: "Competência 5 — Proposta de Intervenção",
           descricao: "Proposta de intervenção",
-          nota: 170,
+          nota: 160,
           max: 200,
           texto: `Sua proposta de intervenção precisa ser mais detalhada e específica. É fundamental indicar: o agente responsável, a ação a ser realizada, o meio de execução, a finalidade e o possível efeito. Desenvolva melhor sua proposta para conquistar pontuação mais alta nesta competência.`,
         },
@@ -124,11 +124,11 @@ export default {
 
           <div class="nota-geral-grafico">
             <svg class="nota-geral-grafico__svg" viewBox="0 0 120 120">
-              <circle cx="60" cy="60" r="54" fill="none" stroke="#f0f0f0" stroke-width="10" />
-              <circle cx="60" cy="60" r="54" fill="none"
-                :stroke="getCorPorDesempenho(redacao.notaGeral, redacao.notaMaxima)" stroke-width="10"
-                stroke-linecap="round" stroke-dasharray="339.3" :stroke-dashoffset="notaGeralDashoffset"
-                transform="rotate(-90 60 60)" class="nota-geral-grafico__arco" />
+              <circle class="base" stroke="#f0f0f0" />
+
+              <circle class="nota-geral-grafico__arco"
+                :stroke="getCorPorDesempenho(redacao.notaGeral, redacao.notaMaxima)" stroke-dasharray="339.3"
+                :stroke-dashoffset="notaGeralDashoffset" />
             </svg>
             <div class="nota-geral-grafico__centro">
               <span class="nota-geral-grafico__valor"
@@ -235,6 +235,21 @@ export default {
 
 .cabecalho-redacao__texto {
   flex: 1;
+}
+
+.nota-geral-grafico__svg circle {
+  cx: 60;
+  cy: 60;
+  r: 54;
+  fill: none;
+  stroke-width: 10;
+}
+
+.nota-geral-grafico__arco {
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navegacao-breadcrumb {

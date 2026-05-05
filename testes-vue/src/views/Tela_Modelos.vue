@@ -1,620 +1,469 @@
 <script>
-import Header from "../components/Header.vue"
-import Footer from "../components/Footer.vue"
-import Chatbot from "../components/Chatbot.vue"
-
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.vue";
+import Chatbot from "../components/Chatbot.vue";
+import "../assets/css/variaveis.css";
 
 export default {
-  components: { 
-    Header 
-    , Footer
-    , Chatbot
+  components: {
+    Header,
+    Footer,
+    Chatbot,
+  },
 
-  }
-}
+  data() {
+    return {
+      filtroTexto: "",
+      filtroCategoria: "Todos",
+      modelos: [
+        {
+          id: 1,
+          imagem: "Temas_Envelhecimento_Sociedade.png",
+          categoria: "ENEM",
+          titulo:
+            "Perspectivas acerca do envelhecimento na sociedade brasileira",
+          nota: 1000,
+        },
+        {
+          id: 2,
+          imagem: "Temas_Herancas_Africanas.jpg",
+          categoria: "ENEM",
+          titulo: "Desafios para a valorização da herança africana no Brasil",
+          nota: 1000,
+        },
+        {
+          id: 3,
+          imagem: "Temas_Invisibilidade_Mulheres.jpg",
+          categoria: "ENEM",
+          titulo:
+            "Desafios para o enfrentamento da invisibilidade do trabalho de cuidado realizado pela mulher no Brasil",
+          nota: 1000,
+        },
+        {
+          id: 4,
+          imagem: "Temas_Cominudades_Tradicionais.jpg",
+          categoria: "ENEM",
+          titulo:
+            "Desafios para a valorização de comunidades e povos tradicionais no Brasil",
+          nota: 1000,
+        },
+        {
+          id: 5,
+          imagem: "Temas_Reginstro_Civil.jpg",
+          categoria: "ENEM",
+          titulo:
+            "Invisibilidade e registro civil: garantia de acesso a cidadania no Brasil",
+          nota: 1000,
+        },
+        {
+          id: 6,
+          imagem: "Temas_Doenca_Mental.jpg",
+          categoria: "ENEM",
+          titulo:
+            "O estigma associado as doenças mentais na sociedade brasileira",
+          nota: 1000,
+        },
+        {
+          id: 7,
+          imagem: "Temas_Desigualdade_Social.jpg",
+          categoria: "ENEM",
+          titulo:
+            "O desafio de reduzir as desigualdade entre as regiões do Brasil",
+          nota: 1000,
+        },
+        {
+          id: 8,
+          imagem: "Temas_Democratizacao_Cinema.jpg",
+          categoria: "ENEM",
+          titulo: "Democratização do acesso ao cinema no Brasil",
+          nota: 1000,
+        },
+        {
+          id: 9,
+          imagem: "Temas_Controle_Dados.jpg",
+          categoria: "ENEM",
+          titulo:
+            "Manipulação do comportamento do usuário pelo controle de dados na internet",
+          nota: 1000,
+        },
+        {
+          id: 10,
+          imagem: "Tema_Educacao_Surdos.jpg",
+          categoria: "ENEM",
+          titulo: "Desafios para a formação educacional dos surdos no Brasil",
+          nota: 1000,
+        },
+        {
+          id: 11,
+          imagem: "Temas_Redes_Sociais_Adolecentes.jpg",
+          categoria: "Provão Paulista",
+          titulo:
+            "Como os adolescentes podem usar as redes sociais sem prejudicar a saúde mental?",
+          nota: 1000,
+        },
+        {
+          id: 12,
+          imagem: "Temas_Gentrificacao.jpg",
+          categoria: "Provão Paulista",
+          titulo:
+            "Gentrificação urbana - o processo de transformação de áreas urbanas",
+          nota: 1000,
+        },
+        {
+          id: 13,
+          imagem: "Temas_Fome_Brasil.jpg",
+          categoria: "Provão Paulista",
+          titulo:
+            "O combate a fome no Brasil: entre a responsabilidade do estado e a atuação da sociedade civil",
+          nota: 1000,
+        },
+        {
+          id: 14,
+          imagem: "Temas_IA_Escolas.jpg",
+          categoria: "Autoral",
+          titulo:
+            "Impacto da inteligência artificial nos alunos de escola pública",
+          nota: 1000,
+        },
+        {
+          id: 15,
+          imagem: "Temas_Resocializacao_Deficientes.jpg",
+          categoria: "Autoral",
+          titulo: "Inclusão social de pessoas com deficiências físicas",
+          nota: 1000,
+        },
+        {
+          id: 16,
+          imagem: "Temas_Consumo_Consciente.jpg",
+          categoria: "Autoral",
+          titulo: "Desafios para manter um consumo consciente",
+          nota: 1000,
+        },
+        {
+          id: 17,
+          imagem: "Temas_Educacao_Financeira.jpg",
+          categoria: "Autoral",
+          titulo:
+            "Desafios para o ensino de qualidade sobre educação financeira",
+          nota: 1000,
+        },
+        {
+          id: 18,
+          imagem: "Temas_Substituicao_IA.jpg",
+          categoria: "Autoral",
+          titulo:
+            "O impacto da inteligência artificial na precarização do trabalho e nas relações de consumo",
+          nota: 1000,
+        },
+        {
+          id: 19,
+          imagem: "Temas_Violencia_Criancas.jpg",
+          categoria: "Autoral",
+          titulo:
+            "Impacto da violência doméstica contra a criança e o adolescente no desenvolvimento social",
+          nota: 1000,
+        },
+        {
+          id: 20,
+          imagem: "Temas_Inseguranca_Alimentar.jpg",
+          categoria: "Autoral",
+          titulo:
+            "A persistência da insegurança alimentar e seus reflexos na saúde nacional",
+          nota: 1000,
+        },
+      ],
+    };
+  },
+
+  computed: {
+    modelosFiltrados() {
+      return this.modelos.filter((modelo) => {
+        const bateTexto = modelo.titulo
+          .toLowerCase()
+          .includes(this.filtroTexto.toLowerCase());
+
+        const bateCategoria =
+          this.filtroCategoria === "Todos" ||
+          modelo.categoria === this.filtroCategoria;
+
+        return bateTexto && bateCategoria;
+      });
+    },
+  },
+
+  methods: {
+    getImagemUrl(nome) {
+      return new URL(`../assets/TEMAS/${nome}`, import.meta.url).href;
+    },
+  },
+};
 </script>
 
 <template>
+  <Header />
 
-<Header />
-
-    <section>
+  <section>
     <header class="titulo">
-        <h1>Modelos</h1>
-        <p>Acesse os temas disponíveis na plataforma com textos de apoios e orientações especificas para desenvolver sua
-            produção textual com estratégia e foco.</p>
+      <h1>Modelos</h1>
+      <p>
+        Acesse os temas disponíveis na plataforma com textos de apoio e
+        orientações específicas para desenvolver sua produção textual com
+        estratégia e foco.
+      </p>
     </header>
 
     <navbar class="fixar-search-bar">
-        <div class="search-bar">
-            <div class="caixa-1">
-                <button type="submit" id="search" class="search-btn"><img src="../assets/ICONS/icon-lupa.png"
-                        id="icon-search"></img></button>
-                <input type="text" id="text" class="input-text" placeholder="Buscar um tema">
-            </div>
+      <div class="search-bar">
+        <div class="caixa-1">
+          <button class="search-btn">
+            <img src="../assets/ICONS/icon-lupa.png" id="icon-search" />
+          </button>
 
-            <div class="caixa-2">
-                <img src="../assets/ICONS/icon-category-buscar.PNG" id="category-icon">
-                <select name="visualizar-detalhe-modelo" class="category">
-                    <option>Todos</option>
-                    <option value="opcao1">ENEM</option>
-                    <option value="opcao2">Provão Paulista</option>
-                    <option value="opcao3">Autoral</option>
-                    <option value="opcao4">----------</option>
-                    <option value="opcao5">Sociedade</option>
-                    <option value="opcao6">Cultura</option>
-                    <option value="opcao7">Inclusão Social</option>
-                    <option value="opcao8">Saúde</option>
-                    <option value="opcao9">Desigualdade Social</option>
-                    <option value="opcao10">Tecnologia</option>
-                    <option value="opcao11">Educação</option>
-                    <option value="opcao12">Natureza</option>
-                    <option value="opcao13">Economia</option>
-                    <option value="opcao14">Violencia</option>
-                </select>
-            </div>
+          <input type="text" v-model="filtroTexto" class="input-text" placeholder="Buscar um tema" />
         </div>
+
+        <div class="caixa-2">
+          <img src="../assets/ICONS/icon-category-buscar.PNG" id="category-icon" />
+
+          <select class="category" v-model="filtroCategoria">
+            <option value="Todos">Todos</option>
+            <option value="ENEM">ENEM</option>
+            <option value="Provão Paulista">Provão Paulista</option>
+            <option value="Autoral">Autoral</option>
+          </select>
+        </div>
+      </div>
     </navbar>
-    </section>
+  </section>
 
-    <section>
-
-
+  <section>
     <main-content class="grid-modelos">
+      <div v-for="modelo in modelosFiltrados" :key="modelo.id" class="caixa-tema">
+        <div class="imagem">
+          <img :src="getImagemUrl(modelo.imagem)" :alt="modelo.titulo" id="img-box" />
 
-
-     
-
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Envelhecimento_Sociedade.png" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>ENEM</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>Perspectivas acerca do envelhecimento na sociedade brasileira </p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
+          <div class="tema-da-modelo">
+            <p>{{ modelo.categoria }}</p>
+          </div>
         </div>
 
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Herancas_Africanas.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>ENEM</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>Desafios para a valorização da herança africana no Brasil</p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
+        <div class="caixa-descricao-modelo">
+          <p>{{ modelo.titulo }}</p>
 
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Invisibilidade_Mulheres.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>ENEM</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>desafios para o enfrentamento da invisibilidade do trabalho de cuidado realizado pela mulher no Brasil</p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
+          <div class="visualizar-detalhe-modelo">
+            <p>{{ modelo.nota }}</p>
 
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Cominudades_Tradicionais.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>ENEM</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>Desafios para a valorização de comunidades e povos tradicionais no Brasil</p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
+            <a href="#">
+              <button>Ver modelo ↗</button>
+            </a>
+          </div>
         </div>
-
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Reginstro_Civil.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>ENEM</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>Invisibilidade e registro civil: garantia de acesso a cidadania no Brasil</p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Doenca_Mental.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>ENEM</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>O estigma associado as doenças mentais na sociedade brasileira </p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Desigualdade_Social.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>ENEM</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>O desafio de reduzir as desigualdade entre as regiões do Brasil </p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Democratizacao_Cinema.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>ENEM</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>Democratização do acesso ao cinema no Brasil</p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Controle_Dados.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>ENEM</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>Manipulação do comportamento do usuário pelo controle de dados na internet</p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Tema_Educacao_Surdos.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>ENEM</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>Desafios para a formação educacional dos surdos no Brasil</p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Redes_Sociais_Adolecentes.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>Provão Paulista</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>Como os adolescentes podem usar as redes sociais sem prejudicar a saúde mental?
-                </p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Gentrificacao.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>Provão Paulista</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>Gentrificação urbana - o processo de transformação de áreas urbanas</p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Fome_Brasil.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>Provão Paulista</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>O combate a fome no Brasil: entr a responsabilidade do estado e a atuação da sociedade civil</p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="caixa-tema">
-            <div class="imagem">
-                
-            <img src="../assets/TEMAS/Temas_IA_Escolas.jpg" id="img-box">
-            
-            <div class="tema-da-modelo">
-                    <p>Autoral</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p> Impacto da inteligência artificial nos alunos de escola pública</p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Resocializacao_Deficientes.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>Autoral</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>Inclusão social de pessoas com deficiências físicas</p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Consumo_Consciente.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>Autoral</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>Desafios para manter um consumo consciente</p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Educacao_Financeira.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>Autoral</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>Desafios para  o ensino de qualidade sobre educação financeira</p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Substituicao_IA.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>Autoral</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>O impacto da inteligência artificial na precarização do trabalho e nas relações de consumo</p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Violencia_Criancas.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>Autoral</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p> Impacto da violência doméstica contra a criança e o adolescente no desenvolvimento social</p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="caixa-tema">
-            <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Inseguranca_Alimentar.jpg" id="img-box">
-                <div class="tema-da-modelo">
-                    <p>Autoral</p>
-                </div>
-            </div>
-            <div class="caixa-descricao-modelo">
-                <p>A persistência da insegurança alimentar e seus reflexos na saúde nacional</p>
-                <div class="visualizar-detalhe-modelo">
-                    <p>1000</p>
-                    <a href="#">
-                        <button>Ver modelo ↗</button></a>
-                </div>
-            </div>
-        </div>
-
-        
+      </div>
     </main-content>
-    </section>
-    
+  </section>
 
   <Chatbot />
- <Footer />
-</template> 
+  <Footer />
+</template>
 
-
-<style>
+<style scoped>
 .fixar-search-bar {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search-bar {
-    display: flex;
-    width: 90%;
-    margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 10px auto;
+  align-items: center;
 }
 
 .caixa-1 {
-    display: flex;
-    width: 60%;
-    height: 38px;
-    background-color: rgb(252, 252, 252);
-    border: 1px solid #a3a3a3;
-    border-radius: 10px;
+  display: flex;
+  width: 60%;
+  align-items: center;
+  height: 48px;
+  padding: 0 10px;
+  background-color: var(--brancoPadrao);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
 }
 
 .search-btn {
-    width: 38px;
-    height: 38px;
-    cursor: pointer;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
 }
 
 .input-text {
-    margin-left: 5px;
-    width: 100%;
-    height: 38px;
-    color: black;
+  width: 100%;
+  height: 38px;
+  margin-left: 5px;
+  color: var(--texto);
 }
 
 .input-text,
 .search-btn,
 .category {
-    border: none;
-    background-color: transparent;
-    outline: none;
+  border: none;
+  background-color: transparent;
+  outline: none;
 }
 
 #icon-search {
-    cursor: pointer;
-    margin-top: 2px;
-    width: 18px;
-    height: 18px;
+  cursor: pointer;
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
 }
 
 #category-icon {
-    margin-left: 10px;
-    margin-top: 10px;
-    width: 18px;
-    height: 18px;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 18px;
+  height: 18px;
 }
 
 .caixa-2 {
-    display: flex;
-    height: 38px;
-    border: 1px solid #a3a3a3;
-    border-radius: 10px;
-    background-color: #fff;
-    margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  height: 48px;
+  background-color: var(--brancoPadrao);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
 }
 
 .category {
-    cursor: pointer;
-    width: 98px;
-    height: 38px;
+  cursor: pointer;
+  width: 98px;
+  height: 38px;
 }
 
 .titulo {
-    margin-top: 40px;
-    margin-left: 5%;
-    max-width: 60%;
+  margin-top: 40px;
+  margin-left: 5%;
+  max-width: 60%;
 }
 
 .titulo p {
-    margin: 5px;
+  margin: 5px;
 }
 
 .grid-modelos {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    width: 90%;
-    max-width: 1200px;
-    margin: 40px auto;
-    margin-top: 5%;
-    margin-bottom:10%;
+  display: grid;
+  width: 90%;
+  max-width: 90%;
+  margin: 3% auto;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
 }
 
 .caixa-tema {
-    width: 100%; 
-    overflow: hidden;
-    position: relative;
-    background-color: #fff;
-    width: 100%;
-    height: 270px;
-    border-radius: 15px;
-    transition: 0.5s;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  height: 350px;
+  border-radius: 15px;
+  transition: 0.5s;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
 }
 
-.caixa-tema:hover{
-    transform:translateY(-10px);
-    box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
+.caixa-tema:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0 14px 28px,
+    rgba(0, 0, 0, 0.22) 0 10px 10px;
 }
 
 .imagem {
-    width: 100%;
-    height: 70%;  
+  width: 100%;
+  height: 70%;
 }
 
 #img-box {
-    border-radius: 10px;
-    width: 100%;
-    height: 100%;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
 }
 
 .tema-da-modelo {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: #fff;
-    padding-left: auto;
-    padding-right: auto;
-    padding: 5px;
-    border-radius: 10px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #fff;
+  padding-left: auto;
+  padding-right: auto;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 .caixa-descricao-modelo {
-    height: 50%;
-    width: 100%;
-    background-color: #fff;
-    position: absolute;
-    bottom: 0;
-    border-radius: 0 0 10px 10px;
-    z-index: 999;
+  height: 50%;
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  border-radius: 0 0 10px 10px;
+  z-index: 999;
 }
 
-.caixa-descricao-modelo p{
-    font-size: 16px;
-    text-align: justify;
-    margin: 2%;
+.caixa-descricao-modelo p {
+  margin: 2% 5%;
+  font-size: 17px;
+  text-align: justify;
 }
 
 .visualizar-detalhe-modelo {
-    position:  absolute;
-    bottom: -5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-    width: 100%;
+  position: absolute;
+  bottom: 3px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
 }
 
 .visualizar-detalhe-modelo p {
-    margin-left: 3%;
-    background-color: transparent;
-    padding: 5px 15px 5px 15px;
-    border-radius: 30px;
-    border: 1px solid rgb(161, 161, 161);
-    transform: 0.5s;
+  margin-left: 3%;
+  padding: 5px 15px 5px 15px;
+  border-radius: 30px;
+  border: 1px solid rgb(161, 161, 161);
 }
 
 .visualizar-detalhe-modelo button {
-    width: auto;
-    height: auto;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    font-size: small;
-    transition-duration: 2s;
-    color: #88898a;
-    transition: 0.5s;
-    margin: 0 10px;
+  width: auto;
+  height: auto;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: small;
+  color: var(--texto-sec);
+  transition: var(--trans);
+  margin: 0 18px;
 }
 
 .visualizar-detalhe-modelo button:hover {
-    color: #3248D5;
-    font-weight: 700;
-    border-radius: 10px;
-    font-size: 15px;
-    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.103);
+  color: #3248d5;
+  font-weight: 700;
+  border-radius: 10px;
+  font-size: 15px;
+  text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.103);
 }
 
 .visualizar-detalhe-modelo a {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 #model-icon {
-    width: 18px;
-    height: 18px;
-    margin-right: 5%;
-    margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  margin-right: 5%;
+  margin-top: 2px;
 }
-
 </style>

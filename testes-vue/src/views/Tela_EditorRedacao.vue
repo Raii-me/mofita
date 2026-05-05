@@ -3,30 +3,111 @@ import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
 import "../assets/css/variaveis.css";
 
+const meusTemas = [
+  {
+    id: 1,
+    titulo: "Perspectivas acerca do envelhecimento na sociedade brasileira",
+  },
+  {
+    id: 2,
+    titulo: "Desafios para a valorização da herança africana no Brasil",
+  },
+  {
+    id: 3,
+    titulo:
+      "Desafios para o enfrentamento da invisibilidade do trabalho de cuidado realizado pela mulher no Brasil",
+  },
+  {
+    id: 4,
+    titulo:
+      "Desafios para a valorização de comunidades e povos tradicionais no Brasil",
+  },
+  {
+    id: 5,
+    titulo:
+      "Invisibilidade e registro civil: garantia de acesso a cidadania no Brasil",
+  },
+  {
+    id: 6,
+    titulo: "O estigma associado as doenças mentais na sociedade brasileira",
+  },
+  {
+    id: 7,
+    titulo: "O desafio de reduzir as desigualdade entre as regiões do Brasil",
+  },
+  { id: 8, titulo: "Democratização do acesso ao cinema no Brasil" },
+  {
+    id: 9,
+    titulo:
+      "Manipulação do comportamento do usuário pelo controle de dados na internet",
+  },
+  {
+    id: 10,
+    titulo: "Desafios para a formação educacional dos surdos no Brasil",
+  },
+  {
+    id: 11,
+    titulo:
+      "Como os adolescentes podem usar as redes sociais sem prejudicar a saúde mental?",
+  },
+  {
+    id: 12,
+    titulo:
+      "Gentrificação urbana - o processo de transformação de áreas urbanas",
+  },
+  {
+    id: 13,
+    titulo:
+      "O combate a fome no Brasil: entre a responsabilidade do estado e a atuação da sociedade civil",
+  },
+  {
+    id: 14,
+    titulo: "Impacto da inteligência artificial nos alunos de escola pública",
+  },
+  { id: 15, titulo: "Inclusão social de pessoas com deficiências físicas" },
+  { id: 16, titulo: "Desafios para manter um consumo consciente" },
+  {
+    id: 17,
+    titulo: "Desafios para o ensino de qualidade sobre educação financeira",
+  },
+  {
+    id: 18,
+    titulo:
+      "O impacto da inteligência artificial na precarização do trabalho e nas relações de consumo",
+  },
+  {
+    id: 19,
+    titulo:
+      "Impacto da violência doméstica contra a criança e o adolescente no desenvolvimento social",
+  },
+  {
+    id: 20,
+    titulo:
+      "A persistência da insegurança alimentar e seus reflexos na saúde nacional",
+  },
+];
+
 export default {
   components: {
     Cabecalho: Header,
     Rodape: Footer,
   },
 
-
   data() {
     return {
-      temaAtualIndex: 0,
-      temas: [
-        "Vou corrigir a rotas dps para puxar o tema que foi realmente escolhido pelo usuario",
-      ],
+      temaSelecionado: null,
       titulo: "",
       textoRedacao: "",
-      temaVisivel: true,
       mostrandoModal: false,
     };
   },
 
+  mounted() {
+    const id = Number(this.$route.params.temaId);
+    this.temaSelecionado = meusTemas.find((t) => t.id === id) || null;
+  },
+
   computed: {
-    temaAtual() {
-      return this.temas[this.temaAtualIndex];
-    },
     palavras() {
       const t = this.textoRedacao.trim();
       return t ? t.split(/\s+/).length : 0;
@@ -38,74 +119,62 @@ export default {
 
   methods: {
     mostrarCarregamento() {
+      if (!this.titulo.trim() || !this.textoRedacao.trim()) {
+        alert("Preencha o título e a redação antes de enviar.");
+        return;
+      }
       this.mostrandoModal = true;
       document.body.style.overflow = "hidden";
     },
-    fecharModal() {
-      this.mostrandoModal = false;
-      document.body.style.overflow = "auto";
-    }
-}
+    sairSemSalvar() {
+      this.$router.push({ name: "theme" });
+    },
 
+  },
+};
 </script>
 
 <template>
-
-
   <main class="editor-pagina">
-    <div class="conteiner">
+    <div class="documento">
       <div class="cartao-editor">
-
-        <header class="cabecalho-editor">
-          <div class="caixa-tema">
-            <Transition name="esmaecer">
-              <p v-if="temaVisivel" class="texto-tema">{{ temaAtual }}</p>
-            </Transition>
-            <button class="btn-trocar" @click="trocarTema">
-              Trocar Tema
-            </button>
-          </div>
+        <header class="cabecalho-documento">
+          <h1>Tema da <span>Redação</span></h1>
+          <p class="texto-tema">
+            {{ temaSelecionado?.titulo ?? "Nenhum tema selecionado" }}
+          </p>
         </header>
 
-        <section class="secao-titulo">
-          <label class="rotulo-titulo">Título da Redação</label>
-          <input
-            v-model="titulo"
-            type="text"
-            class="entrada-titulo"
-            placeholder="Digite seu título aqui..."
-            maxlength="100"
-          />
-        </section>
+        <div class="conteudo-documento">
+          <div class="secao">
+            <h2 class="secao-titulo">Título da Redação</h2>
+            <input v-model="titulo" type="text" class="entrada-titulo" placeholder="Digite seu título aqui..."
+              maxlength="100" />
+          </div>
 
-        <div class="barra-ferramentas">
-          <span class="item-estatistica">Caracteres: <b>{{ caracteres }}</b></span>
-          <span class="item-estatistica">Palavras: <b>{{ palavras }}</b></span>
+          <div class="barra-ferramentas">
+            <span class="item-estatistica">Caracteres: <b>{{ caracteres }}</b></span>
+            <span class="item-estatistica">Palavras: <b>{{ palavras }}</b></span>
+          </div>
+
+          <div class="secao area-escrita">
+            <textarea v-model="textoRedacao" id="editor-texto" placeholder="Comece seu texto aqui..."></textarea>
+          </div>
         </div>
 
-        <section class="area-escrita">
-          <textarea
-            v-model="textoRedacao"
-            id="editor-texto"
-            placeholder="Comece seu texto aqui..."
-          ></textarea>
-        </section>
-
-        <footer class="rodape-controles">
-          <button class="btn btn-voltar" @click="sairSemSalvar">Sair sem salvar</button>
+        <footer class="rodape-documento">
+          <button class="btn-voltar" @click="sairSemSalvar">
+            Sair sem salvar
+          </button>
           <div class="grupo-botoes">
-            <button class="btn btn-salvar" @click="salvarRascunho">Salvar Rascunho</button>
+            <button class="btn btn-salvar" @click="salvarRascunho">
+              Salvar Rascunho
+            </button>
             <button class="btn btn-enviar" @click="mostrarCarregamento">
               Enviar Redação
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <line x1="22" y1="2" x2="11" y2="13" />
-                <polygon points="22 2 15 22 11 13 2 9 22 2" />
-              </svg>
             </button>
           </div>
         </footer>
-
       </div>
     </div>
   </main>
@@ -119,14 +188,10 @@ export default {
           <h2>Avaliando sua Redação o mais rápido possível</h2>
           <p>Por favor, aguarde</p>
         </div>
-        <div class="rodape-modal">
-          <span></span> Dados Seguros
-        </div>
+        <div class="rodape-modal"><span></span> Dados Seguros</div>
       </div>
     </div>
   </Teleport>
-
-
 </template>
 
 <style scoped>
@@ -141,92 +206,89 @@ export default {
   min-height: 100vh;
 }
 
-.conteiner {
+.documento {
   width: 100%;
   max-width: 900px;
-  animation: surgir 0.8s ease-out;
-}
-
-@keyframes surgir {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
 }
 
 .cartao-editor {
   background: var(--branco);
-  border-radius: var(--raio-lg);
-  box-shadow: var(--shadowPadrao);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-md);
   border: 1px solid var(--borda-clara);
   overflow: hidden;
 }
 
-.cabecalho-editor {
-  background: linear-gradient(145deg, var(--azul-escuro) 0%, var(--azulPadrao) 100%);
-  padding: 20px 40px;
+.cabecalho-documento {
+  background: linear-gradient(135deg,
+      var(--azul-escuro) 0%,
+      var(--azulPadrao) 100%);
+  padding: 40px;
   text-align: center;
   color: var(--branco);
 }
 
-.caixa-tema {
-  padding: 20px 30px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  min-height: 100px;
-  justify-content: center;
+.cabecalho-documento h1 {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.cabecalho-documento h1 span {
+  color: var(--laranjaPadrao);
+}
+
+.versao {
+  font-size: 13px;
+  margin-top: 10px;
+  opacity: 0.4;
+  color: var(--branco);
 }
 
 .texto-tema {
   font-size: 15px;
   font-weight: 500;
-  max-width: 600px;
+  width: 75%;
   line-height: 1.5;
-  color: var(--texto-claro);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 20px auto 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  padding: 14px 20px;
 }
 
-.btn-trocar {
-  background: var(--laranjaPadrao);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: var(--radius-pequeno);
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: var(--trans);
-  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+.conteudo-documento {
+  padding: 40px;
 }
 
-.btn-trocar:hover {
-  background: var(--laranjaEscuro);
-  transform: translateY(-2px);
+.secao {
+  margin-bottom: 36px;
 }
 
 .secao-titulo {
-  padding: 30px 50px;
-  border-bottom: 1px solid var(--brancoLeve);
+  color: var(--azulPadrao);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.rotulo-titulo {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--azulPadrao);
-  margin-bottom: 10px;
-  display: block;
-  letter-spacing: 1.5px;
+.secao-titulo::before {
+  content: "";
+  width: 4px;
+  height: 18px;
+  background: var(--laranjaPadrao);
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 
 .entrada-titulo {
   width: 100%;
   border: none;
   background: transparent;
-  font-family:  "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
   color: var(--texto);
   outline: none;
@@ -240,12 +302,14 @@ export default {
 }
 
 .barra-ferramentas {
-  padding: 12px 50px;
+  padding: 12px 0;
   background: #fdfdfd;
   border-bottom: 1px solid var(--brancoLeve);
+  border-top: 1px solid var(--brancoLeve);
   display: flex;
   justify-content: flex-end;
   gap: 25px;
+  margin-bottom: 36px;
 }
 
 .item-estatistica {
@@ -260,14 +324,14 @@ export default {
 }
 
 .area-escrita {
-  padding: 30px 50px;
+  margin-bottom: 0;
 }
 
 #editor-texto {
   width: 100%;
   min-height: 550px;
-  padding: 36px 32px 36px 32px; 
-  font-family: 'Lora', serif;
+  padding: 36px 32px;
+  font-family: "Lora", serif;
   font-size: 1.2rem;
   line-height: 36px;
   border: 1px solid var(--borda);
@@ -275,10 +339,10 @@ export default {
   resize: vertical;
   outline: none;
   color: var(--texto);
-  background-image: linear-gradient(rgba(196, 212, 232, 0.6) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(196, 212, 232, 0.6) 1px,
+      transparent 1px);
   background-size: 100% 36px;
   background-attachment: local;
-  
   transition: border-color var(--trans);
 }
 
@@ -286,17 +350,39 @@ export default {
   border-color: var(--azulPadrao);
 }
 
-.rodape-controles {
-  padding: 30px 50px;
-  display: flex;
-  justify-content: space-between;
+.rodape-documento {
   background: #fafafa;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-top: 1px solid var(--borda-clara);
 }
 
 .grupo-botoes {
   display: flex;
   gap: 12px;
+}
+
+.btn-voltar {
+  background: var(--vermelho);
+  color: var(--branco);
+  padding: 14px 28px;
+  border-radius: var(--radius-pequeno);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--trans);
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.btn-voltar:hover {
+  box-shadow: var(--sombra-md);
+  transform: translateY(-1px);
 }
 
 .btn {
@@ -313,18 +399,10 @@ export default {
   font-family: "Poppins", sans-serif;
 }
 
-.btn-voltar {
-  background: transparent;
-  color: var(--texto-sec);
-}
-
-.btn-voltar:hover {
-  color: var(--vermelho);
-}
-
 .btn-salvar {
   background: var(--brancoLeve);
   color: var(--azul-escuro);
+  border: 1px solid var(--borda-clara);
 }
 
 .btn-salvar:hover {
@@ -345,10 +423,7 @@ export default {
 
 .sobreposicao-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
@@ -407,35 +482,33 @@ export default {
   gap: 8px;
 }
 
-.esmaecer-enter-active,
-.esmaecer-leave-active {
-  transition: opacity 0.25s ease;
-}
-
-.esmaecer-enter-from,
-.esmaecer-leave-to {
-  opacity: 0;
-}
-
 @media (max-width: 768px) {
-  .area-escrita,
-  .secao-titulo,
-  .barra-ferramentas,
-  .rodape-controles {
+  .cabecalho-documento {
+    padding: 30px 20px;
+  }
+
+  .cabecalho-documento h1 {
+    font-size: 24px;
+  }
+
+  .conteudo-documento {
     padding: 20px;
   }
 
-  .rodape-controles {
+  .rodape-documento {
     flex-direction: column;
+    padding: 20px;
     gap: 15px;
   }
 
   .grupo-botoes {
     flex-direction: column;
+    width: 100%;
   }
 
   .btn {
     justify-content: center;
+    width: 100%;
   }
 }
 </style>
