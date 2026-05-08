@@ -1,7 +1,7 @@
 <script>
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
-import "../assets/css/variaveis.css";
+import Header from "../../components/layout/Header.vue";
+import Footer from "../../components/layout/Footer.vue";
+import "../../assets/css/variaveis.css";
 
 const meusTemas = [
   {
@@ -182,8 +182,8 @@ export default {
   <Teleport to="body">
     <div v-if="mostrandoModal" class="sobreposicao-modal" @click.self="fecharModal">
       <div class="conteudo-modal">
-        <img src="../assets/IMAGES/logo-redamais.png" alt="Reda+" class="logo-modal" />
-        <img src="../assets/ICONS/loanding.gif" alt="Carregando" class="carregador-modal" />
+        <img src="../../assets/IMAGES/logo-redamais.png" alt="Reda+" class="logo-modal" />
+        <img src="../../assets/ICONS/loanding.gif" alt="Carregando" class="carregador-modal" />
         <div class="texto-modal">
           <h2>Avaliando sua Redação o mais rápido possível</h2>
           <p>Por favor, aguarde</p>
@@ -195,7 +195,7 @@ export default {
 </template>
 
 <style scoped>
-@import "../assets/css/variaveis.css";
+@import "../../assets/css/variaveis.css";
 
 .editor-pagina {
   background-color: var(--branco);

@@ -1,8 +1,8 @@
 <script>
-import Header from "../components/Header.vue"
-import Footer from "../components/Footer.vue"
-import Chatbot from "../components/Chatbot.vue"
-import "../assets/css/variaveis.css";
+import Header from "../../components/layout/Header.vue"
+import Footer from "../../components/layout/Footer.vue"
+import Chatbot from "../../components/features/Chatbot.vue"
+import "../../assets/css/variaveis.css";
 
 export default {
   components: { 
@@ -25,18 +25,18 @@ export default {
         <navbar class="fixar-search-bar">
             <div class="search-bar">
                 <div class="caixa-search">
-                    <button id="search" class="search-btn"><img src="../assets/ICONS/icon-lupa.png"
+                    <button id="search" class="search-btn"><img src="../../assets/ICONS/icon-lupa.png"
                         id="icon-search"></img></button>
                     <input type="text" class="input-text" placeholder="Buscar redação">
                 </div>
 
                 <div class="caixa-favorito"><a href="#">
-                    <button id="btn-favorito"><img src="../assets/ICONS/icon-favorito.png" id="icon-dado"></button>
+                    <button id="btn-favorito"><img src="../../assets/ICONS/icon-favorito.png" id="icon-dado"></button>
                     <p>Favoritos!</p></a>
                 </div>
 
                 <div class="caixa-category">
-                    <img src="../assets/ICONS/icon-category-buscar.PNG" id="category-icon">
+                    <img src="../../assets/ICONS/icon-category-buscar.PNG" id="category-icon">
                         <select name="visualizar-detalhe-redacao" class="category">
                             <option>Todos</option>
                             <option value="opcao1">Recentes</option>
@@ -56,7 +56,7 @@ export default {
 
         <div class="card" id="1-continuar-envelhecimento-sociedade">
             <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Envelhecimento_Sociedade.png" id="img-box">
+                <img src="../../assets/TEMAS/Temas_Envelhecimento_Sociedade.png" id="img-box">
                 <div class="tema-redacao">
                     <p>Sociedade </p>
                 </div>
@@ -73,7 +73,7 @@ export default {
 
         <div class="card" id="2-continuar-herancas-africanas">
             <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Herancas_Africanas.jpg" id="img-box">
+                <img src="../../assets/TEMAS/Temas_Herancas_Africanas.jpg" id="img-box">
                 <div class="tema-redacao">
                     <p>Cultura</p>
                 </div>
@@ -90,7 +90,7 @@ export default {
 
         <div class="card" id="3-continuar-invisibilidade-mulher">
             <div class="imagem">
-                <img src="../assets/TEMAS/Temas_Invisibilidade_Mulheres.jpg" id="img-box">
+                <img src="../../assets/TEMAS/Temas_Invisibilidade_Mulheres.jpg" id="img-box">
                 <div class="tema-redacao">
                     <p>Inclusão Social</p>
                 </div>
@@ -108,7 +108,7 @@ export default {
 
         <div class="card" id="0-continuar-">
             <div class="imagem">
-                <img src="../assets/TEMAS/" id="img-box">
+                <img src="../../assets/TEMAS/" id="img-box">
                 <div class="tema-redacao">
                     <p>{tema-redacao}</p>
                 </div>

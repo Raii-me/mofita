@@ -1,6 +1,6 @@
 <script>
 
-import "../assets/css/variaveis.css"
+import "../../assets/css/variaveis.css"
 
 export default {
   data() {
@@ -21,7 +21,7 @@ export default {
 
 <template>
   <nav>
-    <RouterLink to="/"><img src="../assets/IMAGES/logo-redamais.png" class="logo" /></RouterLink>
+    <RouterLink to="/"><img src="../../assets/IMAGES/logo-redamais.png" class="logo" /></RouterLink>
     <ul>
       <li>
         <h3><RouterLink to="/home" class="router-link">Inicial</RouterLink></h3>
@@ -44,13 +44,13 @@ export default {
           <font size="2px">{Funcao}</font>
         </p>
       </div>
-      <img src="../assets/IMAGES/foto-perfil-temporaria.png" class="user-pic" @click="toggleMenu"/>
+      <img src="../../assets/IMAGES/foto-perfil-temporaria.png" class="user-pic" @click="toggleMenu"/>
     </div>
 
     <div class="sub-menu-wrap" :class="{ 'open-menu': aberto }">
       <div class="sub-menu">
         <div class="user-info">
-          <img src="../assets/IMAGES/foto-perfil-temporaria.png" />
+          <img src="../../assets/IMAGES/foto-perfil-temporaria.png" />
           <ul>
             <li>
               <h3>{Usuario}</h3>
@@ -62,32 +62,32 @@ export default {
         </div>
         <hr />
         <a href="#" class="sub-menu-link">
-          <img src="../assets/ICONS/icon-perfil.png" />
+          <img src="../../assets/ICONS/icon-perfil.png" />
           <p><RouterLink to="/perfil" class="router-link">Acessar Perfil</RouterLink></p>
           <span>></span>
         </a>
         <a href="#" class="sub-menu-link">
-          <img src="../assets/ICONS/icon-pagina.png" />
+          <img src="../../assets/ICONS/icon-pagina.png" />
           <p><RouterLink to="/tema" class="router-link">Nova Redação</RouterLink></p>
           <span>></span>
         </a>
         <a href="#" class="sub-menu-link">
-          <img src="../assets/ICONS/icon-livro.png" />
+          <img src="../../assets/ICONS/icon-livro.png" />
           <p><RouterLink to="/redacao" class="router-link">Continuar Redação</RouterLink></p>
           <span>></span>
         </a>
         <a href="#" class="sub-menu-link">
-          <img src="../assets/ICONS/icon-perfil-chatbot-simples.png" />
+          <img src="../../assets/ICONS/icon-perfil-chatbot-simples.png" />
           <p>ChatBot</p>
           <span>></span>
         </a>
         <a href="#" class="sub-menu-link" >
-          <img src="../assets/ICONS/icon-configuracoes.png" />
+          <img src="../../assets/ICONS/icon-configuracoes.png" />
           <p><RouterLink to="/perfil" class="router-link">Configurações</RouterLink></p>
           <span>></span>
         </a>
         <a href="#" class="sub-menu-link">
-          <img src="../assets/ICONS/icon-logout.png" />
+          <img src="../../assets/ICONS/icon-logout.png" />
           <p>Sair</p>
           <span>></span>
         </a>

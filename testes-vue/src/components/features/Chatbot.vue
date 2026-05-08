@@ -1,6 +1,6 @@
 <script>
-import "../assets/js/chatbot";
-import "../assets/css/variaveis.css";
+import "../../assets/js/chatbot.js";
+import "../../assets/css/variaveis.css";
 
 
 
@@ -26,7 +26,7 @@ export default {
       <a href="#">
         <div class="chat-content" @click="toggleMenuChatbot">
           <img
-            src="../assets/ICONS/icon-conversa-chatbot.svg"
+            src="../../assets/ICONS/icon-conversa-chatbot.svg"
             class="chat-icon"
           />
           <div class="chat-text">ChatBot</div>
@@ -37,7 +37,7 @@ export default {
     <div class="fixar">
       <div class="box" :class="{ 'open-menu': fechado }">
         <div class="header">
-          <img src="../assets/ICONS/icon-perfil-chatbot.png" id="perfilChat" />
+          <img src="../../assets/ICONS/icon-perfil-chatbot.png" id="perfilChat" />
 
           <ul>
             <h3>Ajuda</h3>
@@ -58,7 +58,7 @@ export default {
         <div class="footer_ChatBot">
           <input type="text" placeholder="Digite..." id="msg-input" />
           <button id="btn-submit" @click="sendMessage()">
-            <img src="../assets/ICONS/icon-enviar.svg" class="chat-icon" />
+            <img src="../../assets/ICONS/icon-enviar.svg" class="chat-icon" />
           </button>
         </div>
       </div>

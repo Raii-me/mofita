@@ -1,8 +1,8 @@
 <script>
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
-import Chatbot from "../components/Chatbot.vue";
-import Grafico from "../components/Grafico.vue";
+import Header from "../../components/layout/Header.vue";
+import Footer from "../../components/layout/Footer.vue";
+import Chatbot from "../../components/features/Chatbot.vue";
+import Grafico from "../../components/layout/Grafico.vue";
 
 /* importar coisa aq , essa é a base */
 
@@ -39,19 +39,19 @@ export default {
                         <h3 class="tituloDireita">Mais Estatisticas</h3>
 
                         <div class="item">
-                            <img src="../assets/ICONS/icon-Regras.png" class="icone">
+                            <img src="../../assets/ICONS/icon-Regras.png" class="icone">
                             <p class="mensageStatus">Redações Feitas</p>
                             <p class="Resultados">08</p>
                         </div>
 
                         <div class="item">
-                            <img src="../assets/ICONS/icon-grafico-desempenho.svg" class="icone">
+                            <img src="../../assets/ICONS/icon-grafico-desempenho.svg" class="icone">
                             <p class="mensageStatus">Maior Nota</p>
                             <p class="Resultados">910</p>
                         </div>
 
                         <div class="item">
-                            <img src="../assets/ICONS/icon-seta-emqueda.png" class="icone">
+                            <img src="../../assets/ICONS/icon-seta-emqueda.png" class="icone">
                             <p class="mensageStatus">Menor Nota</p>
                             <p class="Resultados">710</p>
                         </div>

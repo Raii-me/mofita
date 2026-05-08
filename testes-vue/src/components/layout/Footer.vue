@@ -4,14 +4,15 @@
       
       <div class="rodape-esquerda">
         <a href="#inicio">
-          <img src="../assets/IMAGES/logo-redamais-grande.png" alt="REDA+" class="rodape-logo" />
+          <img src="../../assets/IMAGES/logo-redamais-grande.png" alt="REDA+" class="rodape-logo" />
+
         </a>
 
         <p class="app-texto">Baixe nosso Aplicativo</p>
 
         <a href="#">
           <img
-            src="../assets/IMAGES/footer-googleplay.png"
+            src="../../assets/IMAGES/footer-googleplay.png"
             alt="Google Play"
             class="btn-playstore"
           />
@@ -63,7 +64,7 @@
 </template>
 
 <style scoped>
-@import "../assets/css/variaveis.css";
+@import "../../assets/css/variaveis.css";
 
 .rodape {
   background: linear-gradient(90deg,

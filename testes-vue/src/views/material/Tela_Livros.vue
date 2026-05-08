@@ -1,8 +1,8 @@
 <script>
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
-import Chatbot from "../components/Chatbot.vue";
-import "../assets/css/variaveis.css";
+import Header from "../../components/layout/Header.vue";
+import Footer from "../../components/layout/Footer.vue";
+import Chatbot from "../../components/features/Chatbot.vue";
+import "../../assets/css/variaveis.css";
 
 export default {
   components: {
@@ -121,7 +121,7 @@ export default {
 
   methods: {
     getImagemUrl(nome) {
-      return new URL(`../assets/LIVROS/${nome}`, import.meta.url).href;
+      return new URL(`../../assets/LIVROS/${nome}`, import.meta.url).href;
     },
   },
 };
@@ -143,14 +143,14 @@ export default {
       <div class="search-bar">
         <div class="caixa-search">
           <button class="search-btn">
-            <img src="../assets/ICONS/icon-lupa.png" id="icon-search" />
+            <img src="../../assets/ICONS/icon-lupa.png" id="icon-search" />
           </button>
           <input v-model="filtroTexto" class="input-text" placeholder="Buscar um livro" />
         </div>
 
         <div class="btns">
           <div class="caixa-category">
-            <img src="../assets/ICONS/icon-category-buscar.PNG" id="category-icon" />
+            <img src="../../assets/ICONS/icon-category-buscar.PNG" id="category-icon" />
             <select class="category" v-model="filtroCategoria">
               <option value="Todos">Todos</option>
               <option value="Sociedade">Sociedade</option>

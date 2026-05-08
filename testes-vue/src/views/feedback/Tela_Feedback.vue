@@ -1,8 +1,8 @@
 <script>
-import Header from "../components/Header.vue"
-import Footer from "../components/Footer.vue"
-import Chatbot from "../components/Chatbot.vue"
-import "../assets/css/variaveis.css";
+import Header from "../../components/layout/Header.vue"
+import Footer from "../../components/layout/Footer.vue"
+import Chatbot from "../../components/features/Chatbot.vue"
+import "../../assets/css/variaveis.css";
 
 export default {
   components: { Header, Footer, Chatbot },

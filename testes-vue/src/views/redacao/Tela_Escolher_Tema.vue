@@ -1,8 +1,8 @@
 <script>
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
-import Chatbot from "../components/Chatbot.vue";
-import "../assets/css/variaveis.css";
+import Header from "../../components/layout/Header.vue";
+import Footer from "../../components/layout/Footer.vue";
+import Chatbot from "../../components/features/Chatbot.vue";
+import "../../assets/css/variaveis.css";
 
 export default {
   components: {
@@ -238,7 +238,7 @@ export default {
 
   methods: {
     getImagemUrl(nome) {
-      return new URL(`../assets/TEMAS/${nome}`, import.meta.url).href;
+      return new URL(`../../assets/TEMAS/${nome}`, import.meta.url).href;
     },
 
     formatarParagrafos(texto) {
@@ -289,7 +289,7 @@ export default {
       <div class="search-bar">
         <div class="caixa-search">
           <button type="submit" id="search" class="search-btn">
-            <img src="../assets/ICONS/icon-lupa.png" id="icon-search" />
+            <img src="../../assets/ICONS/icon-lupa.png" id="icon-search" />
           </button>
           <input type="text" v-model="filtroTexto" id="text" class="input-text" placeholder="Buscar um tema" />
         </div>
@@ -297,13 +297,13 @@ export default {
         <div class="btns">
           <div class="caixa-random" @click="sortearTema">
             <button type="submit" id="btn-random">
-              <img src="../assets/ICONS/icon-dado.png" id="icon-dado" />
+              <img src="../../assets/ICONS/icon-dado.png" id="icon-dado" />
             </button>
             <p>Aleatorio!</p>
           </div>
 
           <div class="caixa-category">
-            <img src="../assets/ICONS/icon-category-buscar.PNG" id="category-icon" />
+            <img src="../../assets/ICONS/icon-category-buscar.PNG" id="category-icon" />
             <select name="opcoes" v-model="filtroCategoria" class="category">
               <option value="Todos">Todos</option>
               <option value="Sociedade">Sociedade</option>

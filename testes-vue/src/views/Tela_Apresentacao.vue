@@ -1,5 +1,5 @@
 <script>
-import Footer from "../components/Footer.vue";
+import Footer from "../components/layout/Footer.vue";
 
 export default {
   components: {
@@ -40,7 +40,7 @@ export default {
       <li><a href="#planos">Planos</a></li>
       <li><a href="#contato">Contato</a></li>
       <li class="nav-btn-entrar">
-        <RouterLink to="/home">Entrar</RouterLink>
+        <RouterLink to="/cadastro">Entrar</RouterLink>
       </li>
     </ul>
   </nav>

@@ -1,9 +1,9 @@
 <script>
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
-import Chatbot from "../components/Chatbot.vue";
-import Grafico from "../components/Grafico.vue";
-import Caixa_de_Acao from "../components/Caixa_de_Acao.vue";
+import Header from "../../components/layout/Header.vue";
+import Footer from "../../components/layout/Footer.vue";
+import Chatbot from "../../components/features/Chatbot.vue";
+import Grafico from "../../components/layout/Grafico.vue";
+import Caixa_de_Acao from "../../components/features/Caixa_de_Acao.vue";
 
 /* importar coisa aq , essa é a base */
 
@@ -46,7 +46,7 @@ export default {
 
         <div class="card-design">
           <div class="img-box">
-            <img src="../assets/IMAGES/exemplo-biblioteca.png" alt="Redação" />
+            <img src="../../assets/IMAGES/exemplo-biblioteca.png" alt="Redação" />
             <h2>Última Redação Feita</h2>
           </div>
 
@@ -62,7 +62,7 @@ export default {
 
         <div class="card-design">
           <div class="img-box">
-            <img src="../assets/IMAGES/exemplo-etarismo.png" alt="Redação" />
+            <img src="../../assets/IMAGES/exemplo-etarismo.png" alt="Redação" />
             <h2>Tema Quente</h2>
           </div>
 
@@ -78,7 +78,7 @@ export default {
 
         <div class="card-design">
           <div class="img-box">
-            <img src="../assets/IMAGES/exemplo-Ambiente.png" alt="Redação" />
+            <img src="../../assets/IMAGES/exemplo-Ambiente.png" alt="Redação" />
             <h2>Tema Quente</h2>
           </div>
 
@@ -94,7 +94,7 @@ export default {
 
         <div class="card-design">
           <div class="img-box">
-            <img src="../assets/IMAGES/exemplo-noticias.png" alt="Redação" />
+            <img src="../../assets/IMAGES/exemplo-noticias.png" alt="Redação" />
             <h2>Tema Quente</h2>
           </div>
 
@@ -110,7 +110,7 @@ export default {
 
         <div class="card-design">
           <div class="img-box">
-            <img src="../assets/IMAGES/exemplo-estudando.png" alt="Redação" />
+            <img src="../../assets/IMAGES/exemplo-estudando.png" alt="Redação" />
             <h2>Tema Quente</h2>
           </div>
 
@@ -126,7 +126,7 @@ export default {
 
         <div class="card-design">
           <div class="img-box">
-            <img src="../assets/IMAGES/exemplo-mental.png" alt="Redação" />
+            <img src="../../assets/IMAGES/exemplo-mental.png" alt="Redação" />
             <h2>Tema Quente</h2>
           </div>
 
