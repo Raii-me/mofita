@@ -143,14 +143,14 @@ export default {
       <div class="search-bar">
         <div class="caixa-search">
           <button class="search-btn">
-            <img src="../../assets/ICONS/icon-lupa.png" id="icon-search" />
+            <img src="../../assets/ICONS/icons-outros/icon-lupa.png" id="icon-search" />
           </button>
           <input v-model="filtroTexto" class="input-text" placeholder="Buscar um livro" />
         </div>
 
         <div class="btns">
           <div class="caixa-category">
-            <img src="../../assets/ICONS/icon-category-buscar.PNG" id="category-icon" />
+            <img src="../../assets/ICONS/icons-outros/icon-category-buscar.PNG" id="category-icon" />
             <select class="category" v-model="filtroCategoria">
               <option value="Todos">Todos</option>
               <option value="Sociedade">Sociedade</option>

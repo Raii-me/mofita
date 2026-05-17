@@ -1,134 +1,137 @@
 <template>
-    <div class="cadastro-app">
+  <div class="cadastro-app">
 
     <div class="painel-principal">
 
-        <div class="lado-esquerdo">
-        <router-link to="/home">Home</router-link>
-            <header class="cabecalho">
-                <nav class="links-navegacao">
-                    <router-link to="/login" :class="{ ativo: modo == 'login'}">Entrar</router-link>
-                    <router-link to="/cadastro" :class="{ ativo: modo == 'cadastro'}">Cadastrar</router-link>
-                </nav>
-            </header>
+      <div class="lado-esquerdo">
+        <router-link to="/" style="text-decoration: none;">
+          <div class="btn-voltar-login">
+            <img src="../../assets/ICONS/icon-voltar-laranja.svg"><p>Voltar</p>
+          </div>
+        </router-link>
+        <header class="cabecalho">
+          <nav class="links-navegacao">
+            <router-link to="/login" :class="{ ativo: modo == 'login' }">Entrar</router-link>
+            <router-link to="/cadastro" :class="{ ativo: modo == 'cadastro' }">Cadastrar</router-link>
+          </nav>
+        </header>
 
-            <div class="conteudo">
+        <div class="conteudo">
 
-                <div class="titulo">
-                    <h1>{{ modo === 'cadastro' ? 'Crie sua conta' : 'Bem-vindo de volta' }}</h1>
-                    <p v-if="modo === 'cadastro'">
-                        Registre-se e acompanhe sua evolução na redação.
-                    </p>
-                    <p v-else>
-                        Entre com a sua conta no Reda+.
-                    </p>
-                </div>
+          <div class="titulo">
+            <h1>{{ modo === 'cadastro' ? 'Crie sua conta' : 'Bem-vindo de volta' }}</h1>
+            <p v-if="modo === 'cadastro'">
+              Registre-se e acompanhe sua evolução na redação.
+            </p>
+            <p v-else>
+              Entre com a sua conta no Reda+.
+            </p>
+          </div>
 
-                <div class="formulario" id="area-formulario">
+          <div class="formulario" id="area-formulario">
 
-                    <form id="formulario" @submit.prevent="enviar">
+            <form id="formulario" @submit.prevent="enviar">
 
-                        <div class="linha" v-if="modo === 'cadastro'">
-                            <input type="text" v-model="form.nome" placeholder="Nome" required>
-                            <input type="text" v-model="form.sobrenome" placeholder="Sobrenome" required>
-                        </div>
+              <div class="linha" v-if="modo === 'cadastro'">
+                <input type="text" v-model="form.nome" placeholder="Nome" required>
+                <input type="text" v-model="form.sobrenome" placeholder="Sobrenome" required>
+              </div>
 
-                        <input type="email" v-model="form.email" placeholder="E-mail" required>
+              <input type="email" v-model="form.email" placeholder="E-mail" required>
 
-                        <div class="linha">
-                            <input type="password" v-model="form.senha" ref="senha" placeholder="Senha" required>
-                            <button type="button" @click="mostrarSenha('senha')">👁</button>
-                        </div>
+              <div class="linha">
+                <input type="password" v-model="form.senha" ref="senha" placeholder="Senha" required>
+                <button type="button" @click="mostrarSenha('senha')">👁</button>
+              </div>
 
-                        <div v-if="modo == 'login'" class="esqueceu-senha">
-                            <router-link to="/recuperar" class="forgot-password">
-                                Esqueci minha senha
-                            </router-link>
-                        </div>
+              <div v-if="modo == 'login'" class="esqueceu-senha">
+                <router-link to="/recuperar" class="forgot-password">
+                  Esqueci minha senha
+                </router-link>
+              </div>
 
-                        <div class="linha" v-if="modo === 'cadastro'">
-                            <input type="password" v-model="form.confirmarSenha" ref="confirmarSenha"
-                                placeholder="Repetir senha" required>
-                            <button type="button" @click="mostrarSenha('confirmarSenha')">👁</button>
-                        </div>
+              <div class="linha" v-if="modo === 'cadastro'">
+                <input type="password" v-model="form.confirmarSenha" ref="confirmarSenha" placeholder="Repetir senha"
+                  required>
+                <button type="button" @click="mostrarSenha('confirmarSenha')">👁</button>
+              </div>
 
-                        <p v-if="mensagemErro" class="mensagemErro">{{ mensagemErro }}</p>
-                        
-                        <div class="botoes">
-                            <button type="submit" :disabled="carregando">
-                                {{ carregando ? 'Aguarde...' : modo === 'cadastro' ? 'Cadastrar' : 'Entrar' }}
-                            </button>
-                            <p>ou</p>
-                            <button type="button" id="botao-google" @click="loginGoogle">
-                                <img src="https://fonts.gstatic.com/s/i/productlogos/googleg/v6/24px.svg" alt="Google">
-                                {{ modo === 'cadastro' ? 'Cadastrar-se com Google' : 'Entrar com Google' }}
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+              <p v-if="mensagemErro" class="mensagemErro">{{ mensagemErro }}</p>
+
+              <div class="botoes">
+                <button type="submit" :disabled="carregando">
+                  {{ carregando ? 'Aguarde...' : modo === 'cadastro' ? 'Cadastrar' : 'Entrar' }}
+                </button>
+                <p>ou</p>
+                <button type="button" id="botao-google" @click="loginGoogle">
+                  <img src="https://fonts.gstatic.com/s/i/productlogos/googleg/v6/24px.svg" alt="Google">
+                  {{ modo === 'cadastro' ? 'Cadastrar-se com Google' : 'Entrar com Google' }}
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="lado-direito">
+
+        <div class="imagem-destaque">
+          <img :src="logoUrl" alt="">
         </div>
 
-        <div class="lado-direito">
-
-            <div class="imagem-destaque">
-                <img :src="logoUrl" alt="">
-            </div>
-
-            <div class="texto-informativo">
-                <h2>Treine hoje. Conquiste a nota 1000 amanhã.</h2>
-                <p>Faça parte da nossa comunidade.</p>
-            </div>
+        <div class="texto-informativo">
+          <h2>Treine hoje. Conquiste a nota 1000 amanhã.</h2>
+          <p>Faça parte da nossa comunidade.</p>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
 
 
 export default {
-//import { enviarForm } from '../../services/forms/form.js'
-    //exporta o props com o modo padrão cadastro
-    props: {
-        modo: {
-            type: String,
-            default: 'cadastro'
-        }
-    },
-    data() {
-        return {
-            form: {
-                nome: '',
-                sobrenome: '',
-                email: '',
-                senha: '',
-                confirmarSenha: ''
-            },
-            mensagemErro: '',
-            carregando: false,
+  //import { enviarForm } from '../../services/forms/form.js'
+  //exporta o props com o modo padrão cadastro
+  props: {
+    modo: {
+      type: String,
+      default: 'cadastro'
+    }
+  },
+  data() {
+    return {
+      form: {
+        nome: '',
+        sobrenome: '',
+        email: '',
+        senha: '',
+        confirmarSenha: ''
+      },
+      mensagemErro: '',
+      carregando: false,
 
-            logoUrl: new URL("@/assets/IMAGES/logo-redamais.png", import.meta.url).href
-        }
-    },
-    methods: {
-        mostrarSenha(refNome) {
-            const input = this.$refs[refNome]
-            input.type = input.type === "password" ? "text" : "password"
-        },/*
+      logoUrl: new URL("../../assets/IMAGES/logo-redamais.png", import.meta.url).href
+    }
+  },
+  methods: {
+    mostrarSenha(refNome) {
+      const input = this.$refs[refNome]
+      input.type = input.type === "password" ? "text" : "password"
+    },/*
          enviar() {
             enviarForm(this)// this aqui são os dados do data()
         },
         loginGoogle() {
             window.location.href = "http://localhost:3000/auth/google";
         }*/
-    }
+  }
 }
 
 </script>
 
 <style scoped>
-
 *,
 *::before,
 *::after {
@@ -152,6 +155,7 @@ export default {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -163,6 +167,7 @@ export default {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -174,6 +179,7 @@ export default {
     opacity: 0;
     transform: translateY(25px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -433,7 +439,7 @@ export default {
   align-items: center;
   max-width: 200px;
   width: 100%;
-  margin: 0 ;
+  margin: 0;
 }
 
 .texto-informativo {
@@ -459,9 +465,40 @@ export default {
   animation: animarForm 0.35s ease;
 }
 
+.btn-voltar-login{
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  transition: var(--delayCurto);
+}
+
+.btn-voltar-login p{
+  color: var(--laranjaPadrao);
+  text-decoration: none;
+  font-size: 16px;
+
+}
+
+.btn-voltar-login img{
+  margin-top: auto;
+  width: 25px;
+  height: 25px;
+}
+
+.btn-voltar-login:hover{
+  padding-right: 10px;
+  border-radius: var(--radius-grande);
+
+  transform: translateX(-5px);
+  text-shadow: var(--sombra-sm);
+}
+
+
+
+
 @media (max-width: 850px) {
   .painel-principal {
-    flex-direction: column; 
+    flex-direction: column;
     height: auto;
     min-height: auto;
     width: 95%;
@@ -470,19 +507,19 @@ export default {
 
   .lado-esquerdo {
     width: 100%;
-    padding: 30px 20px; 
-    order: 2; 
+    padding: 30px 20px;
+    order: 2;
   }
 
   .lado-direito {
     width: 100%;
     padding: 40px 20px;
-    border-radius: 0; 
-    order: 1; 
+    border-radius: 0;
+    order: 1;
   }
 
   .imagem-destaque {
-    max-width: 120px; 
+    max-width: 120px;
   }
 
   .texto-informativo h2 {
@@ -490,11 +527,11 @@ export default {
   }
 
   .links-navegacao {
-    gap: 15px; 
+    gap: 15px;
   }
 
   .linha {
-    flex-direction: column; 
+    flex-direction: column;
     gap: 0;
   }
 }

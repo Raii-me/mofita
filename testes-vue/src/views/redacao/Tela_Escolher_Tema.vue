@@ -289,7 +289,7 @@ export default {
       <div class="search-bar">
         <div class="caixa-search">
           <button type="submit" id="search" class="search-btn">
-            <img src="../../assets/ICONS/icon-lupa.png" id="icon-search" />
+            <img src="../../assets/ICONS/icons-outros/icon-lupa.png" id="icon-search" />
           </button>
           <input type="text" v-model="filtroTexto" id="text" class="input-text" placeholder="Buscar um tema" />
         </div>
@@ -297,13 +297,13 @@ export default {
         <div class="btns">
           <div class="caixa-random" @click="sortearTema">
             <button type="submit" id="btn-random">
-              <img src="../../assets/ICONS/icon-dado.png" id="icon-dado" />
+              <img src="../../assets/ICONS/icons-azul/icon-dado-azul.svg" id="icon-dado" />
             </button>
             <p>Aleatorio!</p>
           </div>
 
           <div class="caixa-category">
-            <img src="../../assets/ICONS/icon-category-buscar.PNG" id="category-icon" />
+            <img src="../../assets/ICONS/icons-outros/icon-category-buscar.PNG" id="category-icon" />
             <select name="opcoes" v-model="filtroCategoria" class="category">
               <option value="Todos">Todos</option>
               <option value="Sociedade">Sociedade</option>

@@ -25,13 +25,13 @@ export default {
         <navbar class="fixar-search-bar">
             <div class="search-bar">
                 <div class="caixa-search">
-                    <button id="search" class="search-btn"><img src="../../assets/ICONS/icon-lupa.png"
+                    <button id="search" class="search-btn"><img src="../../assets/ICONS/icons-outros/icon-lupa.png"
                         id="icon-search"></img></button>
                     <input type="text" class="input-text" placeholder="Buscar redação">
                 </div>
 
                 <div class="caixa-favorito"><a href="#">
-                    <button id="btn-favorito"><img src="../../assets/ICONS/icon-favorito.png" id="icon-dado"></button>
+                    <button id="btn-favorito"><img src="../../assets/ICONS/icons-azul/icon-dado-azul.svg" id="icon-dado"></button>
                     <p>Favoritos!</p></a>
                 </div>
 

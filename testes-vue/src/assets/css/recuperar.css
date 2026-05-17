@@ -134,14 +134,14 @@ input::placeholder {
 
 .inputs-codigo input:focus,
 .inputs-codigo input.preenchido {
-  border-color: var(--laranja-btn);
+  border-color: var(--laranjaPadrao);
   box-shadow: 0 4px 12px rgba(255, 115, 0, 0.1);
 }
 
 .botao-enviar {
   width: 100%;
   max-width: 300px;
-  background-color: var(--laranja-btn);
+  background-color: var(--laranjaPadrao);
   color: white;
   border: none;
   padding: 14px;
@@ -154,5 +154,5 @@ input::placeholder {
 }
 
 .botao-enviar:hover {
-  background-color: var(--laranja-btn-hover);
+  background-color: var(--laranjaPadrao-hover);
 }

@@ -2,7 +2,6 @@
 
 :root {
   --azulPadrao: #1a4b9c;
-  --teste: #204B86;
   --azul: #2563c7;
   --azul-escuro-hover: #153d82;
   --azul-escuro: #0d2d66;
@@ -46,6 +45,9 @@
   --brancoLeve: #e4edf8;
 
 
+  --laranjaFundo: #ff770056;
+  --azulFundo: #1a4c9c5e;
+  --cinzaFundo: #e5e5e6;
 
   --sombra-sm: 0 2px 10px rgba(13, 45, 102, 0.1);
   --sombra-md: 0 6px 24px rgba(13, 45, 102, 0.16);
@@ -62,6 +64,7 @@
   --delayMedio: 0.5s;
   --delayAlto: 0.9s;
 
+  --teste: #204B86;
 
   --bg-tela-apre:
     radial-gradient(ellipse 60% 80% at 90% 50%, rgba(37, 99, 199, 0.3) 0%, transparent 70%),

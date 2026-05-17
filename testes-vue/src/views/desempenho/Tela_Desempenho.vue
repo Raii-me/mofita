@@ -39,19 +39,19 @@ export default {
                         <h3 class="tituloDireita">Mais Estatisticas</h3>
 
                         <div class="item">
-                            <img src="../../assets/ICONS/icon-Regras.png" class="icone">
+                            <img src="../../assets/ICONS/icons-azul/icon-Regras-azul.svg" class="icone">
                             <p class="mensageStatus">Redações Feitas</p>
                             <p class="Resultados">08</p>
                         </div>
 
                         <div class="item">
-                            <img src="../../assets/ICONS/icon-grafico-desempenho.svg" class="icone">
+                            <img src="../../assets/ICONS/icons-azul/icon-grafico-desempenho-azul.svg" class="icone">
                             <p class="mensageStatus">Maior Nota</p>
                             <p class="Resultados">910</p>
                         </div>
 
                         <div class="item">
-                            <img src="../../assets/ICONS/icon-seta-emqueda.png" class="icone">
+                            <img src="../../assets/ICONS/icons-azul/icon-seta-emqueda-azul.svg" class="icone">
                             <p class="mensageStatus">Menor Nota</p>
                             <p class="Resultados">710</p>
                         </div>

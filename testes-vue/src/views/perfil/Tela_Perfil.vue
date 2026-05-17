@@ -2,7 +2,7 @@
 import Header from "../../components/layout/Header.vue"
 import Footer from "../../components/layout/Footer.vue"
 import Chatbot from "../../components/features/Chatbot.vue"
-import Switch from '../../components/features/Caixa_de_Acao.vue'
+import Switch from '../../components/features/Switch.vue'
 import "../../assets/css/variaveis.css";
 
 export default {
@@ -66,7 +66,7 @@ export default {
                     <div class="opcoes">
 
                         <div class="opcoes-sidebar" @click="mudarAba('conta')" :class="{ ativo: abaAtiva === 'conta' }">
-                            <img src="../../assets/ICONS/icon-perfil.png">
+                            <img src="../../assets/ICONS/icons-azul/icon-perfil-azul.svg">
                             <p>Conta</p>
                         </div>
 
@@ -75,18 +75,18 @@ export default {
 
                         <div class="opcoes-sidebar" @click="mudarAba('acessibilidade')"
                             :class="{ ativo: abaAtiva === 'acessibilidade' }">
-                            <img src="../../assets/ICONS/icon-lupa.png">
+                            <img src="../../assets/ICONS/icons-azul/icon-lupa-azul.svg">
                             <p>Acessibilidade</p>
                         </div>
 
                         <div class="opcoes-sidebar" @click="mudarAba('configuracao')"
                             :class="{ ativo: abaAtiva === 'configuracao' }">
-                            <img src="../../assets/ICONS/icon-configuracoes.png">
+                            <img src="../../assets/ICONS/icons-azul/icon-configuracoes-azul.svg">
                             <p>Configurações</p>
                         </div>
                         <div class="opcoes-sidebar" @click="mudarAba('caixa4')"
                             :class="{ ativo: abaAtiva === 'caixa4' }">
-                            <img src="../../assets/ICONS/icon-botao-ajuda.png">
+                            <img src="../../assets/ICONS/icons-azul/icon-favorito-azul.svg">
                             <p>palavracoisa</p>
                         </div>
 
@@ -94,7 +94,7 @@ export default {
 
                     <div class="final">
                         <div class="final-sidebar">
-                            <img src="../../assets/ICONS/icon-logout.png">
+                            <img src="../../assets/ICONS/icons-outros/icon-logout.png">
                             <p>Sair</p>
                         </div>
                     </div>

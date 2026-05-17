@@ -62,32 +62,32 @@ export default {
         </div>
         <hr />
         <a href="#" class="sub-menu-link">
-          <img src="../../assets/ICONS/icon-perfil.png" />
+          <img src="../../assets/ICONS/icons-azul/icon-perfil-azul.svg" />
           <p><RouterLink to="/perfil" class="router-link">Acessar Perfil</RouterLink></p>
           <span>></span>
         </a>
         <a href="#" class="sub-menu-link">
-          <img src="../../assets/ICONS/icon-pagina.png" />
+          <img src="../../assets/ICONS/icons-azul/icon-pagina-azul.svg" />
           <p><RouterLink to="/tema" class="router-link">Nova Redação</RouterLink></p>
           <span>></span>
         </a>
         <a href="#" class="sub-menu-link">
-          <img src="../../assets/ICONS/icon-livro.png" />
+          <img src="../../assets/ICONS/icons-azul/icon-livro-azul.svg" />
           <p><RouterLink to="/redacao" class="router-link">Continuar Redação</RouterLink></p>
           <span>></span>
         </a>
         <a href="#" class="sub-menu-link">
-          <img src="../../assets/ICONS/icon-perfil-chatbot-simples.png" />
+          <img src="../../assets/ICONS/icons-azul/icon-perfil-chatbot-simples-azul.svg" />
           <p>ChatBot</p>
           <span>></span>
         </a>
         <a href="#" class="sub-menu-link" >
-          <img src="../../assets/ICONS/icon-configuracoes.png" />
+          <img src="../../assets/ICONS/icons-azul/icon-configuracoes-azul.svg" />
           <p><RouterLink to="/perfil" class="router-link">Configurações</RouterLink></p>
           <span>></span>
         </a>
         <a href="#" class="sub-menu-link">
-          <img src="../../assets/ICONS/icon-logout.png" />
+          <img src="../../assets/ICONS/icons-azul/icon-sairperfil-azul.svg" />
           <p>Sair</p>
           <span>></span>
         </a>
@@ -237,7 +237,7 @@ nav ul li a:hover {
 .sub-menu-link img {
     width: 35px;
     background: var(--brancoLeve);
-    border-radius: 50%;
+    border-radius: 10px;
     padding: 8px;
     margin-right: 15px;
 }

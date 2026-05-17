@@ -216,14 +216,14 @@ export default {
       <div class="search-bar">
         <div class="caixa-1">
           <button class="search-btn">
-            <img src="../../assets/ICONS/icon-lupa.png" id="icon-search" />
+            <img src="../../assets/ICONS/icons-outros/icon-lupa.png" id="icon-search" />
           </button>
 
           <input type="text" v-model="filtroTexto" class="input-text" placeholder="Buscar um tema" />
         </div>
 
         <div class="caixa-2">
-          <img src="../../assets/ICONS/icon-category-buscar.PNG" id="category-icon" />
+          <img src="../../assets/ICONS/icons-outros/icon-category-buscar.PNG" id="category-icon" />
 
           <select class="category" v-model="filtroCategoria">
             <option value="Todos">Todos</option>
@@ -322,13 +322,14 @@ export default {
 
 #category-icon {
   margin-left: 10px;
-  margin-top: 10px;
+
   width: 18px;
   height: 18px;
 }
 
 .caixa-2 {
   display: flex;
+
   align-items: center;
   gap: 6px;
   padding: 0 10px;

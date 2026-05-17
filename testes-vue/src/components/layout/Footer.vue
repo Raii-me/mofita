@@ -34,7 +34,7 @@
             <h4>Ajuda</h4>
             <ul>
               <li><a href="#">Perguntas Frequentes</a></li>
-              <RouterLink to="/teste" class="router-link"><li><a href="#">Suporte</a></li></RouterLink>
+              <RouterLink to="/home" class="router-link"><li><a href="#">Suporte</a></li></RouterLink>
             </ul>
           </div>
 
