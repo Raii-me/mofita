@@ -6,7 +6,7 @@
       <div class="lado-esquerdo">
         <router-link to="/" style="text-decoration: none;">
           <div class="btn-voltar-login">
-            <img src="../../assets/ICONS/icon-voltar-laranja.svg"><p>Voltar</p>
+            <img src="../../assets/ICONS/icons-laranja/icon-voltar-laranja.svg"><p>Voltar</p>
           </div>
         </router-link>
         <header class="cabecalho">

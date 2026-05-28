@@ -34,7 +34,7 @@
             <h4>Ajuda</h4>
             <ul>
               <li><a href="#">Perguntas Frequentes</a></li>
-              <RouterLink to="/home" class="router-link"><li><a href="#">Suporte</a></li></RouterLink>
+              <RouterLink to="/teste" class="router-link"><li><a href="#">Suporte</a></li></RouterLink>
             </ul>
           </div>
 
@@ -143,7 +143,7 @@
 }
 
 .menu-coluna a {
-  color: var(--branco);
+  color: #fff;
   text-decoration: none;
   font-size: 14px;
   transition: var(--trans);
@@ -165,7 +165,7 @@
 }
 
 .caixa-legal a {
-  color: var(--branco);
+  color: #fff;
   font-weight: 600;
   font-size: 13px;
   text-decoration: none;

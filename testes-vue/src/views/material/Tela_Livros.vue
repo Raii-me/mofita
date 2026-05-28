@@ -100,6 +100,34 @@ export default {
           titulo: "Triste Fim de Policarpo Quaresma - Lima Barreto",
           ano: 1915,
         },
+        {
+          id: 13,
+          imagem: "livro-macunaima.png",
+          categoria: "Literatura Clássica",
+          titulo: "Macunaíma - Mario Andrade",
+          ano: 1928,
+        },
+        {
+          id: 14,
+          imagem: "livro-os-sertoes.png",
+          categoria: "Literatura Clássica",
+          titulo: "Os Sertões - Euclides da Cunha",
+          ano: 1902,
+        },
+        {
+          id: 15,
+          imagem: "livro-vidas-secas.png",
+          categoria: "Literatura Clássica",
+          titulo: "Vidas Secas - Graciliano Ramos",
+          ano: 1938,
+        },
+        {
+          id: 16,
+          imagem: "livro-Ursula.png",
+          categoria: "Literatura Clássica",
+          titulo: "Úrsula - Maria Firmina dos Reis",
+          ano: 1859,
+        }
       ],
     };
   },
@@ -164,12 +192,12 @@ export default {
     </navbar>
   </section>
 
-  <section>
+  <section class="container-livros">
     <main-content class="grid-modelos">
       <div v-for="livro in livrosFiltrados" :key="livro.id" class="card">
+
         <div class="imagem">
           <img :src="getImagemUrl(livro.imagem)" id="img-box" />
-
           <div class="tema-livro">
             <p>{{ livro.categoria }}</p>
           </div>
@@ -177,14 +205,14 @@ export default {
 
         <div class="caixa-descricao-livro">
           <p>{{ livro.titulo }}</p>
-
           <div class="visualizar-detalhe-livro">
             <p>{{ livro.ano }}</p>
             <a href="#">
-              <button>Baixar Arquivo ↗</button>
+              <span class="ler-mais-btn">Baixar Arquivo →</span>
             </a>
           </div>
         </div>
+
       </div>
     </main-content>
   </section>
@@ -193,7 +221,8 @@ export default {
   <Footer />
 </template>
 
-<style>
+<style scoped>
+
 .fixar-search-bar {
   display: flex;
   justify-content: center;
@@ -222,58 +251,61 @@ export default {
   background-color: var(--brancoPadrao);
   border: 1px solid var(--borda);
   border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.caixa-search:focus-within {
+  border-color: var(--azulPadrao);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
 }
 
 .search-btn {
   width: 38px;
   height: 38px;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: var(--texto-medio);
+  transition: color 0.3s ease;
+}
+
+.search-btn:hover {
+  color: var(--azulPadrao);
 }
 
 .input-text {
   width: 100%;
   height: 38px;
   margin-left: 5px;
-}
-
-.input-text,
-.search-btn,
-.category,
-#btn-random {
   border: none;
   background-color: transparent;
   outline: none;
+  color: var(--texto);
+  font-size: 14px;
+}
+
+.input-text::placeholder {
+  color: var(--texto-medio);
+}
+
+.category {
+  width: 120px;
+  height: 38px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  color: var(--texto);
+  background: var(--branco);
 }
 
 #category-icon,
-#icon-search,
-#icon-dado {
+#icon-search {
   width: 18px;
   height: 18px;
   display: block;
-}
-
-.caixa-random {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0 12px;
-  height: 48px;
-  background-color: var(--brancoPadrao);
-  border: 1px solid var(--borda);
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-#btn-random {
-  margin-left: 10px;
-}
-
-.caixa-random p {
-  display: flex;
-  align-items: center;
-  margin: 0 10px 0 3px;
-  font-size: 14px;
+  color: var(--texto-sec);
 }
 
 .caixa-category {
@@ -285,12 +317,12 @@ export default {
   background-color: var(--brancoPadrao);
   border: 1px solid var(--borda);
   border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.category {
-  width: 120px;
-  height: 38px;
-  cursor: pointer;
+.caixa-category:hover {
+  border-color: var(--laranjaPadrao);
 }
 
 .titulo {
@@ -300,109 +332,168 @@ export default {
 
 .titulo p {
   margin: 5px;
+  color: var(--texto);
+}
+
+.container-livros {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0 80px;
 }
 
 .grid-modelos {
   display: grid;
   width: 90%;
-  max-width: 90%;
-  margin: 3% auto;
-  gap: 40px;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
 }
 
 .card {
-  position: relative;
-  width: 100%;
-  height: 350px;
+  background: var(--surface-2);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
   overflow: hidden;
-  background-color: var(--brancoPadrao);
-  border-radius: 15px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
-  transition: var(--trans);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--sombra-md);
+  height: 400px;
+  position: relative;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadowPadrao);
+  transform: translateY(-6px);
+  border-color: var(--laranjaPadrao);
 }
 
 .imagem {
-  width: 100%;
-  height: 70%;
+  position: relative;
+  height: 55%;
+  overflow: hidden;
 }
 
 #img-box {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+  border-radius: 0;
+}
+
+.card:hover #img-box {
+  transform: scale(1.05);
 }
 
 .tema-livro {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: 5px;
-  background-color: var(--branco);
-  border-radius: 10px;
+  top: 16px;
+  left: 16px;
+  background: var(--branco);
+  color: var(--texto-forte);
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+}
+
+.tema-livro p {
+  margin: 0;
 }
 
 .caixa-descricao-livro {
-  position: absolute;
-  bottom: 0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background: var(--brancoPadrao);
+  position: static;
+  height: auto;
+  bottom: auto;
   width: 100%;
-  height: 50%;
-  background-color: var(--branco);
-  border-radius: 0 0 10px 10px;
+  border-radius: 0;
 }
 
 .caixa-descricao-livro p {
-  margin: 2% 5%;
-  font-size: 17px;
-  text-align: justify;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--texto);
+  line-height: 1.3;
+  margin: 0 0 auto 0;
+  overflow: hidden;
+  text-align: left;
 }
 
 .visualizar-detalhe-livro {
-  position: absolute;
-  bottom: 3px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  border-top: 1px solid var(--borda);
+  padding-top: 16px;
+  position: static;
   width: 100%;
-  padding: 5px;
+  bottom: auto;
 }
 
-.visualizar-detalhe-livro p {
-  margin: 0 auto 0 3%;
-  padding: 5px 15px;
-  border: 1px solid var(--borda);
-  border-radius: 30px;
-}
-
-.visualizar-detalhe-livro button {
-  width: 200px;
-  height: 45px;
-  font-size: 16px !important;
-  margin-right: 10px;
-  padding: 10px;
-  background: var(--laranjaPadrao);
+.visualizar-detalhe-livro > p {
+  margin: 0;
+  padding: 0;
   border: none;
-  border-radius: 12px;
-  color: var(--branco);
+  border-radius: 0;
+  color: var(--laranjaPadrao);
   font-weight: 700;
-  cursor: pointer;
-  transition: var(--trans);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-.visualizar-detalhe-livro button:hover {
-  background: var(--laranjaEscuro);
-  box-shadow: var(--shadowPadrao);
-  text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.103);
-  transform: translateY(-4px);
+.visualizar-detalhe-livro a {
+  text-decoration: none;
+  color: var(--laranjaPadrao);
+  transition: color 0.3s ease;
 }
 
-#model-icon {
-  width: 18px;
-  height: 18px;
-  margin: 2px 5% 0 0;
+.visualizar-detalhe-livro a:hover {
+  color: var(--laranjaEscuro);
+}
+
+.ler-mais-btn {
+  color: var(--texto-medio);
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.card:hover .ler-mais-btn {
+  color: var(--laranjaPadrao);
+}
+
+@media (max-width: 768px) {
+  .grid-modelos {
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .caixa-search {
+    width: 100%;
+  }
+
+  .caixa-category {
+    width: 100%;
+  }
+
+  .titulo {
+    margin-left: 5%;
+    max-width: 90%;
+  }
 }
 </style>

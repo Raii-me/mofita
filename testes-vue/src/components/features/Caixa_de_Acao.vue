@@ -117,11 +117,11 @@ export default {
 }
 
 .caixaAcao {
+    background: var(--branco);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.9);
-    background: #f4f4f4;
     padding: 30px;
     width: auto;
     height: auto;
@@ -135,7 +135,7 @@ export default {
 }
 
 .caixaTitulo {
-    color: #000;
+    color: var(--textoForte);
     text-align: center;
     font-size: 32px;
     font-weight: 700;

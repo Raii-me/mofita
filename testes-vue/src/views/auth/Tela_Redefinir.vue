@@ -13,7 +13,7 @@
 
     <div class="caixa-icone">
       <div class="icon-auth">
-        <img src="../../assets/ICONS/icon-cadeado-aberto.svg">
+        <img src="../../assets/ICONS/icons-azul/icon-cadeado-aberto-azul.svg">
       </div>
     </div>
 
@@ -93,6 +93,10 @@ export default {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
   animation: aparecerCima 0.8s ease;
   margin: 20px auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .area-logo {

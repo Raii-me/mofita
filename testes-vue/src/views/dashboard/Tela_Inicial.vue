@@ -5,8 +5,6 @@ import Chatbot from "../../components/features/Chatbot.vue";
 import Grafico from "../../components/layout/Grafico.vue";
 import Caixa_de_Acao from "../../components/features/Caixa_de_Acao.vue";
 
-/* importar coisa aq , essa é a base */
-
 export default {
   components: {
     Header,
@@ -14,7 +12,48 @@ export default {
     Chatbot,
     Grafico,
     Caixa_de_Acao,
+    
   },
+  data() {
+    return {
+      temasHome: [
+        {
+          id: 1,
+          imagem: "Temas_Doenca_Mental.jpg",
+          categoria: "ENEM",
+          titulo: "O estigma associado às doenças mentais na sociedade brasileira",
+          destaque: "Tema Quente",
+        },
+        {
+          id: 2,
+          imagem: "Temas_Controle_Dados.jpg",
+          categoria: "ENEM",
+          titulo: "Manipulação do comportamento do usuário pelo controle de dados na internet",
+          destaque: "Tema Quente",
+        },
+        {
+          id: 3,
+          imagem: "Tema_Educacao_Surdos.jpg",
+          categoria: "ENEM",
+          titulo: "Desafios para a formação educacional dos surdos no Brasil",
+          destaque: "Tema Quente",
+        },
+        {
+          id: 4,
+          imagem: "Temas_IA_Escolas.jpg",
+          categoria: "Autoral",
+          titulo: "Impacto da inteligência artificial nos alunos de escola pública",
+          destaque: "Novo",
+        },
+      ],
+    };
+  },
+
+  methods: {
+  getImagemUrl(nome) {
+    return new URL(`../../assets/TEMAS/${nome}`, import.meta.url).href;
+  },
+}
 };
 </script>
 
@@ -24,16 +63,20 @@ export default {
 
   <main>
     <section id="part-1" class="pagina-1">
-      <div>
-        <h1>Bem vindo, Usuario!!</h1>
+      <div class="hero-text">
+        <h1>Bem-vindo, <span class="destaque">Usuário!</span></h1>
         <p class="subTitulo">Plataforma de redação impulsionada por IA</p>
       </div>
+
       <div class="bloco-1">
-        <Caixa_de_Acao />
+        <div class="painel-esquerdo">
+          <Caixa_de_Acao />
+        </div>
 
-        <div class="caixaDireita">
-          <h3 class="titulo-Direita">Evolução</h3>
-
+        <div class="painel-direito">
+          <div class="grafico-header">
+            <h3 class="titulo-Direita">Evolução</h3>
+          </div>
           <div class="Grafico-inicial">
             <Grafico />
           </div>
@@ -41,104 +84,51 @@ export default {
       </div>
     </section>
 
+    <div class="separador">
+  <span></span>
+  <p>Temas recomendados</p>
+  <span></span>
+</div>
+
     <section id="part-2" class="pagina-2">
-      <div class="bloco-2">
+      
+      <div class="grid-modelos">
 
-        <div class="card-design">
-          <div class="img-box">
-            <img src="../../assets/IMAGES/exemplo-biblioteca.png" alt="Redação" />
-            <h2>Última Redação Feita</h2>
-          </div>
+       
 
-          <div class="conteudo">
-            <p>Desafios para a educação Inclusiva</p>
+       <div
+  v-for="tema in temasHome"
+  :key="tema.id"
+  class="card"
+>
+    <div class="imagem">
+      <img
+        :src="getImagemUrl(tema.imagem)"
+        :alt="tema.titulo"
+      />
 
-            <div class="informacaoCard">
-              <span class="nota">920</span>
-              <a class="link" href="#">Visualizar ↗</a>
-            </div>
-          </div>
-        </div>
+      <div class="tema-da-modelo">
+        <p>{{ tema.categoria }}</p>
+      </div>
+    </div>
 
-        <div class="card-design">
-          <div class="img-box">
-            <img src="../../assets/IMAGES/exemplo-etarismo.png" alt="Redação" />
-            <h2>Tema Quente</h2>
-          </div>
+    <div class="caixa-descricao-modelo">
+      <p>{{ tema.titulo }}</p>
 
-          <div class="conteudo">
-            <p>Desafios para o combate do Etarismo</p>
+      <div class="visualizar-detalhe-modelo">
+        <p class="tag-categoria">
+          {{ tema.destaque }}
+        </p>
 
-            <div class="informacaoCard">
-              <span class="tag">ENEM</span>
-              <button class="btn-Escrever">Escrever</button>
-            </div>
-          </div>
-        </div>
+        <a href="#">
+          <span class="ler-mais-btn">
+            Ler textos de apoio →
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
 
-        <div class="card-design">
-          <div class="img-box">
-            <img src="../../assets/IMAGES/exemplo-Ambiente.png" alt="Redação" />
-            <h2>Tema Quente</h2>
-          </div>
-
-          <div class="conteudo">
-            <p>Os impactos do desmatamento</p>
-
-            <div class="informacaoCard">
-              <span class="tag">ENEM</span>
-              <button class="btn-Escrever">Escrever</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-design">
-          <div class="img-box">
-            <img src="../../assets/IMAGES/exemplo-noticias.png" alt="Redação" />
-            <h2>Tema Quente</h2>
-          </div>
-
-          <div class="conteudo">
-            <p>Os perigos da desinformação digital nas Eleições</p>
-
-            <div class="informacaoCard">
-              <span class="tag">ENEM</span>
-              <button class="btn-Escrever">Escrever</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-design">
-          <div class="img-box">
-            <img src="../../assets/IMAGES/exemplo-estudando.png" alt="Redação" />
-            <h2>Tema Quente</h2>
-          </div>
-
-          <div class="conteudo">
-            <p>Os desafios da valorização da educação no Brasil</p>
-
-            <div class="informacaoCard">
-              <span class="tag">ENEM</span>
-              <button class="btn-Escrever">Escrever</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-design">
-          <div class="img-box">
-            <img src="../../assets/IMAGES/exemplo-mental.png" alt="Redação" />
-            <h2>Tema Quente</h2>
-          </div>
-
-          <div class="conteudo">
-            <p>A importância do cuidado com a saúde mental</p>
-
-            <div class="informacaoCard">
-              <span class="tag">ENEM</span>
-              <button class="btn-Escrever">Escrever</button>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   </main>
@@ -147,120 +137,86 @@ export default {
 
 <style scoped>
 * {
-  margin: 0px;
-  padding: 0px;
-  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 main {
-  scroll-behavior: smooth;
-  overflow: auto;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  background: var(--branco);
+  background: var(--brancoPadrao);
   min-height: 100vh;
-  margin: 0;
+  overflow-x: hidden;
 }
 
 .pagina-1 {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 50px;
+  padding: 40px 5% 60px;
+}
+
+.hero-text {
+  margin-bottom: 32px;
 }
 
 h1 {
-  margin-top: 20px;
-  margin-left: 40px;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--texto);
+  margin-bottom: 6px;
 }
 
+.destaque {
+  color: var(--laranjaPadrao);
+}
+
+
 .subTitulo {
+  font-size: 15px;
   font-weight: 300;
-  margin-left: 40px;
-  margin-bottom: 40px;
+  color: var(--texto-sec);
 }
 
 .bloco-1 {
+  display: flex;
+  gap: 28px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.painel-esquerdo {
   flex: 1;
-  display: flex;
-  justify-self: flex-start;
-  justify-content: center;
-  width: 100%;
-  gap: 10px;
-  margin-left:50px;
-  margin-right: 50px;
+  min-width: 0;
 }
 
-.caixaEsquerda {
+.painel-direito {
+  flex: 3.5;
+  min-width: 0;
   display: flex;
-  justify-self: flex-start;
-  flex: 2;
   flex-direction: column;
-  text-align: center;
-  max-width: 400px;
+  background: var(--brancoPadrao);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--sombra-md);
 }
 
-h2 {
-  color: var(--laranjaPadrao);
-  text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.103);
-}
-
-.btn-Funcoes {
-  display: grid;
-  justify-content: center;
-  list-style: none;
-}
-
-.btn-Funcoes button {
-  width: 100%;
-  height: 60px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-
-/*pra q serve isso??? - Rai*/
-#botoesdeAcao {
-  background-color: var(--laranjaPadrao);
-  color: var(--branco);
-  font-size: 20px;
-  border: 2px solid var(--laranjaEscuro);
-  border-radius: 10px;
-  padding: 0 20px 0 20px;
-  text-align: center;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  cursor: pointer;
-  transition: var(--delayCurto);
-}
-
-#botoesdeAcao:hover {
-  background-color: #0b22b6;
-  border: 2px solid #3248d5;
-  font-weight: 700;
-}
-
-.caixaDireita {
-  display: flex;
-  justify-self: flex-start;
-  flex: 3;
-  flex-direction: column;
-  width: 100%;
-  margin-right: 100px;
+.grafico-header {
+  margin-bottom: 16px;
 }
 
 .titulo-Direita {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 600;
-  margin-left: 5px;
+  color: var(--texto);
 }
 
 .Grafico-inicial {
+  flex: 1;
+  min-height: 260px;
   width: 100%;
-  height: 300px;
 }
 
 .Grafico-inicial canvas {
@@ -268,199 +224,208 @@ h2 {
   height: 100% !important;
 }
 
-.pagina-2 {
-  flex: 1;
+.separador {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  gap: 16px;
+  margin: 0px 0 30px;
 }
 
-.bloco-2 {
+.separador span {
+  flex: 1;
+  height: 1px;
+  background: var(--borda);
+}
+
+.separador p {
+  color: var(--texto-sec);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+.pagina-2 {
+  padding: 20px 5% 80px;
+}
+
+.secao-titulo {
+  margin-bottom: 28px;
+}
+
+.secao-titulo h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--texto);
+  margin-bottom: 4px;
+}
+
+.secao-titulo p {
+  font-size: 14px;
+  color: var(--texto-sec);
+  font-weight: 300;
+}
+
+.grid-modelos {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  padding: 30px;
-  margin-bottom: 30px;
+  gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
 }
 
-.card-design {
-  background: var(--branco);
+.card {
+  background: var(--surface-2);
+  border: 1px solid var(--borda);
   border-radius: 16px;
-  margin: 20px;
   overflow: hidden;
-  box-shadow: 0 6px 5px rgba(0, 0, 0, 0.15);
-  transition: var(--delayCurto);
-}
-
-.card-design:hover {
-  transform: translateY(-10px);
-  box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
-}
-
-.img-box {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--sombra-md);
+  height: 400px;
   position: relative;
-  height: 200px;
-  width: 100%;
 }
 
-.img-box img {
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--laranjaPadrao);
+}
+
+.imagem {
+  position: relative;
+  height: 55%;
+  overflow: hidden;
+}
+
+.imagem img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.8s ease;
 }
 
-.img-box::after {
-  content: "";
-  z-index: 1;
+.card:hover .imagem img {
+  transform: scale(1.05);
+}
+
+.tema-da-modelo {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  top: 16px;
+  left: 16px;
+  background: var(--branco);
+  color: var(--texto-forte);
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
 }
 
-.img-box h2 {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  color: var(--branco);
-  font-size: 20px;
-  z-index: 2;
+.tema-da-modelo p {
+  margin: 0;
 }
 
-.conteudo {
-  padding: 15px;
-}
-
-.conteudo p {
-  margin-bottom: 15px;
-  font-size: 16px;
-}
-
-.informacaoCard {
+.caixa-descricao-modelo {
+  padding: 24px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  flex-grow: 1;
+  background: var(--brancoPadrao);
+}
+
+.caixa-descricao-modelo > p {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--texto);
+  line-height: 1.3;
+  margin: 0 0 auto 0;
+  overflow: hidden;
+  text-align: left;
+}
+
+.visualizar-detalhe-modelo {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  border-top: 1px solid var(--borda);
+  padding-top: 16px;
 }
 
-.nota {
-  background: var(--branco);
-  border: 2px solid #0000000e;
-  padding: 8px 20px;
-  border-radius: 10px;
-  font-weight: bold;
-}
 
-.link {
-  color: #88898a;
-  transition: var(--delayCurto);
-  margin: 0px 10px;
-}
-
-.link:hover {
-  color: var(--azulForte);
-  font-weight: 700;
-}
-
-.tag {
-  background: var(--branco);
-  border: 2px solid #0000000e;
-  padding: 8px 20px;
-  border-radius: 10px;
-}
-
-.btn-Escrever {
-  background: var(--azulPadrao);
-  color: white;
+.tag-categoria {
+  margin: 0;
+  padding: 0;
   border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: var(--delayMedio);
-  text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.103);
+  border-radius: 0;
+  color: var(--laranjaPadrao);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
 }
 
-.btn-Escrever:hover {
-  background: var(--laranjaPadrao);
-  border: 2px solid var(--laranjaEscuro);
-  font-weight: 700;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-  text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.103);
+.visualizar-detalhe-modelo a {
+  text-decoration: none;
 }
+
+.ler-mais-btn {
+  color: var(--texto-medio);
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.card:hover .ler-mais-btn {
+  color: var(--laranjaPadrao);
+}
+
 
 @media (max-width: 1024px) {
-  .caixaDireita {
-    margin-right: 30px;
-  }
-
-  .bloco-2 {
+  .grid-modelos {
     grid-template-columns: repeat(2, 1fr);
-    padding: 20px;
   }
 }
 
 @media (max-width: 768px) {
-  h1,
-  .subTitulo {
-    margin-left: 20px;
-    text-align: center;
-  }
-
-  .pagina-1 {
-    align-items: center;
+  .pagina-1,
+  .pagina-2 {
+    padding-left: 5%;
+    padding-right: 5%;
   }
 
   .bloco-1 {
     flex-direction: column;
-    margin-left: 20px;
-    margin-right: 20px;
-    gap: 40px;
+    gap: 24px;
   }
 
-  .caixaDireita {
-    margin-right: 0;
-    width: 100%;
-    align-items: center;
+  .painel-direito {
+    padding: 20px;
   }
 
-  .titulo-Direita {
+  h1 {
+    font-size: 26px;
     text-align: center;
-    margin-bottom: 10px;
   }
 
-  .Grafico-inicial {
-    height: 250px;
+  .subTitulo {
+    text-align: center;
   }
 
-  .bloco-2 {
+  .hero-text {
+    text-align: center;
+  }
+
+  .grid-modelos {
     grid-template-columns: 1fr;
-    gap: 15px;
-    padding: 10px;
-  }
-
-  .card-design {
-    margin: 10px;
+    gap: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  h1 {
-    font-size: 26px;
-  }
-
-  .subTitulo {
-    font-size: 14px;
-  }
-
-  .informacaoCard {
+  .visualizar-detalhe-modelo {
     flex-direction: column;
-    gap: 15px;
-  }
-
-  .btn-Escrever,
-  .nota {
-    width: 100%;
-    text-align: center;
+    align-items: flex-start;
+    gap: 12px;
   }
 }
 </style>

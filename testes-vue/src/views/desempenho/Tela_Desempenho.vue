@@ -116,13 +116,11 @@ main {
     overflow: auto;
     overflow-x: hidden;
     flex-direction: column;
-    background: var(--branco);
+    background: var(--brancoPadrao);
     min-height: 100vh;
-
 }
 
 .pagina-1 {
-
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -135,20 +133,17 @@ main {
 }
 
 .titulo {
-
     margin-top: 40px;
-
+    color: var(--texto);
 }
 
 .subTitulo {
-
     font-weight: 300;
     margin-bottom: 50px;
-
+    color: var(--texto-sec);
 }
 
 .container {
-
     flex: 1;
     display: flex;
     justify-content: center;
@@ -158,25 +153,21 @@ main {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-
 }
 
 .caixaEsquerda {
-
     display: flex;
     flex-direction: column;
     text-align: center;
     align-self: flex-start;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: var(--brancoPadrao);
     box-shadow: var(--shadowPadrao);
     margin: 5px 5px 5px 5px;
     padding: 10px 10px 10px 10px;
     max-width: 850px;
     width: 100%;
     flex: 1 1 300px;
-
-
 }
 
 .Grafic {
@@ -191,13 +182,12 @@ main {
 }
 
 .caixaDireita {
-
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-self: flex-start;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: var(--brancoPadrao);
     box-shadow: var(--shadowPadrao);
     width: 400px;
     height: 300px;
@@ -210,6 +200,7 @@ main {
 .tituloDireita {
     text-align: left;
     margin-bottom: 25px;
+    color: var(--texto);
 }
 
 .item {
@@ -217,32 +208,32 @@ main {
     align-items: center;
     justify-content: space-between;
     padding: 15px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--borda);
+    color: var(--texto);
 }
 
 .icone {
     width: 40px;
     height: 40px;
-    background-color: #F0F7FF;
+    background-color: var(--indigo-bg);
     border-radius: 8px;
     padding: 5px;
 }
 
 .mensageStatus {
-
     text-align: center;
     font-weight: 500;
+    color: var(--texto);
 }
 
 .Resultados {
-
     font-weight: 700;
-    background-color: #efefef;
-    border: 1px solid #fff;
+    background-color: var(--surface-2);
+    border: 1px solid var(--borda-clara);
     border-radius: 5px;
     padding-left: 5px;
     padding-right: 5px;
-
+    color: var(--texto);
 }
 
 .pagina-2 {
@@ -253,37 +244,32 @@ main {
     justify-content: flex-start;
     margin-top: 50px;
     margin-bottom: 100px;
-
 }
 
 .container-2 {
-
     display: grid;
     flex-wrap: wrap;
     justify-content: center;
     border-radius: 30px;
     width: 80%;
     max-width: 1000px;
-    background-color: #fff;
+    background-color: var(--brancoPadrao);
     box-shadow: var(--shadowPadrao);
     margin-top: 15px;
     transition: var(--delayCurto);
 }
 
 .container-2:hover {
-
     transform: translateY(-10px);
     transition: var(--delayCurto);
 }
 
 .tituloCaixa {
-
     margin: 20px 0px 10px 10px;
-
+    color: var(--texto);
 }
 
 .verificarStatus {
-
     display: grid;
     grid-template-columns: 3fr 1fr 1.5fr 1fr;
     align-items: center;
@@ -291,17 +277,15 @@ main {
     margin-left: 10px;
     margin-right: 10px;
     margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--borda);
     gap: 20px;
-
 }
 
 .Tema,
 .Nota,
 .Data,
 .botoes {
-
-    color: #ccc;
+    color: var(--texto-medio);
     font-weight: 400;
 }
 
@@ -319,53 +303,45 @@ main {
     margin-right: 40px;
 }
 
-
 .textosTema {
-
     text-align: left;
     font-size: 15px;
     font-weight: 400;
-
+    color: var(--texto);
 }
 
 .notas {
-
     text-align: center;
     font-weight: 600;
+    color: var(--texto);
 }
 
 .datas {
-
     text-align: center;
+    color: var(--texto);
 }
 
 .visualizarBotoes {
-
-    background-color: #fc871a;
-    border: #fc871a 1px solid;
+    background-color: var(--laranjaPadrao);
+    border: var(--laranjaPadrao) 1px solid;
     padding: 5px 10px 5px 10px;
     border-radius: 5px;
-    color: #EBF1F5;
+    color: #fff;
     text-align: center;
     justify-self: end;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.4);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
-
-
+    transition: var(--delayCurto);
 }
 
 .visualizarBotoes:hover {
-
-    background-color: #204B86;
-    border: 1px solid #2f3da3;
-    font-weight:500;
+    background-color: var(--azulPadrao);
+    border: 1px solid var(--azul);
+    font-weight: 500;
     transition: var(--delayCurto);
-
 }
 
-/* ================= RESPONSIVIDADE MELHORADA ================= */
-/* DESKTOP GRANDE (ajuste fino) */
 @media (max-width: 1200px) {
     .container {
         justify-content: center;
@@ -390,11 +366,7 @@ main {
     }
 }
 
-
-/* TABLET */
 @media (max-width: 1024px) {
-
- 
     .container {
         flex-direction: column;
         align-items: center;
@@ -418,35 +390,29 @@ main {
     }
 }
 
-
-/* MOBILE */
 @media (max-width: 768px) {
-
-
-    /* TITULOS */
     .titulo,
     .subTitulo {
-        text-align: center; /* Centraliza o texto */
-        margin-left: 0;     /* Remove a margem fixa da esquerda */
+        text-align: center;
+        margin-left: 0;
         margin-right: 0;
-        padding: 0 15px;    /* Respiro lateral seguro */
+        padding: 0 15px;
     }
 
-    /* CARDS */
     .container {
-          display: flex;
+        display: flex;
         flex-direction: column;
-        align-items: center; /* Centraliza os cards horizontalmente */
+        align-items: center;
         gap: 20px;
         width: 100%;
     }
 
     .caixaEsquerda,
     .caixaDireita {
-         width: 95% !important; /* Garante largura consistente */
-        max-width: 500px;      /* Evita que fiquem gigantes em telas médias */
-        margin: 0 auto;        /* Centralização forçada */
-        align-self: center; 
+        width: 95% !important;
+        max-width: 500px;
+        margin: 0 auto;
+        align-self: center;
     }
 
     .caixaGeral {
@@ -457,9 +423,9 @@ main {
 
     .container-2 {
         width: 95%;
-        margin: 15px auto; /* Centraliza o card da tabela */
+        margin: 15px auto;
     }
-    
+
     .caixaEsquerda,
     .container-2 {
         margin: 0 auto;
@@ -470,12 +436,11 @@ main {
         height: 250px;
     }
 
-    /* TABELA VIRA CARD */
     .verificarStatus {
         grid-template-columns: 2fr 1fr 1fr;
         align-items: center;
         gap: 5px;
-        background: #fff;
+        background: var(--brancoPadrao);
         border-radius: 10px;
         padding: 15px;
     }
@@ -490,13 +455,9 @@ main {
         grid-column: 1 / -1;
         width: 100%;
     }
-    
 }
 
-
-/* MOBILE PEQUENO */
 @media (max-width: 480px) {
-
     .titulo {
         font-size: 18px;
     }
@@ -508,7 +469,5 @@ main {
     .Grafic {
         height: 200px;
     }
-
 }
-
 </style>

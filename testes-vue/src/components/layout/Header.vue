@@ -1,21 +1,46 @@
 <script>
-
-import "../../assets/css/variaveis.css"
+import "../../assets/css/variaveis.css";
 
 export default {
   data() {
     return {
-      aberto: false
+      aberto: false,
+      darkMode: false
+    };
+  },
+
+  mounted() {
+    const temaSalvo = localStorage.getItem("theme");
+
+    this.darkMode = temaSalvo === "dark";
+
+    this.aplicarTema();
+  },
+
+  watch: {
+    darkMode() {
+      this.aplicarTema();
     }
   },
+
   methods: {
     toggleMenu() {
-      this.aberto = !this.aberto
+      this.aberto = !this.aberto;
+    },
+
+    aplicarTema() {
+      document.documentElement.setAttribute(
+        "data-theme",
+        this.darkMode ? "dark" : "light"
+      );
+
+      localStorage.setItem(
+        "theme",
+        this.darkMode ? "dark" : "light"
+      );
     }
   }
-}
-
-
+};
 </script>
 
 
@@ -77,16 +102,6 @@ export default {
           <span>></span>
         </a>
         <a href="#" class="sub-menu-link">
-          <img src="../../assets/ICONS/icons-azul/icon-perfil-chatbot-simples-azul.svg" />
-          <p>ChatBot</p>
-          <span>></span>
-        </a>
-        <a href="#" class="sub-menu-link" >
-          <img src="../../assets/ICONS/icons-azul/icon-configuracoes-azul.svg" />
-          <p><RouterLink to="/perfil" class="router-link">Configurações</RouterLink></p>
-          <span>></span>
-        </a>
-        <a href="#" class="sub-menu-link">
           <img src="../../assets/ICONS/icons-azul/icon-sairperfil-azul.svg" />
           <p>Sair</p>
           <span>></span>
@@ -117,6 +132,7 @@ nav {
     width: 120px;
 }
 
+
 .cont-user {
     display: flex;
 }
@@ -126,7 +142,7 @@ nav {
     flex-direction: column;
     align-items: flex-end;
     font-weight: 600;
-    color: var(--branco);
+    color: #fff;
     text-decoration: none;
     font-size: small;
 }
@@ -151,7 +167,7 @@ nav ul li {
 
 nav ul li a {
     font-weight: 600;
-    color: var(--branco);
+    color: #fff;
     ;
     display: inline-block;
     text-decoration: none;

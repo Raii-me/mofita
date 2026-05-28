@@ -6,533 +6,617 @@ import Switch from '../../components/features/Switch.vue'
 import "../../assets/css/variaveis.css";
 
 export default {
-    components: {
-        Header,
-        Footer,
-        Chatbot,
-        Switch
-    },
+    components: { Header, Footer, Chatbot, Switch },
 
     data() {
         return {
             nome: 'teste',
             esc: '',
-
             tirarAnimacao: false,
             altoContraste: false,
             notificacao: false,
             espacamentoLinha: false,
             modoFoco: false,
-            restaurarPadraoConfiguracao: false,
             modoEscuro: false,
-            receberEmail: false,
-            chatbotFlutuante: false,
-            restaurarPadraoAcessibilidade: false,
-
+            receberEmail: true,
+            chatbotFlutuante: true,
             abaAtiva: 'conta'
+        }
+    },
+
+    mounted() {
+        const temaSalvo = localStorage.getItem("theme");
+        this.modoEscuro = temaSalvo === "dark";
+        this.aplicarTema();
+    },
+
+    watch: {
+        modoEscuro() {
+            this.aplicarTema();
         }
     },
 
     methods: {
         mudarAba(aba) {
-            this.abaAtiva = aba
+            this.abaAtiva = aba;
         },
-        salvar(){
-            this.nome = this.esc
-            alert(this.nome)
+
+        voltar() {
+            this.$router.back("/");
+        },
+
+        salvar() {
+            this.nome = this.esc;
+            alert(this.nome);
+        },
+
+        aplicarTema() {
+            if (this.modoEscuro) {
+                document.documentElement.setAttribute("data-theme", "dark");
+                localStorage.setItem("theme", "dark");
+            } else {
+                document.documentElement.removeAttribute("data-theme");
+                localStorage.setItem("theme", "light");
+            }
         }
     }
 }
 </script>
 
-
 <template>
-    <Header />
 
     <div class="conteudo-config">
         <div class="config-container">
             <section class="info-conta">
 
-                <div class="sidebar">
+                <aside class="sidebar">
                     <div class="profile-edt">
-                        <img src="../../assets/IMAGES/foto-perfil-temporaria.png" />
-                        <p>{usuario}</p>
-                        <p>{Funcao}</p>
-                        <p class="id-usuario">{id}</p>
-                        
-                        <hr>
+                        <div class="avatar-wrapper">
+                            <img src="../../assets/IMAGES/foto-perfil-temporaria.png" />
+                        </div>
+                        <p class="profile-nome">{{ usuario }}</p>
+                        <p class="profile-funcao">{{ Funcao }}</p>
+                        <p class="id-usuario">{{ id }}</p>
+                        <hr />
                     </div>
 
-                    <div class="opcoes">
+                    <nav class="opcoes">
+                        <button
+                            class="opcoes-sidebar"
+                            @click="mudarAba('conta')"
+                            :class="{ ativo: abaAtiva === 'conta' }"
+                        >
+                            <img src="../../assets/ICONS/icons-azul/icon-perfil-azul.svg" />
+                            <span>Conta</span>
+                        </button>
 
-                        <div class="opcoes-sidebar" @click="mudarAba('conta')" :class="{ ativo: abaAtiva === 'conta' }">
-                            <img src="../../assets/ICONS/icons-azul/icon-perfil-azul.svg">
-                            <p>Conta</p>
-                        </div>
+                        <button
+                            class="opcoes-sidebar"
+                            @click="mudarAba('configuracao')"
+                            :class="{ ativo: abaAtiva === 'configuracao' }"
+                        >
+                            <img src="../../assets/ICONS/icons-azul/icon-configuracoes-azul.svg" />
+                            <span>Configurações</span>
+                        </button>
 
-        
-
-
-                        <div class="opcoes-sidebar" @click="mudarAba('acessibilidade')"
-                            :class="{ ativo: abaAtiva === 'acessibilidade' }">
-                            <img src="../../assets/ICONS/icons-azul/icon-lupa-azul.svg">
-                            <p>Acessibilidade</p>
-                        </div>
-
-                        <div class="opcoes-sidebar" @click="mudarAba('configuracao')"
-                            :class="{ ativo: abaAtiva === 'configuracao' }">
-                            <img src="../../assets/ICONS/icons-azul/icon-configuracoes-azul.svg">
-                            <p>Configurações</p>
-                        </div>
-                        <div class="opcoes-sidebar" @click="mudarAba('caixa4')"
-                            :class="{ ativo: abaAtiva === 'caixa4' }">
-                            <img src="../../assets/ICONS/icons-azul/icon-favorito-azul.svg">
-                            <p>palavracoisa</p>
-                        </div>
-
-                    </div>
+            
+                    </nav>
 
                     <div class="final">
-                        <div class="final-sidebar">
-                            <img src="../../assets/ICONS/icons-outros/icon-logout.png">
-                            <p>Sair</p>
-                        </div>
+                        <button class="final-sidebar">
+                            <img src="../../assets/ICONS/icons-outros/icon-logout.png" />
+                            <span>Sair</span>
+                        </button>
+                        <button class="final-sidebar" id="voltar" @click="voltar">
+                            <img src="../../assets/ICONS/icons-outros/icon-logout.png" />
+                            <span>Voltar</span>
+                        </button>
                     </div>
-                </div>
+                </aside>
 
                 <main class="config-box">
-                    <div v-if="abaAtiva === 'conta'">
 
-                        <div class="titulo">
+                    <div v-if="abaAtiva === 'conta'" class="aba-conteudo">
+                        <div class="secao-titulo">
                             <h4>Seus dados</h4>
+                            <p>Gerencie suas informações pessoais</p>
                         </div>
 
                         <div class="setting-box">
-                            <p>Nome:</p>
+                            <label class="field-label">Nome</label>
                             <div class="change-box">
-                                <input type="text" placeholder="Digite um Nome novo"/>
-                                <button @click="salvar">Mudar Nome</button>
+                                <input type="text" v-model="esc" placeholder="Digite um novo nome" />
+                                <button @click="salvar">Salvar</button>
                             </div>
                         </div>
 
                         <div class="setting-box">
-                            <p>Email:</p>
+                            <label class="field-label">Email</label>
                             <div class="change-box">
-                                <input type="text" placeholder="Digite um Email novo" />
-                                <button>Mudar Email</button>
+                                <input type="email" placeholder="Digite um novo email" />
+                                <button>Salvar</button>
                             </div>
                         </div>
 
-                        <div class="titulo">
-                            <h4>Mudar Senha</h4>
+                        <div class="secao-titulo secao-titulo--mt">
+                            <h4>Segurança</h4>
+                            <p>Altere sua senha de acesso</p>
                         </div>
 
-                        <div class="password-box">
-                            <p>Senha Atual</p>
+                        <div class="setting-box">
+                            <label class="field-label">Senha atual</label>
                             <div class="password-config">
-                                <input type="text" placeholder="Digite sua senha atual" />
+                                <input type="password" placeholder="Digite sua senha atual" />
                             </div>
                         </div>
 
-                        <div class="password-box">
-                            <p>Nova Senha</p>
+                        <div class="setting-box">
+                            <label class="field-label">Nova senha</label>
                             <div class="password-config">
-                                <input type="text" placeholder="Digite sua nova senha" />
+                                <input type="password" placeholder="Digite sua nova senha" />
                             </div>
                         </div>
 
-                        <div class="password-box">
-                            <p>Confirme</p>
+                        <div class="setting-box">
+                            <label class="field-label">Confirmar senha</label>
                             <div class="password-config">
-                                <input type="text" placeholder="Confirme sua senha" />
+                                <input type="password" placeholder="Confirme sua nova senha" />
                                 <button>Salvar</button>
                             </div>
                         </div>
                     </div>
 
-                    <div v-else-if="abaAtiva === 'acessibilidade'">
-
-                        <div class="titulo">
-                            <h4>Acessibilidade</h4>
-                        </div>
-
-
-                        <div class="acessibilidade-box">
-                            <p>Tirar Animações</p>
-                            <Switch v-model="tirarAnimacao" />
-                        </div>
-
-                        <div class="acessibilidade-box">
-                            <p>Alto contraste</p>
-                            <Switch v-model="altoContraste" />
-                        </div>
-
-
-
-                        <div class="acessibilidade-box">
-                            <p>Notificações</p>
-                            <Switch v-model="notificacao" />
-                        </div>
-                        <div class="acessibilidade-box">
-                            <p>Espaçamento entre linhas</p>
-                            <Switch v-model="espacamentoLinha" />
-                        </div>
-                        <div class="acessibilidade-box">
-                            <p>Modo foco</p>
-                            <Switch v-model="modoFoco" />
-                        </div>
-
-                        <div class="acessibilidade-box">
-                            <p>Restaurar Padrão</p>
-                                <button>Mudar Nome</button>
-                        </div>
-
-
-                    </div>
-
-                    <div v-else-if="abaAtiva === 'configuracao'">
-                        <div class="titulo">
+                    <div v-else-if="abaAtiva === 'configuracao'" class="aba-conteudo">
+                        <div class="secao-titulo">
                             <h4>Configurações</h4>
+                            <p>Preferências gerais do sistema</p>
                         </div>
 
-                        <div class="acessibilidade-box">
-                            <p>Modo Escuro</p>
+                        <div class="opcao-row">
+                            <div class="opcao-info">
+                                <span class="opcao-nome">Modo Escuro</span>
+                                <span class="opcao-desc">Altera o tema da interface para escuro</span>
+                            </div>
                             <Switch v-model="modoEscuro" />
                         </div>
 
-                        <div class="acessibilidade-box">
-                            <p>Idiomas</p>
+                        <div class="opcao-row">
+                            <div class="opcao-info">
+                                <span class="opcao-nome">Tamanho da Fonte</span>
+                                <span class="opcao-desc">Ajuste o tamanho do texto na plataforma</span>
+                            </div>
                             <select class="category">
-                                <option value="opcao1">PT-BR</option>
-                                <option value="opcao2">ES</option>
-                                <option value="opcao3">EN</option>
-
+                                <option value="10">10px</option>
+                                <option value="12">12px</option>
+                                <option value="14" selected>14px</option>
+                                <option value="16">16px</option>
+                                <option value="18">18px</option>
+                                <option value="20">20px</option>
+                                <option value="22">22px</option>
                             </select>
                         </div>
 
-                        <div class="acessibilidade-box">
-                            <p>Tamanho da Fonte</p>
-                            <select class="category">
-                                <option value="opcao1">10px</option>
-                                <option value="opcao2">12px</option>
-                                <option value="opcao3">14px</option>
-                                <option value="opcao4">16px</option>
-                                <option value="opcao5">18px</option>
-                                <option value="opcao6">20px</option>
-                                <option value="opcao7">22px</option>
-                            </select>
-                        </div>
-
-                        <div class="acessibilidade-box">
-                            <p>Receber Email</p>
+                        <div class="opcao-row">
+                            <div class="opcao-info">
+                                <span class="opcao-nome">Receber Emails</span>
+                                <span class="opcao-desc">Notificações e novidades por email</span>
+                            </div>
                             <Switch v-model="receberEmail" />
                         </div>
 
-                        <div class="acessibilidade-box">
-                            <p>Chatbot Flutuante</p>
+                        <div class="opcao-row">
+                            <div class="opcao-info">
+                                <span class="opcao-nome">Chatbot Flutuante</span>
+                                <span class="opcao-desc">Exibe o assistente flutuante na tela</span>
+                            </div>
                             <Switch v-model="chatbotFlutuante" />
                         </div>
 
-                        <div class="acessibilidade-box">
-                            <p>Restaurar Padrão</p>
-                            <button>Mudar Nome</button>
+                        <div class="secao-footer">
+                            <button class="btn-restaurar">Restaurar Padrão</button>
                         </div>
-
-                        
-
-
-
-
-
                     </div>
+
                 </main>
-
-
             </section>
-
-
         </div>
     </div>
-
-    <Chatbot />
-    <Footer />
+<Chatbot v-if="chatbotFlutuante" />
 </template>
 
 <style scoped>
 .conteudo-config {
     width: 100%;
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    background: var(--surface);
 }
 
 .config-container {
     width: 90%;
+    max-width: 1100px;
     height: fit-content;
-    background-color: var(--branco);
+    background-color: var(--brancoPadrao);
     box-shadow: var(--shadowPadrao);
-    border-radius: var(--radius-pequeno);
-
-    margin-top: 50px;
-    margin-bottom: 50px;
+    border-radius: var(--radius-medio);
+    margin: 50px 0;
+    overflow: hidden;
 }
 
 .info-conta {
     display: flex;
+    min-height: 600px;
 }
 
 .sidebar {
-    height: auto;
-    min-height: 600px;
-    padding-top: 35px;
-    width: 200px;
-    min-width: 200px;
-    max-width: 200px;
+    width: 220px;
+    min-width: 220px;
     flex-shrink: 0;
-    box-shadow: 2px 0 1px rgba(0, 0, 0, 0.103); /*isso daq q faz a linha ali caso alguem venha ver*/ 
-    background-color: var(--branco);
-    border-radius: var(--radius-pequeno) 0px 0px var(--radius-pequeno);
-    border-right: 2px solid var(--cinzaPadrao);
+    background-color: var(--surface-2);
+    border-right: 1px solid var(--borda);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    padding: 32px 0 20px;
+    gap: 10px;
 }
 
 .profile-edt {
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 0 20px;
+    margin-bottom: 8px;
 }
 
-.profile-edt img {
-    width: 70px;
-    height: 70px;
+.avatar-wrapper {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 10px;
+}
+
+.avatar-wrapper img {
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
-    border: 2px solid var(--branco);
-    margin-bottom: 5px;
+    border: 2px solid var(--borda);
+    object-fit: cover;
 }
 
-.profile-edt p {
-    font-size: 15px;
+.profile-nome {
+    font-size: 14px;
     font-weight: 700;
-    color: #000000;
+    color: var(--texto);
+    margin: 0;
+}
+
+.profile-funcao {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--texto-medio);
+    margin: 2px 0 0;
+}
+
+.id-usuario {
+    font-size: 10px;
+    color: var(--texto-suave);
+    margin: 2px 0 0;
 }
 
 .profile-edt hr {
-    margin-top: 10px;
+    margin-top: 16px;
     width: 100%;
     border: none;
     height: 1px;
-    background-color: #e2e2e2;
+    background-color: var(--borda);
 }
 
 .opcoes {
-    margin-top: 5px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
+    align-items: stretch;
+    padding: 8px 12px;
+    gap: 2px;
+    flex: 1;
 }
 
 .final {
-    margin-top: auto;
-    margin-bottom: 10px;
+    padding: 8px 12px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.opcoes-sidebar {
-    border: 2px solid var(--azulPadrao);
-    color: var(--azulPadrao);
-}
-
-.final-sidebar {
-    border: 2px solid var(--vermelho);
-    color: var(--vermelho);
-}
-
-.opcoes-sidebar p,
-.final-sidebar p {
-    all: unset;
-    margin-right: 5px;
+    gap: 10px;
 }
 
 .opcoes-sidebar,
 .final-sidebar {
-    transition: 0.5s;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-top: 5px;
-    width: 168px;
-    padding: 5px;
-    background-color: var(--branco);
-    font-size: 14px;
+    gap: 8px;
+    width: 100%;
+    padding: 9px 12px;
+    background: transparent;
+    border: none;
     border-radius: var(--radius-pequeno);
+    font-size: 13px;
+    font-weight: 600;
     cursor: pointer;
+    transition: all var(--trans);
+    text-align: left;
 }
 
-.opcoes-sidebar img,
-.final-sidebar img {
-    margin-left: 5px;
-    margin-right: 5px;
-    width: 14px;
-    height: 14px;
+.opcoes-sidebar {
+    color: var(--texto-sec);
 }
 
 .opcoes-sidebar:hover {
     background-color: var(--azulPadraoClaro);
-    box-shadow: var(--sombra-md);
-}
-
-.final-sidebar:hover {
-    background-color: var(--vermelhoClaro);
-    box-shadow: var(--sombra-md);
+    color: var(--azulPadrao);
 }
 
 .opcoes-sidebar.ativo {
     background-color: var(--azulPadraoClaro);
-    box-shadow: var(--sombra-md);
+    color: var(--azulPadrao);
+    font-weight: 700;
 }
 
-
-.category {
-    background-color: var(--branco);
-    padding: 2px;
-    width: 60px;
-    border-radius: var(--radius-pequeno);
-    border: 1px solid var(--cinzaBorda);
+.final-sidebar {
+    color: var(--vermelho);
+    border: 1px solid var(--vermelho);
+}
+#voltar{
+    color: var(--texto-sec);
+    border: 1px solid var(--borda);
 }
 
-.acessibilidade-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 11px;
-    margin-left: 2%;
-    margin-right: 2%;
-    background-color: var(--cinzaPadrao);
-    border: 1px solid var(--cinzaBorda);
-    border-radius: var(--radius-pequeno);
-    box-shadow: var(--sombra-sm);
-    margin-top: 15px;
+#voltar:hover{
+    background: var(--brancoPadrao);
 }
 
-
-.acessibilidade-box button {
-    height: 40px;
-    margin-left: auto;
-    width: 100px;
-    background: var(--laranjaPadrao);
-    border: none;
-    border-radius: var(--radius-pequeno);
-    color: var(--branco);
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--trans);
-    margin-right: 10px;
+.final-sidebar:hover {
+    background-color: var(--vermelhoClaro);
 }
 
+.opcoes-sidebar img,
+.final-sidebar img {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
 
-.acessibilidade-box p {
-    margin-right: auto;
-
+.opcoes-sidebar span,
+.final-sidebar span {
+    white-space: nowrap;
 }
 
 .config-box {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    background: var(--brancoPadrao);
 }
 
-.titulo h4 {
-    margin-left: 2%;
-    margin-top: 3%;
+.aba-conteudo {
+    padding: 32px 36px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
-.setting-box,
-.password-box {
-    position: relative;
-    margin-left: 2%;
-    margin-right: 2%;
- 
-    padding: 6px;
-    border: 1px solid var(--cinzaBorda);
+.secao-titulo {
+    margin-bottom: 24px;
+}
+
+.secao-titulo--mt {
+    margin-top: 36px;
+}
+
+.secao-titulo h4 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--texto);
+    margin: 0 0 4px;
+}
+
+.secao-titulo p {
+    font-size: 13px;
+    color: var(--texto-medio);
+    margin: 0;
+}
+
+.setting-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--borda);
     border-radius: var(--radius-pequeno);
-    margin-top: 15px;
-    margin-bottom: 10px;
-    box-shadow: var(--sombra-sm);
+    padding: 16px;
+    margin-bottom: 12px;
+    background: var(--surface-2);
+    transition: border-color var(--trans);
 }
 
-.setting-box p,
-.password-box p {
-    color: var(--cinzaForte);
-    position: absolute;
-    background-color: var(--branco);
-    top: 10px;
-    padding:0 5px 0 5px;
-    left:10px;
-    margin-left: 4px;
+.setting-box:focus-within {
+    border-color: var(--azulPadrao);
+}
+
+.field-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--texto-medio);
+    margin-bottom: 8px;
 }
 
 .change-box,
 .password-config {
-    color: var(--branco);
     display: flex;
     gap: 10px;
+    align-items: center;
 }
-input:focus {
-    
-    border-color: var(--azulPadrao) !important;
-
-}
-
 
 .change-box input,
 .password-config input {
-    transition: var(--delayCurto);
-    margin-top:20px;
-    padding-left: 10px;
-    width: 80%;
+    flex: 1;
     height: 40px;
-    background: var(--branco);
-    border: 2px solid var(--cinzaBorda);
+    padding: 0 12px;
+    background: var(--brancoPadrao);
+    border: 1.5px solid var(--borda);
     border-radius: var(--radius-pequeno);
-     outline: none;
+    outline: none;
+    color: var(--texto);
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color var(--delayCurto);
+}
+
+.change-box input::placeholder,
+.password-config input::placeholder {
+    color: var(--texto-medio);
+}
+
+input:focus {
+    border-color: var(--azulPadrao) !important;
 }
 
 .change-box button,
 .password-config button {
-    margin-top:20px;
-    margin-left: auto;
-    width: 100px;
+    height: 40px;
+    padding: 0 18px;
     background: var(--laranjaPadrao);
     border: none;
     border-radius: var(--radius-pequeno);
-    color: var(--branco);
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--trans);
-    margin-right: 10px;
+    color: #fff;
+    font-size: 13px;
     font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all var(--trans);
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
-.profile-edt button:hover,
-.setting-box button:hover,
+.change-box button:hover,
 .password-config button:hover {
     background: var(--laranjaEscuro);
-    box-shadow: var(--sombra-md);
-    text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.103);
-    transform: translateY(-2px) ;
-   
+    transform: translateY(-2px);
+    box-shadow: var(--laranjaShadow);
 }
 
-.id-usuario{
-    font-size: 10px !important;
+.opcao-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border: 1px solid var(--borda);
+    border-radius: var(--radius-pequeno);
+    background: var(--surface-2);
+    margin-bottom: 8px;
+    gap: 16px;
+    transition: border-color var(--trans);
 }
 
+.opcao-row:hover {
+    border-color: var(--laranjaPadrao);
+}
 
+.opcao-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.opcao-nome {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--texto);
+}
+
+.opcao-desc {
+    font-size: 12px;
+    color: var(--texto-medio);
+}
+
+.category {
+    background-color: var(--brancoPadrao);
+    padding: 6px 10px;
+    border-radius: var(--radius-pequeno);
+    border: 1.5px solid var(--borda);
+    color: var(--texto);
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    transition: border-color var(--trans);
+    min-width: 80px;
+}
+
+.category:focus {
+    border-color: var(--azulPadrao);
+}
+
+.secao-footer {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-restaurar {
+    padding: 9px 20px;
+    background: transparent;
+    border: 1.5px solid var(--borda);
+    border-radius: var(--radius-pequeno);
+    color: var(--texto-sec);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all var(--trans);
+}
+
+.btn-restaurar:hover {
+    border-color: var(--vermelho);
+    color: var(--vermelho);
+    background: var(--vermelhoClaro);
+}
+
+@media (max-width: 768px) {
+    .config-container {
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .info-conta {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: unset;
+        border-right: none;
+        border-bottom: 1px solid var(--borda);
+        padding: 20px 16px 12px;
+    }
+
+    .opcoes {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 8px 0;
+        gap: 6px;
+    }
+
+    .opcoes-sidebar {
+        width: auto;
+        flex: 1;
+        min-width: fit-content;
+        justify-content: center;
+    }
+
+    .aba-conteudo {
+        padding: 20px 16px 32px;
+    }
+}
 </style>
