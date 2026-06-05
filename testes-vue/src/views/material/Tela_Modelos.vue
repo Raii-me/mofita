@@ -15,7 +15,7 @@ export default {
     return {
       filtroTexto: "",
       filtroCategoria: "Todos",
-      temaSelecionado: null, 
+      temaSelecionado: null,
       modelos: [
         {
           id: 1,
@@ -28,13 +28,13 @@ Diante desse cenário, nota-se que a dificultosa promoção de um futuro digno �
 Ademais, é fundamental ressaltar que a negligência estatal perpetua a aversão social ao inerente envelhecimento populacional. Essa questão se intensifica, na atualidade, ao passo que o Brasil não possui uma campanha nacional concreta e eficaz de estímulo à qualidade de vida da terceira idade. Tal panorama foi estudado pelo pesquisador Ruy Braga, o qual, a partir de uma perspectiva crítica voltada à realidade latino-americana, verbaliza que a ausência de um modelo assistencial inclusivo e socialmente comprometido permite o não reconhecimento dos idosos como integrantes ativos da sociedade. Sob essa ótica, o posicionamento do estudioso é válido, visto que políticas públicas ineficientes possibilitam a precarização do bem-estar da terceira idade, de modo a qualificar essa faixa etária como pouco importante para a edificação da nação — suprimindo o seu futuro salutar. Por isso, essa situação hostil precisa ser revertida. 
 É premente, portanto, uma medida que perpetue perspectivas positivas ao envelhecimento populacional. Logo, cabe ao Poder Executivo Federal — mais especificamente ao Ministério dos Direitos Humanos e da Cidadania — fomentar o respeito à terceira idade. Tal ação ocorrerá por meio da criação do “Projeto Nacional Vida Feliz”, o qual engajará debates públicos — ministrados por idosos — nos 5570 municípios brasileiros, a fim de desmistificar ideais advindos da colonização do Brasil e de protagonizar a atuação de pessoas idosas no combate direto e frontal à marginalização sofrida por elas, culminando na promoção da dignidade a essa parte da sociedade. Afinal, não é aceitável que, em um país democrático, a população envelhecida seja, como denunciado por Clarice, invisibilizada.`,
         },
-         {
+        {
           id: 2,
           imagem: "Temas_Herancas_Africanas.jpg",
           categoria: "ENEM",
           titulo: "Desafios para a valorização da herança africana no Brasil",
           nota: 1000,
-          modelo: `O "ciclo do ouro" — ocorrido no Brasil no século XVIII — acarretou o aumento do número de escravos provenientes do continente africano no país, trazidos com graves diferenças culturais entre si, sem que fossem levados em consideração os aspectos regionais e sociais de suas origens, ocasionando uma homogeneização forçada de indivíduos. Atualmente, de forma análoga à História Colonial Brasileira, ainda há uma forte tendência à padronização cultural da África, desprezando sua pluralidade e seu legado. Assim, dois grandes desafios para a valorização da herança africana no Brasil devem ser debelados: as políticas públicas ineficazes e as falhas educacionais. _+++
+          modelo: `O "ciclo do ouro" — ocorrido no Brasil no século XVIII — acarretou o aumento do número de escravos provenientes do continente africano no país, trazidos com graves diferenças culturais entre si, sem que fossem levados em consideração os aspectos regionais e sociais de suas origens, ocasionando uma homogeneização forçada de indivíduos. Atualmente, de forma análoga à História Colonial Brasileira, ainda há uma forte tendência à padronização cultural da África, desprezando sua pluralidade e seu legado. Assim, dois grandes desafios para a valorização da herança africana no Brasil devem ser debelados: as políticas públicas ineficazes e as falhas educacionais.
 Diante do cenário exposto, as políticas públicas ineficazes possibilitam a desvalorização do legado africano no país, uma vez que elas impedem o estabelecimento concreto de uma revisão histórica pautada em mais oportunidades, proteção e visibilidade para pessoas pretas. Consoante o sociólogo Émile Durkheim, uma sociedade sem regras claras, sem valores e sem limites encontra-se em estado de anomia social. Nesse sentido sociológico, esse estado anômico pode ser observado na hodierna realidade brasileira, na medida em que as políticas públicas ineficientes permitem o desprezo e o desrespeito com as religiões de matriz africana, a desassistência em áreas quilombolas e a ausência de representatividade em propagandas, por exemplo. Com base nisso, uma mudança urgente e pragmática deve ser realizada, visando à transformação dessa conjuntura, de modo a não só valorizar a herança africana no país, como também a protegê-la. 
 Ademais, as falhas educacionais também constituem-se como importantes fatores que aprofundam o descaso com o legado africano no Brasil. Segundo o filósofo Immanuel Kant, "o homem é aquilo que a educação faz dele". Sob esse prisma filosófico, essas falhas educacionais solidificam mentalidades alienadas na população, potencializando preconceitos e ratificando equívocos concernentes à cultura africana no país. Nesse viés, a própria formação do cidadão brasileiro — no que tange à África e sua herança — é maculada por noções desprovidas de veracidade e etnocêntricas, corroborando a desvalorização da pluralidade e das "raízes africanas", presentes em campos variados, como a gastronomia, a dança e a religião, representados respectivamente pelo acarajé, pelo tambor de crioula e pelo candomblé. Então, torna-se imperiosa a correção imediata dessas falhas, no sentido de debelar erros e ampliar visões africanas positivas. 
 Infere-se, portanto, que as políticas públicas ineficazes e as falhas educacionais configuram-se como os dois desafios para a valorização da herança africana no Brasil. Nessa ótica, o Governo Federal — órgão máximo responsável pela ordem social — deve ampliar as políticas públicas existentes, tornando-as mais eficazes, por intermédio de uma aliança com o Governo Estadual e o Governo Municipal, com a finalidade de aumentar a proteção, as oportunidades e a representatividade das pessoas pretas. O Governo Federal também deve corrigir as falhas educacionais, por meio da Mídia — grande divulgadora de informações — e da Escola, a fim de mitigar equívocos, ocasionando a valorização do legado africano. Logo, o país possuirá uma estrutura melhor para "dialogar" com a herança da África, longe da padronização impositiva ocorrida durante o "ciclo do ouro" no século XVIII.`,
@@ -96,6 +96,10 @@ Portanto, faz-se imprescindível que a mídia — instrumento de ampla abrangên
           titulo:
             "O desafio de reduzir as desigualdade entre as regiões do Brasil",
           nota: 1000,
+          modelo: `Na obra de arte “Os reiterantes” de Candido Portinari é retratada uma família na pobreza andando em um deserto, ou seja, representando um exemplo de migração de nordestinos para lugares que possam melhorar a condição financeira. Fora do desenho, a situação de desigualdade entre regiões brasileiras é presente, de modo geral, ocasionada por um fardo histórico e a negligência estatal, então, caso resolvidos, talvez essa não fosse a realidade do Brasil. 
+          Em primeira análise, é necessário ressaltar que os fluxos migratórios internos ocorridos no passado podem ser motivadores do cenário atual de priorização de certas localidades do país. Evidenciando o supracitado, em meados de 1950, com o advento do modelo capitalista, as opções de industrialização sempre recaiam nas regiões Sul e Sudeste, de forma a centralizar os espaços propícios a chegada de canarinhos que precisavam modificar suas situações econômicas. Diante disso, trazendo para o século XXI, torna-se inadmissível que tal circunstância ainda ocorra, quando até donos de grandes perfis nas redes sociais, os chamados influenciadores digitais, que moram no Nordeste muitas vezes precisam se mudar para os polos industriais, tendo que deixar um vínculo familiar para trás. Logo, faz-se crucial o interesse das empresas, nesse caso nacionais, no restante do país, de forma a expandir a situação criada anos atrás.
+          Ademais, convém debater que o descaso estatal também faz parte da precarização de certas áreas, indo contra um dever previsto na lei. Sob esse aspecto, de acordo com o artigo 5 da Constituição todos são iguais e tem que ter acesso a segurança e propriedade, condicionando um lar. Em outras palavras, mesmo que em teoria existam lugares “mais fáceis” de se conseguirem empregos, citados anteriormente por terem sido o foco de muitas empresas, torna-se desconfortável para aquele já estagnado na miséria conseguir forças para migrar para outras regiões, como último recurso e muitas vezes sem o conhecimento para adquirir o serviço, pois é compromisso do Estado evitar esse cenário ao proporcionar tanto a capacitação, como oportunidades. Isto significa que além das empresas, é evidente a ação dos três poderes a fim de agirem para promover a propriedade e segurança em totalidade entre brasileiros.
+          Por conseguinte, é indiscutível ações interventivas, para tanto, cabe ao governo federal junto do Ministério do Trabalho fazerem um projeto de expansão da modernização e dos empregos, pincipalmente para o Norte e o Nordeste. De modo geral, esse projeto será feito a partir de política públicas voltadas a capacitação para os serviços do futuro, logo, para a tecnologia, em que cursos técnicos gratuitos serão ofertados em massa, como, Administração, Informática, Marketing Digital. Além disso, propostas serão feitas com as empresas nacionais, por exemplo, Magazine Luiza, de forma a incentivar a maior instalação de suas sedes e lojas físicas nas regiões citadas antes, objetivando gerar novos empregos e proporcionar espaços mais modernos e parecidos com os encontrados no Sul. Desse modo, os diferentes territórios do Brasil vão ser nivelados.`
         },
         {
           id: 8,
@@ -103,6 +107,10 @@ Portanto, faz-se imprescindível que a mídia — instrumento de ampla abrangên
           categoria: "ENEM",
           titulo: "Democratização do acesso ao cinema no Brasil",
           nota: 1000,
+          modelo: `Ao longo do processo de formação da sociedade, o pensamento cinematográfico consolidou-se em diversas comunidades. No início do século XX, com os regimes totalitários, por exemplo, o cinema era utilizado como meio de dominação à adesão das massas ao governo. Embora o cinema tenha se popularizado, posteriormente, como entretenimento, nota-se, na contemporaneidade, a sua limitação social, em virtude do discurso elitizado que o compõe e da falta de acesso por parte da população. Essa visão negativa pode ser significativamente minimizada, desde que acompanhada da desconstrução coletiva, junto à redução do custo do ingresso para a maior acessibilidade.
+          Em primeira análise, é evidente que a herança ideológica da produção cinematográfica, como um recurso destinado às elites, conservou-se na coletividade e perpetuou a exclusão de classes inferiores. Nessa perspectiva, segundo Michel Foucault, filósofo francês, o poder articula-se em uma linguagem que cria mecanismos de controle e coerção, os quais aumentam a subordinação. Sob essa ótica, constata-se que o discurso hegemônico introduzido, na modernidade, moldou o comportamento do cidadão a acreditar que o cinema deve se restringir a determinada parcela da sociedade, o que enfraquece o princípio de que todos indivíduos têm o direito ao lazer e ao entretenimento. Desse modo, com a concepção instituída da produção cinematográfica como diversão das camadas altas, o cinema adquire o caráter elitista, o qual contribui com a exclusão do restante da população.
+          Além disso, uma comunidade que restringe o acesso ao cinema, por meio do custo de ingressos, representa um retrocesso para a coletividade que preza por igualdade. Nesse sentido, na teoria da percepção do estado da sociedade, de Émile Durkheim, sociólogo francês, abrangem-se duas divisões: "normal e patológico". Seguindo essa linha de pensamento, observa-se que um ambiente patológico, em crise, rompe com o seu desenvolvimento, visto que um sistema desigual não favorece o progresso coletivo. Dessa forma, com a disponibilidade de ir ao cinema mediada pelo preço — que não leva em consideração a renda regional —, a democratização torna-se inviável.
+          Depreende-se, portanto, a relevância da igualdade do acesso ao cinema no Brasil. Para que isso ocorra, é necessário que o Estado proporcione a redução coerente do custo de ingressos por região, junto à difusão da importância da produção cinematográfica no cotidiano, nos meios de comunicação, por meio de anúncios, a fim de colaborar com o acesso igualitário. Ademais, a instituição educacional deve proporcionar aos indivíduos uma educação voltada à democratização coletiva do cinema, como entretenimento destinado às elites, por intermédio de debates e palestras, na área das Ciências Humanas, como forma de esclarecimento populacional. Assim, haverá um ambiente estável que colabore com a acessibilidade geral ao cinema no país`
         },
         {
           id: 9,
@@ -111,6 +119,10 @@ Portanto, faz-se imprescindível que a mídia — instrumento de ampla abrangên
           titulo:
             "Manipulação do comportamento do usuário pelo controle de dados na internet",
           nota: 1000,
+          modelo: `No livro “1984” de George Orwell, é retratado um futuro distópico em que um Estado totalitário controla e manipula toda forma de registro histórico e contemporâneo, a fim de moldar a opinião pública a favor dos governantes. Nesse sentido, a narrativa foca na trajetória de Winston, um funcionário do contraditório Ministério da Verdade que diariamente analisa e altera notícias e conteúdos midiáticos para favorecer a imagem do Partido e formar a população através de tal ótica. Fora da ficção, é fato que a realidade apresentada por Orwell pode ser relacionada ao mundo cibernético do século XXI: gradativamente, os algoritmos e sistemas de inteligência artificial corroboram para a restrição de informações disponíveis e para a influência comportamental do público, preso em uma grande bolha sociocultural.
+          Em primeiro lugar, é importante destacar que, em função das novas tecnologias, internautas são cada vez mais expostos a uma gama limitada de dados e conteúdos na internet, consequência do desenvolvimento de mecanismos filtradores de informação a partir do uso diário individual. De acordo com o filósofo Zygmund Baüman, vive-se atualmente um período de liberdade ilusória, já que o mundo digitalizado não só possibilitou novas formas de interação com o conhecimento, mas também abriu portas para a manipulação e alienação vistas em “1984”. Assim, os usuários são inconscientemente analisados e lhes é apresentado apenas o mais atrativo para o consumo pessoal.
+          Por conseguinte, presencia-se um forte poder de influência desses algoritmos no comportamento da coletividade cibernética: ao observar somente o que lhe interessa e o que foi escolhido para ele, o indivíduo tende a continuar consumindo as mesmas coisas e fechar os olhos para a diversidade de opções disponíveis. Em um episódio da série televisiva Black Mirror, por exemplo, um aplicativo pareava pessoas para relacionamentos com base em estatísticas e restringia as possibilidades para apenas as que a máquina indicava – tornando o usuário passivo na escolha. Paralelamente, esse é o objetivo da indústria cultural para os pensadores da Escola de Frankfurt: produzir conteúdos a partir do padrão de gosto do público, para direcioná-lo, torná-lo homogêneo e, logo, facilmente atingível.
+          Portanto, é mister que o Estado tome providências para amenizar o quadro atual. Para a conscientização da população brasileira a respeito do problema, urge que o Ministério de Educação e Cultura (MEC) crie, por meio de verbas governamentais, campanhas publicitárias nas redes sociais que detalhem o funcionamento dos algoritmos inteligentes nessas ferramentas e advirtam os internautas do perigo da alienação, sugerindo ao interlocutor criar o hábito de buscar informações de fontes variadas e manter em mente o filtro a que ele é submetido. Somente assim, será possível combater a passividade de muitos dos que utilizam a internet no país e, ademais, estourar a bolha que, da mesma forma que o Ministério da Verdade construiu em Winston de “1984”, as novas tecnologias estão construindo nos cidadãos do século XXI.`
         },
         {
           id: 10,
@@ -118,6 +130,11 @@ Portanto, faz-se imprescindível que a mídia — instrumento de ampla abrangên
           categoria: "ENEM",
           titulo: "Desafios para a formação educacional dos surdos no Brasil",
           nota: 1000,
+          modelo: `Na mitologia grega, Sísifo foi condenado por Zeus a rolar uma enorme pedra morro acima eternamente. Todos os dias, Sísifo atingia o topo do rochedo, contudo era vencido pela exaustão, assim a pedra retornava à base. Hodiernamente, esse mito assemelha-se à luta cotidiana dos deficientes auditivos brasileiros, os quais buscam ultrapassar as barreiras as quais os separam do direito à educação. Nesse contexto, não há dúvidas de que a formação educacional de surdos é um desafio no Brasil o qual ocorre, infelizmente, devido não só à negligência governamental, mas também ao preconceito da sociedade.
+          A Constituição cidadã de 1988 garante educação inclusiva de qualidade aos deficientes, todavia o Poder Executivo não efetiva esse direito. Consoante Aristóteles no livro "Ética a Nicômaco", a política serve para garantir a felicidade dos cidadãos, logo se verifica que esse conceito encontra-se deturpado no Brasil à medida que a oferta não apenas da educação inclusiva, como também da preparação do número suficiente de professores especializados no cuidado com surdos não está presente em todo o território nacional, fazendo os direitos permanecerem no papel.
+          Outrossim, o preconceito da sociedade ainda é umgrande impasse à permanência dos deficientes auditivos nas escolas. Tristemente, a existência da discriminação contra surdos é reflexo da valorização dos padrões criados pela consciência coletiva. No entanto, segundo o pensador e ativista francês Michel Foucault, é preciso mostrar às pessoas que elas são mais livres do que pensam para quebrar pensamentos errôneos construídos em outros momentos históricos. Assim, uma mudança nos valores da sociedade é fundamental para transpor as barreiras à formação educacional de surdos.
+          Portanto, indubitavelmente, medidas são necessárias para resolver esse problema. Cabe ao Ministério da Educação criar um projeto para ser desenvolvido nas escolas o qual promova palestras, apresentações artísticas e atividades lúdicas a respeito do cotidiano e dos direitos dos surdos. - uma vez que ações culturais coletivas têm imenso poder transformador - a fim de que a comunidade escolar e a sociedade no geral - por conseguinte - conscientizem-se. Desse modo, a realidade distanciar-se-á do mito grego e os Sísifos brasileiros vencerão o desafio de Zeus.
+          `
         },
         {
           id: 11,
@@ -165,9 +182,12 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
           id: 14,
           imagem: "Temas_IA_Escolas.jpg",
           categoria: "Autoral",
-          titulo:
-            "Impacto da inteligência artificial nos alunos de escola pública",
+          titulo: "Impacto da inteligência artificial nos alunos de escola pública",
           nota: 1000,
+          modelo: `Na obra "Admirável Mundo Novo", de Aldous Huxley, a tecnologia é utilizada como instrumento de controle social e condicionamento comportamental dos indivíduos. Embora a realidade contemporânea seja distinta da ficção apresentada pelo autor, o avanço da inteligência artificial tem provocado transformações profundas na educação, especialmente entre estudantes da rede pública. Nesse contexto, o impacto dessa tecnologia sobre os alunos brasileiros está relacionado tanto à ampliação das desigualdades educacionais quanto à insuficiente preparação pedagógica para seu uso consciente.
+    Nesse prisma, a assimetria no acesso aos recursos tecnológicos potencializa os efeitos negativos da inteligência artificial nas escolas públicas. Segundo o sociólogo Pierre Bourdieu, a distribuição desigual dos capitais econômico e cultural influencia diretamente as oportunidades disponíveis aos indivíduos. Sob essa ótica, muitos estudantes da rede pública não possuem acesso adequado à internet de qualidade, dispositivos modernos ou plataformas educacionais avançadas, dificultando o aproveitamento pleno das ferramentas de IA. Como consequência, enquanto determinados grupos utilizam esses recursos para potencializar a aprendizagem, outros permanecem limitados por barreiras estruturais, ampliando disparidades já existentes no sistema educacional brasileiro.
+    Além disso, a ausência de formação adequada para alunos e professores constitui outro obstacle relevante. De acordo com Paulo Freire, a educação deve promover a autonomia crítica do estudante. Entretanto, o uso indiscriminado da inteligência artificial, sem orientação pedagógica adequada, pode estimular a dependência tecnológica e comprometer o desenvolvimento de habilidades fundamentais, como interpretação, argumentação e pensamento crítico. Assim, em vez de atuar como ferramenta complementar ao aprendizado, a tecnologia corre o risco de substituir processos cognitivos essenciais para a formação cidadã.
+    Portanto, medidas devem ser adotadas para garantir que a inteligência artificial contribua positivamente para a educação pública. Cabe ao Ministério da Educação ampliar investimentos em infraestrutura tecnológica nas escolas, por meio da aquisição de equipamentos modernos e da expansão do acesso à internet, visando reduzir desigualdades digitais. Paralelamente, as secretarias de educação devem promover cursos de capacitação para docentes e estudantes sobre o uso ético e responsável da IA, a fim de fortalecer a aprendizagem crítica. Dessa maneira, a tecnologia deixará de representar um fator de exclusão e passará a atuar como instrumento de democratização do conhecimento.`,
         },
         {
           id: 15,
@@ -175,6 +195,10 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
           categoria: "Autoral",
           titulo: "Inclusão social de pessoas com deficiências físicas",
           nota: 1000,
+          modelo: `A Constituição Federal de 1988 estabelece que todos os cidadãos são iguais perante a lei, independentemente de suas condições físicas ou sociais. Entretanto, apesar dos avanços legislativos alcançados nas últimas décadas, a inclusão social de pessoas com deficiências físicas ainda enfrenta inúmeros obstáculos no Brasil. Nesse cenário, a insuficiência da acessibilidade urbana e a persistência de preconceitos sociais configuram importantes entraves à plena participação desses indivíduos na sociedade.
+    Sob esse viés, a precariedade da infraestrutura urbana compromete diretamente a autonomia das pessoas com deficiência física. Segundo o conceito de cidadania defendido por T. H. Marshall, o acesso aos direitos sociais é condição indispensável para a integração dos indivíduos à coletividade. Contudo, a realidade brasileira é marcada pela presença de calçadas inadequadas, transportes públicos insuficientemente adaptados e prédios sem acessibilidade plena. Tal conjuntura restringe o direito de locomoção e dificulta o acesso à educação, ao trabalho e ao lazer, contribuindo para processos de exclusão social.
+    Além disso, o preconceito ainda representa uma barreira significativa à inclusão. Sob a perspectiva do sociólogo Erving Goffman, os estigmas sociais produzem formas de discriminação que marginalizam determinados grupos. Nesse sentido, muitas pessoas com deficiência enfrentam dificuldades para ingressar no mercado de trabalho ou são constantemente subestimadas quanto às suas capacidades. Essa mentalidade reforça práticas discriminatórias e impede o reconhecimento de seu potencial produtivo e intelectual.
+    Portanto, torna-se necessário ampliar as políticas de inclusão social. Para isso, o Ministério das Cidades deve intensificar a fiscalização das normas de acessibilidade e investir na adaptação dos espaços urbanos, por meio de recursos federais destinados aos municípios. Ademais, o Ministério dos Direitos Humanos deve promover campanhas educativas nos meios de comunicação, visando combater preconceitos e incentivar a valorização da diversidade. Assim, será possível construir uma sociedade mais justa, inclusiva e comprometida com a dignidade humana.`
         },
         {
           id: 16,
@@ -182,39 +206,55 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
           categoria: "Autoral",
           titulo: "Desafios para manter um consumo consciente",
           nota: 1000,
+          modelo: `O sociólogo Zygmunt Bauman define a contemporaneidade como uma "sociedade de consumidores", marcada pela constante busca por bens materiais e pela substituição acelerada de produtos. Nesse contexto, embora a preocupação com a sustentabilidade tenha se tornado mais presente nos debates públicos, manter hábitos de consumo consciente ainda representa um grande desafio para a população brasileira. Diante dessa realidade, a influência da cultura consumista e a insuficiência da educação ambiental configuram obstáculos para a consolidação de práticas responsáveis de consumo.
+    Precipuamente, a engrenagem da cultura do consumo excessivo atua como fator primordial para a manutenção desse problema. Segundo os pensadores da Escola de Frankfurt, a indústria cultural possui forte capacidade de moldar comportamentos e desejos sociais. Sob essa perspectiva, a publicidade e as redes sociais estimulam constantemente a aquisição de novos produtos, associando felicidade, sucesso e status ao ato de consumir. Como consequência, muitos indivíduos desenvolvem hábitos impulsivos de compra, ignorando os impactos ambientais e sociais gerados pela exploração excessiva dos recursos naturais e pela produção desenfreada de resíduos.
+    Ademais, a deficiência da educação ambiental dificulta a formação de consumidores mais conscientes. De acordo com Paulo Freire, a educação é capaz de transformar a realidade por meio da reflexão crítica. Entretanto, a abordagem limitada de temas relacionados à sustentabilidade nas instituições de ensino impede que parte da população compreenda plenamente as consequências de suas escolhas de consumo. Dessa forma, perpetuam-se práticas prejudiciais ao meio ambiente, como o desperdício de recursos, o descarte inadequado de materiais e a valorização de padrões consumistas incompatíveis com o desenvolvimento sustentável.
+    Portanto, é imprescindível fortalecer a promoção do consumo consciente no Brasil. Para isso, o Ministério da Educação deve ampliar a inserção de conteúdos voltados à sustentabilidade nos currículos escolares, por meio de projetos interdisciplinares e atividades práticas que incentivem hábitos responsáveis. Paralelamente, os meios de comunicação devem desenvolver campanhas educativas capazes de conscientizar a população acerca dos impactos do consumo excessivo, estimulando escolhas mais sustentáveis. Assim, será possível construir uma sociedade comprometida com a preservação ambiental e com a utilização responsável dos recursos disponíveis.`,
         },
         {
           id: 17,
           imagem: "Temas_Educacao_Financeira.jpg",
           categoria: "Autoral",
-          titulo:
-            "Desafios para o ensino de qualidade sobre educação financeira",
+          titulo: "Desafios para o ensino de qualidade sobre educação financeira",
           nota: 1000,
+          modelo: `Na obra "Pai Rico, Pai Pobre", o escritor Robert Kiyosaki destaca a importância do conhecimento financeiro para a construção de uma vida economicamente estável. Entretanto, no Brasil contemporâneo, a educação financeira ainda ocupa espaço reduzido na formação dos cidadãos, contribuindo para problemas como endividamento e consumo descontrolado. Nesse cenário, a insuficiência das políticas educacionais e a influência da cultura consumista configuram desafios para a promoção de um ensino de qualidade sobre finanças.
+    Dessa forma, a lacuna existente na abordagem da educação financeira pelas escolas dificulta a formação de indivíduos preparados para lidar com as oscilações do mercado. Segundo o educador Paulo Freire, a educação deve fornecer instrumentos capazes de transformar a realidade dos estudantes. Contudo, muitos jovens concluem a educação básica sem conhecimentos fundamentais sobre orçamento, investimentos, crédito ou planejamento financeiro. Como resultado, tornam-se mais vulneráveis a decisões impulsivas e ao acúmulo de dívidas ao longo da vida adulta.
+    Além disso, a cultura consumista amplamente difundida pelos meios de comunicação agrava esse cenário. Sob a ótica da Escola de Frankfurt, a indústria cultural influencia comportamentos e padrões sociais. Nesse sentido, a constante associação entre felicidade e consumo estimula gastos excessivos e dificulta a adoption de hábitos financeiros saudáveis. Dessa forma, mesmo quando há acesso à informação, muitos indivíduos enfrentam dificuldades para aplicar conceitos de planejamento e controle financeiro.
+    Portanto, torna-se necessário ampliar a qualidade do ensino sobre educação financeira no Brasil. Para isso, o Ministério da Educação deve fortalecer a abordagem do tema na educação básica, mediante a criação de materiais didáticos específicos e a capacitação de professores. Além disso, instituições financeiras e meios de comunicação devem promover campanhas educativas acessíveis à população, visando disseminar conhecimentos sobre organização financeira e consumo responsável. Assim, será possível formar cidadãos mais conscientes e preparados para lidar com os desafios econômicos da sociedade contemporânea.`,
         },
         {
           id: 18,
           imagem: "Temas_Substituicao_IA.jpg",
           categoria: "Autoral",
-          titulo:
-            "O impacto da inteligência artificial na precarização do trabalho e nas relações de consumo",
+          titulo: "O impacto da inteligência artificial na precarização do trabalho e nas relações de consumo",
           nota: 1000,
+          modelo: `No filme "Tempos Modernos", Charlie Chaplin retrata trabalhadores submetidos à lógica da mecanização excessiva e à perda gradual de autonomia no ambiente produtivo. Embora a obra pertença ao século XX, suas reflexões permanecem atuais diante do avanço da inteligência artificial. Nesse contexto, a crescente adoção dessa tecnologia tem provocado mudanças profundas tanto no mercado de trabalho quanto nas relações de consumo, evidenciando desafios relacionados à precarização laboral e à manipulação dos hábitos dos consumidores.
+    Em primeira instância, o processo de substituição de funções humanas por sistemas automatizados intensifica a insegurança profissional. Segundo Karl Marx, as transformações nos meios de produção impactam diretamente as relações de trabalho. Sob essa perspectiva, a utilização da inteligência artificial em setores administrativos, industriais e de atendimento tem reduzido a necessidade de mão de obra em determinadas atividades, aumentando a competitividade e a vulnerabilidade de trabalhadores menos qualificados. Como consequência, cresce a informalidade e a instabilidade econômica entre grupos socialmente fragilizados.
+    Além disso, a inteligência artificial influencia significativamente o comportamento dos consumidores. De acordo com Zygmunt Bauman, a sociedade contemporânea é marcada pelo consumo constante e pela construção de identidades através das mercadorias. Nesse sentido, algoritmos inteligentes coletam dados pessoais para direcionar anúncios e recomendações cada vez mais precisas, estimulando compras impulsivas e reduzindo a autonomia de decisão dos indivíduos. Dessa forma, as relações de consumo tornam-se mais assimétricas, favorecendo interesses corporativos.
+    Portanto, medidas devem ser implementadas para minimizar os impactos negativos da inteligência artificial. Cabe ao Ministério do Trabalho desenvolver programas de qualificação profissional voltados às novas demandas tecnológicas, por meio de cursos gratuitos e parcerias com instituições de ensino. Paralelamente, a Autoridade Nacional de Proteção de Dados deve intensificar a fiscalização do uso de informações pessoais pelas empresas digitais, garantindo maior transparência e proteção aos consumidores. Assim, será possível conciliar inovação tecnológica, justiça social e respeito aos direitos dos cidadãos.`,
         },
         {
           id: 19,
           imagem: "Temas_Violencia_Criancas.jpg",
           categoria: "Autoral",
-          titulo:
-            "Impacto da violência doméstica contra a criança e o adolescente no desenvolvimento social",
+          titulo: "Impacto da violência doméstica contra a criança e o adolescent no desenvolvimento social",
           nota: 1000,
+          modelo: `A violência doméstica contra crianças e adolescentes constitui uma grave violação dos direitos humanos e compromete diretamente a formação de indivíduos saudáveis e integrados à sociedade. Apesar dos avanços legais promovidos pelo Estatuto da Criança e do Adolescente, milhares de jovens brasileiros ainda convivem diariamente com agressões físicas, psicológicas e negligência familiar. Nesse cenário, a persistência desse problema está associada à naturalização da violência e à insuficiência das redes de proteção social.
+    De início, a herança cultural de normalização das práticas violentas no ambiente familiar favorece a continuidade desse fenômeno. Segundo o sociólogo Pierre Bourdieu, determinadas formas de violência podem ser reproduzidas simbolicamente e naturalizadas ao longo das gerações. Sob essa ótica, muitos responsáveis consideram agressões físicas ou humilhações como métodos legítimos de educação, ignorando os danos emocionais causados às vítimas. Como resultado, crianças e adolescentes desenvolvem dificuldades de socialização, insegurança e baixa autoestima, fatores que comprometem seu desenvolvimento social.
+    Além disso, a fragilidade dos mecanismos de proteção contribui para a manutenção da violência doméstica. Embora existam órgãos especializados, como os Conselhos Tutelares, a falta de recursos e de integração entre instituições dificulta a identificação precoce de situações de risco. Consequentemente, inúmeras vítimas permanecem expostas a ambientes abusivos por longos períodos, acumulando traumas que podem repercutir durante toda a vida adulta.
+    Portanto, torna-se indispensável fortalecer o enfrentamento à violência doméstica contra crianças e adolescentes. Para isso, o Ministério dos Direitos Humanos deve ampliar investimentos em programas de proteção e acolhimento, por meio da capacitação de profissionais e do fortalecimento da rede de assistência social. Paralelamente, as escolas devem promover campanhas educativas voltadas à conscientização das famílias sobre formas não violentas de educação. Assim, será possível garantir um desenvolvimento social mais saudável às futuras gerações.`,
         },
         {
           id: 20,
           imagem: "Temas_Inseguranca_Alimentar.jpg",
           categoria: "Autoral",
-          titulo:
-            "A persistência da insegurança alimentar e seus reflexos na saúde nacional",
+          titulo: "A persistência da insegurança alimentar e seus reflexos na saúde nacional",
           nota: 1000,
-        },
+          modelo: `A alimentação adequada constitui um direito fundamental assegurado pela Constituição Federal e indispensável à manutenção da saúde e da dignidade humana. Contudo, milhões de brasileiros ainda enfrentam dificuldades para garantir refeições suficientes e nutritivas diariamente. Nesse contexto, a persistência da insegurança alimentar no país revela problemas estruturais relacionados à desigualdade socioeconômica e à insuficiência de políticas públicas eficazes.
+    Com efeito, a severa concentração de renda aliada à vulnerabilidade econômica impede o acesso regular aos alimentos básicos. Segundo o economista Amartya Sen, a fome está mais associada à falta de acesso do que à escassez de alimentos propriamente dita. Sob essa perspectiva, famílias em situação de pobreza enfrentam dificuldades para adquirir produtos básicos, sobretudo em períodos de inflação elevada e desemprego. Como consequência, tornam-se mais frequentes quadros de desnutrição, deficiências nutricionais e agravamento de doenças.
+    Ademais, a insuficiência das políticas de segurança alimentar contribui para a manutenção desse cenário. Embora existam programas de assistência social e distribuição de renda, sua abrangência nem sempre é suficiente para atender todas as populações vulneráveis. Dessa forma, muitas comunidades permanecem expostas à insegurança alimentar, o que impacta negativamente indicadores de saúde pública e qualidade de vida.
+    Portanto, é necessário intensificar as ações de combate à insegurança alimentar no Brasil. Para isso, o Governo Federal deve ampliar investimentos em programas de transferência de renda e fortalecimento da agricultura familiar, por meio da destinação de recursos específicos e da ampliação da assistência técnica aos produtores. Paralelamente, os municípios devem fortalecer programas de alimentação escolar e distribuição de alimentos para famílias vulneráveis. Assim, será possível reduzir os impactos da fome e promover melhores condições de saúde para a população brasileira.`,
+        }
       ],
     };
   },
@@ -333,7 +373,7 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
         <div class="topo-imagem">
           <img :src="getImagemUrl(temaSelecionado.imagem)" :alt="temaSelecionado.titulo" />
         </div>
-        
+
         <header class="topo-modal">
           <div class="etiqueta-tema">
             <span class="tag-subcategoria">{{ temaSelecionado.categoria }}</span>
@@ -343,7 +383,7 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
 
           <h1 class="titulo-redacao">{{ temaSelecionado.titulo }}</h1>
         </header>
-        
+
 
         <div class="texto-conteudo apoio">
           <div class="subtitulo-secao">Redação</div>
@@ -353,7 +393,7 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
               {{ p }}
             </p>
           </div>
-          
+
         </div>
 
       </div>
@@ -433,7 +473,7 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
   border: none;
   background-color: transparent;
   outline: none;
-  background: var(--branco) ;
+  background: var(--branco);
   color: var(--texto);
 }
 
@@ -553,7 +593,7 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
   border-radius: 0;
 }
 
-.caixa-descricao-modelo > p {
+.caixa-descricao-modelo>p {
   font-size: 17px;
   font-weight: 800;
   color: var(--texto);
@@ -622,7 +662,7 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
   pointer-events: all;
   background: rgba(0, 0, 0, 0.6);
 }
- 
+
 .janela-modal {
   position: fixed;
   top: 50%;
@@ -643,13 +683,13 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
   pointer-events: none;
   border: 1px solid var(--borda);
 }
- 
+
 .janela-modal.aberta {
   opacity: 1;
   pointer-events: all;
   transform: translate(-50%, -50%) scale(1);
 }
- 
+
 .botao-fechar {
   position: absolute;
   top: 24px;
@@ -668,13 +708,13 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
   z-index: 10;
   color: var(--texto-forte);
 }
- 
+
 .botao-fechar:hover {
   background: var(--surface-3);
   border-color: var(--laranjaPadrao);
   color: var(--laranjaPadrao);
 }
- 
+
 .corpo-modal {
   flex: 1;
   overflow-y: auto;
@@ -683,29 +723,29 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
   scrollbar-color: var(--borda) var(--surface);
   position: relative;
 }
- 
+
 .corpo-modal::-webkit-scrollbar {
   width: 8px;
 }
- 
+
 .corpo-modal::-webkit-scrollbar-track {
   background: var(--surface);
 }
- 
+
 .corpo-modal::-webkit-scrollbar-thumb {
   background: var(--borda);
   border-radius: 4px;
 }
- 
+
 .corpo-modal::-webkit-scrollbar-thumb:hover {
   background: var(--texto-medio);
 }
- 
+
 .topo-modal {
   margin-bottom: 30px;
   padding-right: 50px;
 }
- 
+
 .etiqueta-tema {
   display: flex;
   align-items: center;
@@ -717,22 +757,22 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
   margin-bottom: 16px;
   letter-spacing: 1px;
 }
- 
+
 .tag-subcategoria {
   color: var(--texto-medio);
 }
- 
+
 .tag-subcategoria.destaque {
   color: var(--laranjaPadrao);
 }
- 
+
 .titulo-redacao {
   font-size: 24px;
   font-weight: 800;
   color: var(--texto-forte);
   line-height: 1.2;
 }
- 
+
 .topo-imagem {
   width: calc(100% + 80px);
   margin-left: -40px;
@@ -742,13 +782,13 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
   border-radius: 8px;
   overflow: hidden;
 }
- 
+
 .topo-imagem img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
- 
+
 .subtitulo-secao {
   font-size: 14px;
   font-weight: 700;
@@ -759,11 +799,11 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
   margin-bottom: 20px;
   letter-spacing: 0.5px;
 }
- 
+
 .texto-conteudo.instrucoes {
   margin-bottom: 40px;
 }
- 
+
 .texto-conteudo.instrucoes p {
   font-size: 16px;
   line-height: 1.7;
@@ -774,7 +814,7 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
   border-radius: 0 4px 4px 0;
   margin: 0;
 }
- 
+
 .bloco-charge {
   width: 100%;
   min-height: 200px;
@@ -789,27 +829,27 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
   background: var(--surface-3);
   overflow: hidden;
 }
- 
+
 .bloco-charge img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   border-radius: 6px;
 }
- 
+
 .leitura-focada {
   font-family: 'Georgia', 'Times New Roman', serif;
   font-size: 18px;
   line-height: 1.8;
   color: var(--texto);
 }
- 
+
 .leitura-focada p {
   margin-bottom: 24px;
   text-align: justify;
   color: var(--texto);
 }
- 
+
 .rodape-modal {
   position: absolute;
   bottom: 0;
@@ -819,7 +859,7 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
   background: var(--branco);
   border-top: 1px solid var(--borda);
 }
- 
+
 .btn-escolher {
   width: 100%;
   padding: 18px;
@@ -834,13 +874,13 @@ Em suma, o combate à fome no Brasil depende de uma atuação integrada, em que 
   box-shadow: var(--laranjaShadow);
   display: block;
 }
- 
+
 .btn-escolher:hover {
   background: var(--laranjaEscuro);
   transform: translateY(-2px);
   box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
 }
- 
+
 .btn-escolher:active {
   transform: translateY(0);
 }

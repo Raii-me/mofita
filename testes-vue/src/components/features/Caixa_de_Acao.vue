@@ -2,8 +2,7 @@
 export default {
     data() {
         return { novaReda: false }
-        return { contReda: false }
-        return { minhasReda: false }
+
     },
     mounted() {
         window.addEventListener('keydown', (e) => {
@@ -14,16 +13,17 @@ export default {
 </script>
 
 <template>
+
+    <!-- tirei alguns modais daqui pois achei desnecessario alem de tornar o fluxo irritante -->
     <div class="overlay" :class="{ active: novaReda }" @click="novaReda = false"></div>
-    <div class="overlay" :class="{ active: contReda }" @click="contReda = false"></div>
-    <div class="overlay" :class="{ active: minhasReda }" @click="minhasReda = false"></div>
+
 
     <div class="caixaEsquerda">
         <h2>Vamos Começar!!!</h2>
 
         <ul class="btn-Funcoes">
             <li><button class="btn-Abrir" @click="novaReda = true">Nova Redação</button></li>
-            <li><button class="btn-Abrir" @click="contReda = true">Continuar Redação</button></li>
+            <li><RouterLink to="/redacao" class="router-link"><button class="btn-Abrir" >Continuar Redação</button></RouterLink></li>
             <li><button class="btn-Abrir" @click="minhasReda = true">Minhas Redações</button></li>
         </ul>
     </div>
@@ -35,26 +35,6 @@ export default {
         <div class="caixaBotoes">
             <RouterLink to="/tema" class="router-link"><button class="botaoAcao">Escrever Redação</button></RouterLink>
             <button class="botaoAcao">Enviar Arquivo</button>
-        </div>
-    </div>
-
-    <div class="caixaAcao" :class="{ active: contReda }">
-        <h2 class="caixaTitulo">Continuar Redação</h2>
-        <p>Veja todas suas redações incompletas!</p>
-
-        <div class="caixaBotoes">
-            <RouterLink to="/redacao" class="router-link"><button class="botaoAcao">Ver Rascunhos</button></RouterLink>
-
-        </div>
-    </div>
-
-    <div class="caixaAcao" :class="{ active: minhasReda }">
-        <h2 class="caixaTitulo">Minhas Redações</h2>
-        <p>Ver todas suas redações corrigidas!</p>
-
-        <div class="caixaBotoes">
-            <RouterLink to="/desempenho" class="router-link"><button class="botaoAcao">Ver Redações</button></RouterLink>
-
         </div>
     </div>
 </template>

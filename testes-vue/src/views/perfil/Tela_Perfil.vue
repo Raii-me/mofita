@@ -148,6 +148,12 @@ export default {
                             <div class="password-config">
                                 <input type="password" placeholder="Digite sua senha atual" />
                             </div>
+
+                            <!-- apos a conclusão da senha ele esta redirecionando ao login, tentei corrigir salvando a query da url como referencia entre a tela de login ou perfil mas não consegui -->
+                            <router-link class="esqueceu-senha" to="/recuperar" target="_blank">
+                                Esqueci minha senha 
+                            </router-link>
+
                         </div>
 
                         <div class="setting-box">
@@ -162,6 +168,25 @@ export default {
                             <div class="password-config">
                                 <input type="password" placeholder="Confirme sua nova senha" />
                                 <button>Salvar</button>
+                            </div>
+                        </div>
+                       <div class="secao-titulo secao-titulo--mt">
+                            <h4>Criar senha</h4>
+                            <p>Para contas criadas via Google, defina uma senha de acesso</p>
+                        </div>
+
+                        <div class="setting-box">
+                            <label class="field-label">Nova senha</label>
+                            <div class="password-config">
+                                <input type="password" placeholder="Crie uma senha" />
+                            </div>
+                        </div>
+
+                        <div class="setting-box">
+                            <label class="field-label">Confirmar senha</label>
+                            <div class="password-config">
+                                <input type="password" placeholder="Confirme a senha criada" />
+                                <button>Criar senha</button>
                             </div>
                         </div>
                     </div>
@@ -248,6 +273,20 @@ export default {
 .info-conta {
     display: flex;
     min-height: 600px;
+}
+
+.esqueceu-senha {
+    font-size: 15px;
+    color: var(--azul);
+    text-decoration: none;
+    transition: color 0.2s;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.esqueceu-senha:hover {
+    text-decoration: underline;
+    color: var(--laranja);
 }
 
 .sidebar {
@@ -428,7 +467,6 @@ export default {
 .setting-box {
     display: flex;
     flex-direction: column;
-    gap: 0;
     border: 1px solid var(--borda);
     border-radius: var(--radius-pequeno);
     padding: 16px;

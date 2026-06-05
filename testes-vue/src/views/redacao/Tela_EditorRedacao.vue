@@ -4,6 +4,11 @@ import Footer from "../../components/layout/Footer.vue";
 import "../../assets/css/variaveis.css";
 
 const meusTemas = [
+  //adicionando tema para fluxo rodar no mofita
+  {
+    id: 0,
+    titulo: "Tema Livre",
+  },
   {
     id: 1,
     titulo: "Perspectivas acerca do envelhecimento na sociedade brasileira",
@@ -126,8 +131,9 @@ export default {
       this.mostrandoModal = true;
       document.body.style.overflow = "hidden";
     },
-    sairSemSalvar() {
-      this.$router.push({ name: "theme" });
+
+    voltar() {
+      this.$router.back("/");
     },
 
   },
@@ -163,7 +169,7 @@ export default {
         </div>
 
         <footer class="rodape-documento">
-          <button class="btn-voltar" @click="sairSemSalvar">
+          <button class="btn-voltar" @click="voltar">
             Sair sem salvar
           </button>
           <div class="grupo-botoes">
@@ -198,73 +204,67 @@ export default {
 @import "../../assets/css/variaveis.css";
 
 .editor-pagina {
-  background-color: var(--branco);
+  background-color: var(--surface);
   color: var(--texto);
   padding: 40px 20px;
   display: flex;
   justify-content: center;
   min-height: 100vh;
 }
-
+ 
 .documento {
   width: 100%;
   max-width: 900px;
 }
-
+ 
 .cartao-editor {
-  background: var(--branco);
+  background: var(--brancoPadrao);
   border-radius: var(--raio);
   box-shadow: var(--sombra-md);
   border: 1px solid var(--borda-clara);
   overflow: hidden;
 }
-
+ 
 .cabecalho-documento {
   background: linear-gradient(135deg,
       var(--azul-escuro) 0%,
       var(--azulPadrao) 100%);
   padding: 40px;
   text-align: center;
-  color: var(--branco);
+  color: var(--texto-forte);
 }
-
+ 
 .cabecalho-documento h1 {
   font-size: 32px;
   font-weight: 800;
+  color: #fff;
 }
-
+ 
 .cabecalho-documento h1 span {
   color: var(--laranjaPadrao);
 }
-
-.versao {
-  font-size: 13px;
-  margin-top: 10px;
-  opacity: 0.4;
-  color: var(--branco);
-}
-
+ 
 .texto-tema {
   font-size: 15px;
   font-weight: 500;
   width: 75%;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.85);
+  color: #fff;
   margin: 20px auto 0;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 12px;
   padding: 14px 20px;
 }
-
+ 
 .conteudo-documento {
   padding: 40px;
 }
-
+ 
 .secao {
   margin-bottom: 36px;
 }
-
+ 
 .secao-titulo {
   color: var(--azulPadrao);
   font-size: 18px;
@@ -274,7 +274,7 @@ export default {
   align-items: center;
   gap: 10px;
 }
-
+ 
 .secao-titulo::before {
   content: "";
   width: 4px;
@@ -283,7 +283,7 @@ export default {
   border-radius: 2px;
   flex-shrink: 0;
 }
-
+ 
 .entrada-titulo {
   width: 100%;
   border: none;
@@ -293,40 +293,43 @@ export default {
   color: var(--texto);
   outline: none;
   padding: 5px 0;
-  border-bottom: 2px solid var(--brancoLeve);
+  border-bottom: 2px solid var(--borda);
   transition: border-color var(--trans);
 }
-
+ 
+.entrada-titulo::placeholder {
+  color: var(--texto-medio);
+}
+ 
 .entrada-titulo:focus {
   border-bottom-color: var(--azulPadrao);
 }
-
+ 
 .barra-ferramentas {
   padding: 12px 0;
-  background: #fdfdfd;
-  border-bottom: 1px solid var(--brancoLeve);
-  border-top: 1px solid var(--brancoLeve);
+  border-bottom: 1px solid var(--borda);
+  border-top: 1px solid var(--borda);
   display: flex;
   justify-content: flex-end;
   gap: 25px;
   margin-bottom: 36px;
 }
-
+ 
 .item-estatistica {
   font-size: 13px;
   color: var(--texto-sec);
   font-weight: 500;
 }
-
+ 
 .item-estatistica b {
   color: var(--azulPadrao);
   font-weight: 700;
 }
-
+ 
 .area-escrita {
   margin-bottom: 0;
 }
-
+ 
 #editor-texto {
   width: 100%;
   min-height: 550px;
@@ -339,19 +342,23 @@ export default {
   resize: vertical;
   outline: none;
   color: var(--texto);
-  background-image: linear-gradient(rgba(196, 212, 232, 0.6) 1px,
-      transparent 1px);
+  background-color: var(--brancoPadrao);
+  background-image: linear-gradient(var(--azulPadraoClaro) 1px, transparent 1px);
   background-size: 100% 36px;
   background-attachment: local;
   transition: border-color var(--trans);
 }
-
+ 
+#editor-texto::placeholder {
+  color: var(--texto-medio);
+}
+ 
 #editor-texto:focus {
   border-color: var(--azulPadrao);
 }
 
 .rodape-documento {
-  background: #fafafa;
+  background: var(--surface-2);
   padding: 20px 40px;
   display: flex;
   align-items: center;
@@ -366,7 +373,7 @@ export default {
 
 .btn-voltar {
   background: var(--vermelho);
-  color: var(--branco);
+  color: #fff;
   padding: 14px 28px;
   border-radius: var(--radius-pequeno);
   font-weight: 600;
@@ -400,9 +407,9 @@ export default {
 }
 
 .btn-salvar {
-  background: var(--brancoLeve);
-  color: var(--azul-escuro);
-  border: 1px solid var(--borda-clara);
+  background: var(--surface-3);
+  color: var(--texto);
+  border: 1px solid var(--borda);
 }
 
 .btn-salvar:hover {

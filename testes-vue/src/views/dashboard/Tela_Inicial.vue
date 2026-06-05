@@ -4,6 +4,7 @@ import Footer from "../../components/layout/Footer.vue";
 import Chatbot from "../../components/features/Chatbot.vue";
 import Grafico from "../../components/layout/Grafico.vue";
 import Caixa_de_Acao from "../../components/features/Caixa_de_Acao.vue";
+import ModalApoio from "../../components/features/ModalTema.vue";
 
 export default {
   components: {
@@ -12,48 +13,53 @@ export default {
     Chatbot,
     Grafico,
     Caixa_de_Acao,
-    
+    ModalApoio
+
   },
   data() {
     return {
+      temaSelecionado: null,
+
+      //não coloquei os textos apoiadores aqui para poupar codigo ja que e simulação do banco mas e o mesmo esquema da tela de escolher
       temasHome: [
         {
-          id: 1,
+          id: 6,
           imagem: "Temas_Doenca_Mental.jpg",
           categoria: "ENEM",
           titulo: "O estigma associado às doenças mentais na sociedade brasileira",
-          destaque: "Tema Quente",
+          subcategoria: "Tema Quente",
         },
         {
-          id: 2,
+          id: 9,
           imagem: "Temas_Controle_Dados.jpg",
           categoria: "ENEM",
           titulo: "Manipulação do comportamento do usuário pelo controle de dados na internet",
-          destaque: "Tema Quente",
+          subcategoria: "Tema Quente",
         },
         {
-          id: 3,
+          id: 10,
           imagem: "Tema_Educacao_Surdos.jpg",
           categoria: "ENEM",
           titulo: "Desafios para a formação educacional dos surdos no Brasil",
-          destaque: "Tema Quente",
+          subcategoria: "Tema Quente",
         },
         {
-          id: 4,
+          id: 14,
           imagem: "Temas_IA_Escolas.jpg",
           categoria: "Autoral",
           titulo: "Impacto da inteligência artificial nos alunos de escola pública",
-          destaque: "Novo",
+          subcategoria: "Novo",
         },
       ],
     };
   },
 
   methods: {
-  getImagemUrl(nome) {
-    return new URL(`../../assets/TEMAS/${nome}`, import.meta.url).href;
-  },
-}
+    getImagemUrl(nome) {
+      return new URL(`../../assets/TEMAS/${nome}`, import.meta.url).href;
+    },
+
+  }
 };
 </script>
 
@@ -64,7 +70,7 @@ export default {
   <main>
     <section id="part-1" class="pagina-1">
       <div class="hero-text">
-        <h1>Bem-vindo, <span class="destaque">Usuário!</span></h1>
+        <h1>Bem-vindo, <span class="subcategoria">Usuário!</span></h1>
         <p class="subTitulo">Plataforma de redação impulsionada por IA</p>
       </div>
 
@@ -85,54 +91,48 @@ export default {
     </section>
 
     <div class="separador">
-  <span></span>
-  <p>Temas recomendados</p>
-  <span></span>
-</div>
+      <span></span>
+      <p>Temas recomendados</p>
+      <span></span>
+    </div>
 
     <section id="part-2" class="pagina-2">
-      
+
       <div class="grid-modelos">
 
-       
 
-       <div
-  v-for="tema in temasHome"
-  :key="tema.id"
-  class="card"
->
-    <div class="imagem">
-      <img
-        :src="getImagemUrl(tema.imagem)"
-        :alt="tema.titulo"
-      />
 
-      <div class="tema-da-modelo">
-        <p>{{ tema.categoria }}</p>
-      </div>
-    </div>
+        <div v-for="tema in temasHome" :key="tema.id" class="card" @click="temaSelecionado = tema">
+          <div class="imagem">
+            <img :src="getImagemUrl(tema.imagem)" :alt="tema.titulo" />
 
-    <div class="caixa-descricao-modelo">
-      <p>{{ tema.titulo }}</p>
+            <div class="tema-da-modelo">
+              <p>{{ tema.categoria }}</p>
+            </div>
+          </div>
 
-      <div class="visualizar-detalhe-modelo">
-        <p class="tag-categoria">
-          {{ tema.destaque }}
-        </p>
+          <div class="caixa-descricao-modelo">
+            <p>{{ tema.titulo }}</p>
 
-        <a href="#">
-          <span class="ler-mais-btn">
-            Ler textos de apoio →
-          </span>
-        </a>
-      </div>
-    </div>
-  </div>
+            <div class="visualizar-detalhe-modelo">
+              <p class="tag-categoria">
+                {{ tema.subcategoria }}
+              </p>
+
+              <a href="#">
+                <span class="ler-mais-btn">
+                  Ler textos de apoio →
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
 
       </div>
     </section>
   </main>
   <Footer />
+  <ModalApoio :tema="temaSelecionado" @fechar="temaSelecionado = null" />
 </template>
 
 <style scoped>
@@ -168,7 +168,7 @@ h1 {
   margin-bottom: 6px;
 }
 
-.destaque {
+.subcategoria {
   color: var(--laranjaPadrao);
 }
 
@@ -333,7 +333,7 @@ h1 {
   background: var(--brancoPadrao);
 }
 
-.caixa-descricao-modelo > p {
+.caixa-descricao-modelo>p {
   font-size: 17px;
   font-weight: 800;
   color: var(--texto);
@@ -387,6 +387,7 @@ h1 {
 }
 
 @media (max-width: 768px) {
+
   .pagina-1,
   .pagina-2 {
     padding-left: 5%;
