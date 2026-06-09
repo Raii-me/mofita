@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="dpBaixo">10dp</dimen>
+    <dimen name="dpMedio">15dp</dimen>
+    <dimen name="dpAlto" >20dp</dimen>
+    <dimen name="dpMuitoAlto" >25dp</dimen>
+
+</resources>

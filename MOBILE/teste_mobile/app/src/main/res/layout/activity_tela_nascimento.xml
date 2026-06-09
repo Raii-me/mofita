@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context=".Tela_Nascimento">
+
+    <ImageButton
+        android:layout_width="@dimen/dpMedio"
+        android:layout_height="@dimen/dpMuitoAlto"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/ic_voltar_azul" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/dpAlto"
+        android:layout_marginTop="34dp"
+        android:paddingLeft="@dimen/dpBaixo"
+        android:paddingRight="@dimen/dpBaixo"
+        android:src="@drawable/bg_logo_reda" />
+
+    <TextView
+        android:id="@+id/txt_bv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginBottom="@dimen/dpAlto"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/colocar_idade"
+        android:textColor="@color/laranjaPadrao"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="@dimen/dpBaixo"
+
+        android:background="@drawable/bg_borda_azul"
+        android:hint="Data de Nascimeto"
+        android:inputType="datetime"
+
+        android:paddingHorizontal="@dimen/dpMedio"
+        android:paddingVertical="@dimen/dpBaixo"
+         android:textColorHint="@color/cinzaPadrao" />
+
+    <Button
+        android:id="@+id/btn_entrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/cinzaFundo"
+        android:paddingVertical="@dimen/dpBaixo"
+        android:text="Continuar"
+        android:textColor="@color/pretoPadrao"
+        app:cornerRadius="@dimen/dpBaixo" />
+
+    <Button
+        android:id="@+id/btn_voltar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="@dimen/dpMuitoAlto"
+        android:backgroundTint="@color/cinzaFundo"
+        android:paddingVertical="@dimen/dpBaixo"
+        android:text="Voltar"
+        android:textColor="@color/pretoPadrao"
+        app:cornerRadius="@dimen/dpBaixo" />
+
+</LinearLayout>

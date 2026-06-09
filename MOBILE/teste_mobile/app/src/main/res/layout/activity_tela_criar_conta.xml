@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context=".Tela_Criar_Conta">
+
+    <ImageButton android:id="@+id/btn_voltar_inicial"
+        android:layout_width="@dimen/dpMedio"
+        android:layout_height="@dimen/dpMuitoAlto"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/ic_voltar_azul" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/dpAlto"
+        android:layout_marginTop="34dp"
+        android:paddingLeft="@dimen/dpBaixo"
+        android:paddingRight="@dimen/dpBaixo"
+        android:src="@drawable/bg_logo_reda" />
+
+    <TextView
+        android:id="@+id/txt_bv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="@dimen/dpAlto"
+        android:layout_marginBottom="@dimen/dpAlto"
+        android:gravity="center"
+        android:text="@string/criar_conta"
+        android:textColor="@color/laranjaPadrao"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="@dimen/dpBaixo"
+        android:fontFamily="@font/poppins_regular"
+
+        android:background="@drawable/bg_borda_azul"
+        android:hint="Nome"
+        android:inputType="textPersonName"
+        android:textColor="@color/pretoPadrao"
+        android:paddingHorizontal="@dimen/dpMedio"
+        android:paddingVertical="@dimen/dpMedio"
+        android:textColorHint="@color/cinzaPadrao" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="@dimen/dpBaixo"
+        android:fontFamily="@font/poppins_regular"
+
+        android:background="@drawable/bg_borda_azul"
+        android:hint="Sobrenome"
+        android:inputType="textPersonName"
+        android:textColor="@color/pretoPadrao"
+        android:paddingHorizontal="@dimen/dpMedio"
+        android:paddingVertical="@dimen/dpMedio"
+        android:textColorHint="@color/cinzaPadrao" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="@dimen/dpBaixo"
+        android:fontFamily="@font/poppins_regular"
+
+        android:background="@drawable/bg_borda_azul"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/pretoPadrao"
+        android:paddingHorizontal="@dimen/dpMedio"
+        android:paddingVertical="@dimen/dpMedio"
+        android:textColorHint="@color/cinzaPadrao" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="@dimen/dpBaixo"
+        android:fontFamily="@font/poppins_regular"
+
+        android:background="@drawable/bg_borda_azul"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        android:textColor="@color/pretoPadrao"
+        android:paddingHorizontal="@dimen/dpMedio"
+        android:paddingVertical="@dimen/dpMedio"
+        android:textColorHint="@color/cinzaPadrao" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_criar_conta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/dpBaixo"
+            android:text="Continuar"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/pretoPadrao"
+            app:backgroundTint="@color/cinzaFundo"
+            app:cornerRadius="@dimen/dpBaixo" />
+
+        <ImageView
+            android:id="@+id/img_linha_divisoria"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dpAlto"
+            android:layout_marginTop="@dimen/dpBaixo"
+            android:layout_marginBottom="@dimen/dpBaixo"
+            android:background="@drawable/bg_linha_inicial" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_google"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dpBaixo"
+            android:text="@string/login_com_google"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/pretoPadrao"
+            app:backgroundTint="@color/cinzaFundo"
+            app:cornerRadius="@dimen/dpBaixo"
+            app:icon="@drawable/ic_google_2"
+            app:iconGravity="textStart"
+            app:iconTint="@null" />
+
+    </LinearLayout>
+
+</LinearLayout>

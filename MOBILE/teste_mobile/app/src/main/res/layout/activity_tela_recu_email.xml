@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brancoPadrao"
+    android:orientation="vertical"
+    tools:context=".Tela_Recu_Email">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/dpAlto"
+        android:paddingLeft="@dimen/dpBaixo"
+        android:paddingRight="@dimen/dpBaixo"
+        android:src="@drawable/bg_logo_reda" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+
+            android:layout_width="100dp"
+            android:layout_height="@dimen/dpMedio"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/ic_barra_preenchida" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="@dimen/dpMedio"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/ic_barra_nao_vazia" />
+
+        <ImageButton
+
+            android:layout_width="100dp"
+            android:layout_height="@dimen/dpMedio"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/ic_barra_nao_vazia" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="47dp"
+        android:background="@drawable/bg_borda_azul"
+        android:backgroundTint="#E6E6FA"
+        android:gravity="center"
+        android:padding="@dimen/dpMuitoAlto">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/ic_cadeado_fechado" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="62dp"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:textColor="@color/pretoPadrao"
+        android:text="Esqueceu a senha?"
+        android:textSize="@dimen/dpMuitoAlto" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="5.5dp"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:textColor="@color/azulPadrao"
+        android:text="Digite seu E-mail para instruções"
+        android:textSize="@dimen/dpMedio" />
+
+    <EditText
+        android:id="@+id/txt_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/bg_borda_azul"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:paddingHorizontal="@dimen/dpMedio"
+        android:paddingVertical="@dimen/dpMedio"
+        android:textColor="@color/pretoPadrao"
+        android:textColorHint="@color/cinzaPadrao" />
+
+    <Button
+        android:id="@+id/btn_receber_codigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="70dp"
+        android:fontFamily="@font/poppins_regular"
+        android:paddingVertical="@dimen/dpMedio"
+        android:text="Receber Codigo"
+        android:textColor="@color/brancoPadrao"
+        app:backgroundTint="@color/laranjaPadrao"
+        app:cornerRadius="@dimen/dpBaixo" />
+
+</LinearLayout>

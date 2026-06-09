@@ -1,0 +1,17 @@
+1 - O android >PRECISA< estar na versão mais atualizada
+
+2 - O arquivo estava rodando antes de enviar pro git, então se não rodar é culpa da IDE 
+
+3 - Não esta completo, tem 90% das telas, acredito que falta +/- 3 telas 
+
+4 - pega o arquivo "teste mobile" e joga dentro da pasta de documentos (parece estranho, mas tem mais chances de rodar doq a pasta do próprio android)
+
+5 - Qualquer erro, tenta tirar o cache que talvez o erro desaparece (IDE desgraçada)
+
+6 - Designs das telas estão sujeitos a alterações 
+
+7 - Boa sorte tentando mexer nessa bosta de IDE feita no quinto circulo do inferno
+
+8 - maldito seja o criador dessa merda
+
+

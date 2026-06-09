@@ -1,0 +1,32 @@
+package acom.rai.teste_mobile;
+
+import android.content.Intent;
+import android.os.Bundle;
+
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+public class Tela_Login extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
+        setContentView(R.layout.activity_tela_login);
+
+
+        findViewById(R.id.btn_entrar).setOnClickListener(v -> startActivity(new Intent(this, Tela_Home.class)));
+        findViewById(R.id.btn_recu_senha).setOnClickListener(v -> startActivity(new Intent(this, Tela_Recu_Email.class)));
+        findViewById(R.id.btn_voltar_inicial).setOnClickListener(v -> finish());
+
+
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
+    }
+}

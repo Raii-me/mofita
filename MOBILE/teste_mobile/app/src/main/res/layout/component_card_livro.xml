@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_margin="@dimen/dpAlto"
+    app:cardBackgroundColor="#fff"
+    app:cardCornerRadius="@dimen/dpMedio"
+    app:cardElevation="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical">
+
+            <ImageView android:id="@+id/img_livro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg_imagem_moldura" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dpBaixo"
+            android:layout_marginTop="-88dp"
+            android:background="@drawable/bg_titulo_branca"
+            android:paddingLeft="@dimen/dpMedio"
+            android:paddingTop="6dp"
+            android:paddingRight="@dimen/dpMedio"
+            android:paddingBottom="6dp">
+
+            <TextView android:id="@+id/txt_tema_livro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tema do livro"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/dpMedio"
+                android:fontFamily="@font/poppins_regular"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dpMedio"
+            android:layout_marginTop="60dp"
+            android:orientation="vertical">
+
+            <TextView android:id="@+id/txt_desc_livro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:justificationMode="inter_character"
+                android:text="Descrição do livro"
+                android:fontFamily="@font/poppins_regular"
+                android:textSize="@dimen/dpMedio" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="@dimen/dpMedio"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button android:id="@+id/btn_baixar_livro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Baixar livro"
+                android:fontFamily="@font/poppins_regular"
+                android:backgroundTint="@color/transparente"
+                android:textColor="@color/azulFundo"
+                android:textSize="@dimen/dpMedio"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+
+

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brancoPadrao"
+    android:orientation="vertical"
+    tools:context=".Tela_Login">
+
+    <ImageButton android:id="@+id/btn_voltar_inicial"
+        android:layout_width="@dimen/dpMedio"
+        android:layout_height="@dimen/dpMuitoAlto"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/ic_voltar_azul" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/dpAlto"
+        android:layout_marginTop="34dp"
+        android:paddingLeft="@dimen/dpBaixo"
+        android:paddingRight="@dimen/dpBaixo"
+        android:src="@drawable/bg_logo_reda" />
+
+    <TextView
+        android:id="@+id/txt_bv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginBottom="40sp"
+        android:gravity="center"
+        android:text="@string/login"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/laranjaPadrao"
+        android:textSize="@dimen/dpMuitoAlto"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="@dimen/dpBaixo"
+        android:fontFamily="@font/poppins_regular"
+
+        android:background="@drawable/bg_borda_azul"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/pretoPadrao"
+        android:paddingHorizontal="@dimen/dpMedio"
+        android:paddingVertical="@dimen/dpMedio"
+         android:textColorHint="@color/cinzaPadrao" />
+
+
+    <EditText
+        android:id="@+id/edt_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="@dimen/dpBaixo"
+
+        android:background="@drawable/bg_borda_azul"
+        android:hint="@string/senha"
+        android:inputType="textPassword"
+        android:fontFamily="@font/poppins_regular"
+
+        android:paddingHorizontal="@dimen/dpMedio"
+        android:paddingVertical="@dimen/dpMedio"
+        android:textColor="@color/pretoPadrao"
+        android:textColorHint="@color/cinzaPadrao"
+
+
+        app:cornerRadius="@dimen/dpMedio" />
+
+    <Button android:id="@+id/btn_recu_senha"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="5dp"
+        android:text="Esqueceu a senha?"
+        android:backgroundTint="@color/transparente"
+        android:textColor="@color/azulPadrao"
+        android:fontFamily="@font/poppins_regular"
+        android:textSize="13dp"
+        android:padding="0dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn_entrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/dpBaixo"
+            android:text="Entrar"
+            android:textColor="@color/pretoPadrao"
+            app:backgroundTint="@color/cinzaFundo"
+            android:fontFamily="@font/poppins_regular"
+            app:cornerRadius="@dimen/dpBaixo" />
+
+        <ImageView
+            android:id="@+id/img_linha_divisoria"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dpAlto"
+            android:layout_marginTop="@dimen/dpBaixo"
+            android:layout_marginBottom="@dimen/dpBaixo"
+            android:background="@drawable/bg_linha_inicial" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_google"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:padding="@dimen/dpBaixo"
+            android:text="@string/login_com_google"
+            android:textColor="@color/pretoPadrao"
+            app:backgroundTint="@color/cinzaFundo"
+            app:cornerRadius="@dimen/dpBaixo"
+            app:icon="@drawable/ic_google_2"
+            app:iconGravity="textStart"
+            app:iconTint="@null" />
+
+    </LinearLayout>
+
+</LinearLayout>

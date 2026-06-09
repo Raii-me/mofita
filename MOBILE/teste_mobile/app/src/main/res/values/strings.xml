@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Telas Mobile</string>
+    <string name="digitar_email">Insira seu email</string>
+    <string name="digitar_senha">Insira sua senha</string>
+    <string name="bem_vindo">Bem Vindo!</string>
+    <string name="login">Faça login</string>
+    <string name="cadastro">Cadastro</string>
+    <string name="desc_plataforma">Seja REDA+! \na maior plataforma de redação do Brasil, que vai ajudar você, estudante, a ingressar em uma universidade!</string>
+    <string name="login_com_google">Login com google</string>
+    <string name="outras_op_es">----------------------------- Outras opções --------------------------</string>
+    <string name="senha">Senha</string>
+    <string name="criar_conta">Criar uma Nova Conta</string>
+    <string name="termos_politica">Ao clicar em continuar, você concorda com os nossos Termos de Serviço e com a Política de Privacidade</string>
+
+    <string name="colocar_idade">Qual a sua Idade?</string>
+    <string name="possui_conta">Já possui uma Conta</string>
+
+    <string name="texto">Descrição do tema e preciso por um texto para simular uma descrição e n ficar vazio</string>
+
+    <string name="politicas_de_privacidade">Bem-vindo ao Reda+.\n\n A sua privacidade é uma prioridade absoluta para nós. Esta Política de Privacidade explica como coletamos, usamos, compartilhamos e protegemos suas informações pessoais ao utilizar nossa plataforma de auxílio à redação.\n Ao acessar o Reda+, você concorda com as práticas descritas neste documento, que foi atualizado para garantir total conformidade com as diretrizes de proteção de dados vigentes.
+\nNós coletamos informações que você nos fornece diretamente, como seu nome, endereço de e-mail e dados de login, além do conteúdo das redações que você submete para correção pela nossa inteligência artificial.</string>
+
+    <string name="termos_de_Uso">Olá!\n Antes de criar sua conta no Reda+, \nPor favor, leia e aceite nossos Termos e Condições.\n Esta atualização foi realizada em 30 de maio de 2024 e define as regras para o uso da nossa plataforma.\nÉ fundamental que você leia estes Termos e Condições cuidadosamente antes de concluir seu cadastro ou utilizar qualquer funcionalidade do nosso serviço.\n O seu acesso e a utilização da plataforma estão condicionados à sua total aceitação e ao cumprimento destas normas, que se aplicam a todos os visitantes, usuários e demais pessoas que acessam ou utilizam o sistema do Reda+.</string>
+
+
+</resources>

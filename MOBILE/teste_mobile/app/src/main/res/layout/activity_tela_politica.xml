@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brancoPadrao"
+    android:orientation="vertical"
+    tools:context=".Tela_Politica">
+
+    <include layout="@layout/component_top_voltar" />
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="600dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_titulo_branca"
+        android:elevation="5dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="Politica de Privacidade"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/pretoPadrao"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:text="Atualizado em Fevereiro de 2025"
+            android:textSize="14dp"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/pretoPadrao"
+            android:gravity="center"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/pretoPadrao"
+            android:text="@string/politicas_de_privacidade"
+            android:lineSpacingExtra="1.1sp"
+            android:justificationMode="inter_word"
+            android:textSize="15dp"
+            android:gravity="center"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

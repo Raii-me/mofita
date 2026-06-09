@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brancoPadrao"
+    android:orientation="vertical"
+    tools:context=".Tela_Termos">
+
+    <include layout="@layout/component_top_voltar" />
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="600dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_titulo_branca"
+        android:elevation="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:text="Termos de Uso"
+            android:textColor="@color/pretoPadrao"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:text="Atualizado em Fevereiro de 2025"
+            android:textSize="14dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/poppins_regular"
+            android:gravity="center"
+            android:justificationMode="inter_word"
+            android:lineSpacingExtra="1.5sp"
+            android:text="@string/termos_de_Uso"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

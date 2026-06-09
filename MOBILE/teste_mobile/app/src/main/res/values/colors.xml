@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="cinzaPadrao">#B8B6B6</color>
+    <color name="laranjaPadrao">#ff6700</color>
+    <color name="azulPadrao">#1a4c9c</color>
+    <color name="brancoPadrao">#fff</color>
+    <color name="pretoPadrao">#1D1D1D</color>
+    <color name="roxoPadrao">#5358B8</color>
+
+    <color name="cinzaTitulo">#787777</color>
+
+    <color name="amareloPadrao">#ffc107</color>
+    <color name="amareloFundo">#33ffc107</color>
+
+    <color name="vermelho">#FF0000</color>
+    <color name="vermelhoFundo">#56FF0000</color>
+
+    <color name="roxoFundo">#895358B8</color>
+    <color name="laranjaFundo">#56FF7600</color>
+    <color name="azulFundo">#AD1A4C9C</color>
+    <color name="cinzaFundo">#E4E4E4</color>
+
+    <color name="transparente">#00FFFFFF</color>
+
+
+
+
+</resources>

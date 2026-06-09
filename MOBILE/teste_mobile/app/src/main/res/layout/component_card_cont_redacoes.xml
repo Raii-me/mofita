@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/brancoPadrao"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/card_continuar_redacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="@dimen/dpMedio"
+        android:layout_marginBottom="@dimen/dpAlto"
+        android:background="@drawable/bg_borda_cinza"
+        android:elevation="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_titulo_cont_redacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dpMedio"
+            android:layout_marginTop="@dimen/dpBaixo"
+            android:layout_marginBottom="@dimen/dpMedio"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Titulo da Redaçao"
+            android:textFontWeight="800"
+            android:textSize="@dimen/dpMedio"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_desc_cont_redacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dpMedio"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Descrição da redação" />
+
+        <Button
+            android:id="@+id/btn_continuar_redacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/transparente"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Continuar"
+            android:textColor="@color/azulPadrao"
+            android:textSize="@dimen/dpMedio" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brancoPadrao"
+    android:orientation="vertical"
+    tools:context=".Tela_Continuar_Redacao">
+
+    <include layout="@layout/component_top_voltar" />
+
+    <TextView
+        style="@style/titulo_padrao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continuar Redações" />
+
+
+    <include layout="@layout/component_card_cont_redacoes"/>
+
+    <include layout="@layout/component_card_cont_redacoes"/>
+
+    <include layout="@layout/component_card_cont_redacoes"/>
+
+
+    <include layout="@layout/component_navbar" />
+
+</LinearLayout>

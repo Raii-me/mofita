@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brancoPadrao"
+    android:orientation="vertical"
+    tools:context=".Tela_Recu_Codigo">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="@dimen/dpAlto"
+        android:paddingLeft="@dimen/dpBaixo"
+        android:paddingRight="@dimen/dpBaixo"
+        android:src="@drawable/bg_logo_reda" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+
+            android:layout_width="100dp"
+            android:layout_height="@dimen/dpMedio"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/ic_barra_preenchida" />
+
+        <ImageButton
+            android:layout_width="100dp"
+            android:layout_height="@dimen/dpMedio"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/ic_barra_preenchida" />
+
+        <ImageButton
+
+            android:layout_width="100dp"
+            android:layout_height="@dimen/dpMedio"
+            android:layout_marginHorizontal="5dp"
+            android:background="@drawable/ic_barra_nao_vazia" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="47dp"
+        android:background="@drawable/bg_borda_azul"
+        android:backgroundTint="#E6E6FA"
+        android:gravity="center"
+        android:padding="@dimen/dpMuitoAlto">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/ic_chave" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="62dp"
+        android:gravity="center"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Digite o seu Codigo"
+        android:textColor="@color/pretoPadrao"
+        android:textSize="@dimen/dpMuitoAlto" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="5.5dp"
+        android:gravity="center"
+        android:textColor="@color/azulPadrao"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Insira o codigo recebido por ***@email.com" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dpAlto"
+        android:layout_marginTop="45dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/input_number_1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/dpBaixo"
+            android:background="@drawable/bg_borda_laranja"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/pretoPadrao"
+            android:textSize="@dimen/dpMuitoAlto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/input_number_2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/dpBaixo"
+            android:background="@drawable/bg_borda_laranja"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/pretoPadrao"
+            android:textSize="@dimen/dpMuitoAlto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/input_number_3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/dpBaixo"
+            android:background="@drawable/bg_borda_laranja"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/pretoPadrao"
+            android:textSize="@dimen/dpMuitoAlto"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/input_number_4"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="@dimen/dpBaixo"
+            android:background="@drawable/bg_borda_laranja"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/pretoPadrao"
+            android:textSize="@dimen/dpMuitoAlto"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <Button android:id="@+id/btn_enviar_codigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="70dp"
+        android:paddingVertical="@dimen/dpMedio"
+        android:text="Confirmar"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/brancoPadrao"
+        app:backgroundTint="@color/laranjaPadrao"
+        app:cornerRadius="@dimen/dpBaixo" />
+
+</LinearLayout>

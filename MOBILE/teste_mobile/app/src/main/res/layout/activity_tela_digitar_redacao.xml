@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brancoPadrao"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    tools:context=".Tela_Modelo">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="110dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include layout="@layout/component_top_voltar" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dpMedio"
+                android:layout_marginTop="@dimen/dpAlto"
+                android:background="@drawable/bg_borda_cinza"
+                android:elevation="@dimen/dpBaixo"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/dpBaixo">
+
+                <TextView
+                    android:id="@+id/txt_origem_tema_redacao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dpBaixo"
+                    android:text="ASSUNTO - ENEM (de onde veio)"
+                    android:textColor="@color/azulPadrao"
+                    android:textSize="@dimen/dpMedio"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_tema_redacao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dpBaixo"
+                    android:padding="@dimen/dpBaixo"
+                    android:text="@string/texto"
+                    android:textColor="@color/pretoPadrao"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="@dimen/dpMedio"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dpMedio"
+                android:layout_marginTop="@dimen/dpAlto"
+                android:background="@drawable/bg_borda_cinza"
+                android:elevation="@dimen/dpBaixo"
+                android:orientation="vertical"
+
+                android:paddingVertical="@dimen/dpBaixo">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dpBaixo"
+                    android:text="Titulo da redação"
+                    android:textColor="@color/azulPadrao"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textSize="@dimen/dpMedio"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/txt_nome_redacao"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dpBaixo"
+                    android:fontFamily="@font/poppins_regular"
+                    android:background="@null"
+                    android:hint="Opcional"
+
+                    android:padding="@dimen/dpBaixo"
+                    android:textColor="@color/pretoPadrao"
+                    android:textColorHint="@color/cinzaPadrao"
+                    android:textSize="@dimen/dpMedio" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_marginHorizontal="@dimen/dpMedio"
+                android:layout_marginTop="@dimen/dpAlto"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bg_borda_cinza"
+                android:elevation="@dimen/dpBaixo"
+                android:orientation="vertical"
+                android:paddingVertical="@dimen/dpBaixo">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dpBaixo"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SUA REDAÇÃO..."
+                            android:textColor="@color/cinzaTitulo"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="@dimen/dpMedio" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_weight="1"
+                            android:orientation="horizontal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="Palavras: 0"
+                            android:textColor="@color/vermelho"
+                            android:fontFamily="@font/poppins_regular"
+                            android:textSize="@dimen/dpMedio" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/dpBaixo"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="(Minimo: 60)"
+                            android:textSize="@dimen/dpMedio" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/dpBaixo"
+                    android:layout_marginTop="@dimen/dpBaixo"
+                    android:background="@null"
+                    android:gravity="top|start"
+                    android:hint="Digite sua redação aqui..."
+                    android:fontFamily="@font/poppins_regular"
+
+                    android:padding="2dp"
+                    android:textColor="@color/pretoPadrao"
+                    android:textColorHint="@color/cinzaPadrao"
+                    android:textSize="@dimen/dpMedio" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="50dp"
+                    android:layout_marginVertical="@dimen/dpMedio"
+                    android:backgroundTint="@color/laranjaFundo"
+                    android:text="Limpar"
+                    android:textColor="@color/brancoPadrao"
+                    android:fontFamily="@font/poppins_regular"
+                    android:textStyle="bold"
+                    app:cornerRadius="@dimen/dpBaixo"
+                    app:strokeColor="@color/laranjaPadrao"
+
+                    app:strokeWidth="2dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dpMedio"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/azulFundo"
+                        android:text="Salvar"
+                        android:textColor="@color/brancoPadrao"
+                        android:textStyle="bold"
+                        app:cornerRadius="@dimen/dpBaixo"
+                        app:strokeColor="@color/azulPadrao"
+                        android:fontFamily="@font/poppins_regular"
+                        app:strokeWidth="2dp" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dpMedio"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/vermelhoFundo"
+                        android:text="Sair"
+                        android:textColor="@color/brancoPadrao"
+                        android:textStyle="bold"
+                        app:cornerRadius="@dimen/dpBaixo"
+                        app:strokeColor="@color/vermelho"
+                        android:fontFamily="@font/poppins_regular"
+                        app:strokeWidth="2dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include layout="@layout/component_navbar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

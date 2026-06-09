@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/brancoPadrao"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/caixa_modelos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dpMedio"
+        android:layout_marginTop="@dimen/dpMedio"
+        android:background="@drawable/bg_borda_cinza"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dpBaixo"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_foto_tema"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="@dimen/dpBaixo"
+                android:layout_marginVertical="@dimen/dpBaixo"
+                android:background="@drawable/bg_imagem_moldura"
+                android:elevation="@dimen/dpBaixo"
+                app:cornerRadius="50dp"
+                app:shapeAppearanceOverlay="@style/roundedImage"
+                app:strokeColor="@color/cinzaPadrao"
+                app:strokeWidth="3dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dpBaixo"
+                android:background="@drawable/bg_borda_cinza"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/txt_origem_tema"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:textSize="13dp"
+
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="@dimen/dpMedio"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_nome_tema"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dpBaixo"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_regular"
+
+                android:textColor="@color/pretoPadrao"
+                android:textSize="@dimen/dpMedio" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="@dimen/dpBaixo"
+                android:background="@color/azulPadrao" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_selecionar"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="@dimen/dpBaixo"
+                android:backgroundTint="@color/azulFundo"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Selecionar"
+                android:textColor="@color/brancoPadrao"
+                app:cornerRadius="@dimen/dpBaixo"
+                app:strokeColor="@color/azulPadrao"
+                app:strokeWidth="1dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

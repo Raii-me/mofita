@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brancoPadrao"
+    android:orientation="vertical"
+    tools:context=".Tela_Inicial">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="150dp"
+        android:src="@drawable/bg_logo_reda" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="Bem-Vindo"
+        android:textColor="#F67608"
+        android:textSize="@dimen/dpMuitoAlto"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn_cadastrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/dpBaixo"
+            android:text="Criar uma Nova Conta"
+            android:textColor="@color/pretoPadrao"
+            app:backgroundTint="@color/cinzaFundo"
+            android:fontFamily="@font/poppins_regular"
+            app:cornerRadius="@dimen/dpBaixo" />
+
+        <ImageView
+            android:id="@+id/img_linha_divisoria"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:layout_marginTop="@dimen/dpBaixo"
+            android:layout_marginBottom="@dimen/dpBaixo"
+            android:background="@drawable/bg_linha_inicial" />
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn_entrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dpBaixo"
+            android:text="@string/possui_conta"
+            android:textColor="@color/pretoPadrao"
+            app:backgroundTint="@color/cinzaFundo"
+            android:fontFamily="@font/poppins_regular"
+            app:cornerRadius="@dimen/dpBaixo" />
+
+    </LinearLayout>
+
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/termos_politica"
+           android:layout_marginHorizontal="50dp"
+           android:gravity="center"
+           android:textColor="@color/pretoPadrao"
+           android:fontFamily="@font/poppins_regular"
+           android:layout_marginTop="@dimen/dpMuitoAlto"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="@dimen/dpAlto">
+
+       <TextView android:id="@+id/btn_termos"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Termos de uso"
+           android:textColor="@color/azulPadrao"
+           android:layout_marginHorizontal="10dp"
+           android:textStyle="bold"
+           android:fontFamily="@font/poppins_regular"
+           android:layout_marginTop="@dimen/dpMedio"
+           />
+
+       <TextView android:id="@+id/btn_politicas"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginHorizontal="10dp"
+           android:textColor="@color/azulPadrao"
+           android:text="Politica de privacidade"
+           android:textStyle="bold"
+           android:fontFamily="@font/poppins_regular"
+           android:layout_marginTop="@dimen/dpMedio"
+
+           />
+
+
+   </LinearLayout>
+
+</LinearLayout>

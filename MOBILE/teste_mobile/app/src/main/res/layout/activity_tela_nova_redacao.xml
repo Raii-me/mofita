@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/brancoPadrao"
+    android:orientation="vertical"
+    tools:context=".Tela_Nova_Redacao">
+
+    <include layout="@layout/component_top_voltar" />
+
+    <TextView
+        style="@style/titulo_padrao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Criar nova redação!" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dpAlto"
+        android:layout_marginTop="@dimen/dpAlto"
+        android:background="@drawable/bg_borda_cinza"
+        android:elevation="@dimen/dpBaixo"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dpAlto"
+            android:layout_marginBottom="@dimen/dpAlto"
+            android:gravity="center"
+            android:text="Nova Redação"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/laranjaPadrao"
+            android:textSize="@dimen/dpAlto" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/btn_padrao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Foto" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/btn_padrao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Arquivo" />
+
+        <com.google.android.material.button.MaterialButton android:id="@+id/btn_digitar_redacao"
+            style="@style/btn_padrao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Digitar" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dpAlto"
+        android:layout_marginTop="@dimen/dpMuitoAlto"
+        android:background="@drawable/bg_borda_cinza"
+        android:elevation="@dimen/dpBaixo"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dpBaixo"
+            android:gravity="center"
+            android:text="Redações Salvas"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/laranjaPadrao"
+            android:textSize="@dimen/dpAlto" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dpBaixo"
+            android:gravity="center"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/pretoPadrao"
+            android:text="Total: $NOTA" />
+
+        <Button android:id="@+id/btn_ver_redacao"
+            style="@style/btn_padrao"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_height="55dp"
+            android:text="Ver Redações" />
+
+    </LinearLayout>
+
+    <include layout="@layout/component_navbar" />
+
+</LinearLayout>

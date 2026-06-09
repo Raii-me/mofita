@@ -1,0 +1,49 @@
+<resources>
+
+    <style name="Base.Theme.Teste_mobile" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="Theme.Teste_mobile" parent="Base.Theme.Teste_mobile" />
+
+    <style name="roundedImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <style name="titulo_padrao">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:layout_marginTop">33dp</item>
+        <item name="android:layout_marginBottom">@dimen/dpMedio</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/laranjaPadrao</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="btn_padrao">
+        <item name="android:layout_marginStart">@dimen/dpMuitoAlto</item>
+        <item name="android:layout_marginEnd">@dimen/dpMuitoAlto</item>
+        <item name="android:layout_marginBottom">@dimen/dpBaixo</item>
+        <item name="android:backgroundTint">@color/azulPadrao</item>
+        <item name="android:textColor">@color/brancoPadrao</item>
+        <item name="android:textSize">@dimen/dpMedio</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">@dimen/dpBaixo</item>
+        <item name="strokeColor">@color/azulPadrao</item>
+        <item name="strokeWidth">2dp</item>
+    </style>
+
+    <style name="linha_padrao">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginRight">2dp</item>
+        <item name="android:layout_marginLeft">2dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:background">@color/cinzaPadrao</item>
+    </style>
+
+</resources>
